@@ -28,7 +28,7 @@ jobs:
         with:
           server: 153.92.6.140
           username: u405465134.tt
-          password: b;L042J=YguhVuCm
+          password: ${{ secrets.FTP_SERVER_PASSWORD }}
           port: 21
           protocol: ftp
           server-dir: /
