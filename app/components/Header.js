@@ -9,7 +9,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/tt/logo.png"
             alt="Tiger Tiger Logo"
             width={175}
             height={50}
