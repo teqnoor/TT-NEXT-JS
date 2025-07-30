@@ -8,8 +8,8 @@ export default function Header() {
       <header className="mt-6 flex items-center gap-[50px] rounded-full bg-white/30 shadow-[0px_4px_13.4px_0px_#0000001F] backdrop-blur-[24px] px-[15px] py-[10px]">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Image
-            src="/logo.png"
+          <imgg
+            src="/tt/logo.png"
             alt="Tiger Tiger Logo"
             width={175}
             height={50}
