@@ -15,7 +15,7 @@ jobs:
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: 📦 Install Dependencies
         run: npm install
@@ -31,6 +31,6 @@ jobs:
           password: b;L042J=YguhVuCm
           port: 21
           protocol: ftp
-          local-dir: out/       
-          server-dir: /
+          local-dir: out/ # ← Build output
+          server-dir: /tt/ # ← Upload into "tt" folder
           timeout: 60000
