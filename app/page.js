@@ -7,7 +7,7 @@ export default function Home() {
       <section className="relative w-full overflow-hidden">
         {/* Background Image */}
         <img
-          src="/tt/Hero_bg.png"
+          src="/tt/Hero_Bg.png"
           alt="Hero Background"
           width={1920}
           height={920} // Set based on Figma or image aspect ratio
