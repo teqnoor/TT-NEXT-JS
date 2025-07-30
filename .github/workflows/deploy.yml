@@ -32,5 +32,5 @@ jobs:
           port: 21
           protocol: ftp
           local-dir: out/ # ← Build output
-          server-dir: /tt/ # ← Upload into "tt" folder
+          server-dir: / # ← Upload into "tt" folder
           timeout: 60000
