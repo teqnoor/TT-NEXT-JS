@@ -1,6 +1,6 @@
 const nextConfig = {
   output: "export", // ✅ enables static export
-  basePath: "/tt", // 👈 VERY IMPORTANT
+  basePath: "/", // 👈 VERY IMPORTANT
   assetPrefix: "/tt", // 👈 ensure CSS/JS loads correctly
 };
 
