@@ -31,5 +31,5 @@ jobs:
           password: b;L042J=YguhVuCm
           port: 21
           protocol: ftp
-          server-dir: /tt/          # remote path
+          server-dir: /
           local-dir: out/
