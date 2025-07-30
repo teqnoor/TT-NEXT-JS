@@ -31,6 +31,6 @@ jobs:
           password: b;L042J=YguhVuCm
           port: 21
           protocol: ftp
-          local-dir: out/ # ← Build output
-          server-dir: / # ← Upload into "tt" folder
+          local-dir: out/tt/
+          server-dir: /tt/
           timeout: 60000
