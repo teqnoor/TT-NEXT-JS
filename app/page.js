@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 
 export default function Home() {
@@ -6,7 +5,7 @@ export default function Home() {
     <>
       <section className="relative w-full overflow-hidden">
         {/* Background Image */}
-        <Image
+        <img
           src="/tt/Hero_bg.png"
           alt="Hero Background"
           width={1920}
@@ -60,29 +59,29 @@ export default function Home() {
       <section className="bg-[#40023F] py-4">
         <div className="max-w-7xl mx-auto flex justify-center gap-10 flex-wrap items-center px-4">
           {/* Replace these with actual logos or styled text/images */}
-          <Image
-            src="/tt/brands/cococho.png"
+          <img
+            src="/brands/cococho.png"
             alt="Coco Choo"
             width={170}
             height={68}
             className="object-contain"
           />
-          <Image
-            src="/tt/brands/wowchow.png"
+          <img
+            src="/brands/wowchow.png"
             alt="Wow Chow"
             width={170}
             height={68}
             className="object-contain"
           />
-          <Image
-            src="/tt/brands/pulp.png"
+          <img
+            src="/brands/pulp.png"
             alt="PULP+"
             width={170}
             height={68}
             className="object-contain"
           />
-          <Image
-            src="/tt/brands/taste_japan.png"
+          <img
+            src="/brands/taste_japan.png"
             alt="Taste Japan"
             width={170}
             height={68}
