@@ -23,12 +23,13 @@ jobs:
       - name: 🏗 Build & Export Static Site
         run: npm run build
 
-      - name: 📂 Upload via FTP
+      - name: 📂 Upload to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
           server: 153.92.6.140
           username: u405465134.tt
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /tt/ # remote path
-          local-dir: out/ # ⬅️ NOT out/tt — this is the fix
-
+          password: b;L042J=YguhVuCm
+          port: 21
+          protocol: ftp
+          server-dir: /tt/          # remote path
+          local-dir: out/
