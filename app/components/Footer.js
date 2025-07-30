@@ -7,7 +7,7 @@ export default function Footer() {
         {/* Logo and Description */}
         <div>
           <img
-            src="/logo.png"
+            src="/tt/logo.png"
             alt="Tiger Tiger Logo"
             width={250}
             height={40}

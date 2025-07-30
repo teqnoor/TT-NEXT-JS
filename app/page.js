@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
       <section className="relative w-full overflow-hidden">
         {/* Background Image */}
         <img
-          src="/Hero_bg.png"
+          src="/tt/Hero_bg.png"
           alt="Hero Background"
           width={1920}
           height={920} // Set based on Figma or image aspect ratio
@@ -60,28 +61,28 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex justify-center gap-10 flex-wrap items-center px-4">
           {/* Replace these with actual logos or styled text/images */}
           <img
-            src="/brands/cococho.png"
+            src="/tt/brands/cococho.png"
             alt="Coco Choo"
             width={170}
             height={68}
             className="object-contain"
           />
           <img
-            src="/brands/wowchow.png"
+            src="/tt/brands/wowchow.png"
             alt="Wow Chow"
             width={170}
             height={68}
             className="object-contain"
           />
           <img
-            src="/brands/pulp.png"
+            src="/tt/brands/pulp.png"
             alt="PULP+"
             width={170}
             height={68}
             className="object-contain"
           />
           <img
-            src="/brands/taste_japan.png"
+            src="/tt/brands/taste_japan.png"
             alt="Taste Japan"
             width={170}
             height={68}
