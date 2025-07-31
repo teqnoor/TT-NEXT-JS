@@ -30,6 +30,3 @@ jobs:
           username: u405465134.tiger.teqnoor.cloud
           password: ${{ secrets.FTP_SERVER_PASSWORD }}
           port: 21
-          protocol: ftp
-          server-dir: /
-          local-dir: out/
