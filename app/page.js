@@ -195,55 +195,24 @@ export default function Home() {
             From Drinks to Sauces, Tiger Tiger Foods has it all for you
           </p>
 
-          {/* Product Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-            {/* Card 1 */}
-            <div className="bg-[#6B3D8F] p-4 flex flex-col items-center rounded">
-              <img
-                src="/wow-chow.png"
-                alt="Wow Chow Noodles"
-                className="h-48 object-contain mb-4"
-              />
-              <span className="bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
-                Wow Chow Noodles
-              </span>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-[#ABC531] p-4 flex flex-col items-center rounded">
-              <img
-                src="/bubble-tea.png"
-                alt="Bubble Tea"
-                className="h-48 object-contain mb-4"
-              />
-              <span className="bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
-                Bubble Tea
-              </span>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-[#F5B4C3] p-4 flex flex-col items-center rounded">
-              <img
-                src="/coco-choo.png"
-                alt="Coco Choo Drink"
-                className="h-48 object-contain mb-4"
-              />
-              <span className="bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
-                Coco Choo Drink
-              </span>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-[#00B9C2] p-4 flex flex-col items-center rounded">
-              <img
-                src="/japanese-range.png"
-                alt="Japanese Range"
-                className="h-48 object-contain mb-4"
-              />
-              <span className="bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
-                Japanese Range
-              </span>
-            </div>
+            {/* Card Template */}
+            {[
+              { title: "Wow Chow Noodles", image: "/wow.jpg" },
+              { title: "Bubble Tea", image: "/buble_tea.jpg" },
+              { title: "Coco Choo Drink", image: "/cococho.jpg" },
+              { title: "Japanese Range", image: "/sauces.jpg" },
+            ].map((card, i) => (
+              <div
+                key={i}
+                className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
+                style={{ backgroundImage: `url('${card.image}')` }}
+              >
+                <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
+                  {card.title}
+                </span>
+              </div>
+            ))}
           </div>
 
           {/* Button */}
