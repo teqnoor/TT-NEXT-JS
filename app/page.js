@@ -222,6 +222,25 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      <section className="bg-[#FFFCF5] py-8">
+        {/* Header Row */}
+        <div className="max-w-6xl mx-auto px-4 flex justify-between items-center mb-6">
+          <div>
+            <h2 className="text-lg font-semibold text-[#220016] mb-2">
+              Product Categories
+            </h2>
+            <p>
+              We have wide variety of products ranging from drinks to noodles
+              and frozen. You name it, we got it.
+            </p>
+          </div>
+          <a href="#" className="text-sm text-[#220016]">
+            All Categories
+          </a>
+        </div>
+
+      </section>
     </>
   );
 }

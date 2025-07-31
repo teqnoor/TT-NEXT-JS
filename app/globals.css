@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 10s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+
 :root {
   --background: #F7F5F3;
   --foreground: #171717;
