@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
+import SmoothSlider from "./components/SmoothSlider";
 
 export default function Home() {
   const flavours = [
@@ -26,6 +27,7 @@ export default function Home() {
   ];
   return (
     <>
+      {/* Hero Section */}
       <section className="relative w-full overflow-hidden">
         {/* Background Image */}
         <Image
@@ -80,6 +82,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Brands Section */}
       <section className="bg-[#40023F] py-4">
         <div className="max-w-7xl mx-auto flex justify-center gap-10 flex-wrap items-center px-4">
           {/* Replace these with actual logos or styled text/images */}
@@ -114,7 +117,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 px-4 md:px-12 bg-[#FFFDF4]">
+      {/* Flavours Section */}
+      <section className="py-12">
         <div className="max-w-6xl mx-auto text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-bold text-[#220016] mb-2">
             4 Amazing Flavours
@@ -130,7 +134,7 @@ export default function Home() {
                 key={index}
                 className={`rounded-md overflow-hidden  flex items-center justify-center`}
               >
-                <Image
+                <img
                   src={flavour.image}
                   alt={flavour.name}
                   className="object-contain"
@@ -141,7 +145,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="">
+      {/* Award Section */}
+      <section className="py-12">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center border border-black bg-[#FFF0B4] px-1 py-0">
           {/* Left Text Content */}
           <div className="w-full md:w-1/2 p-6 space-y-4">
@@ -179,13 +184,16 @@ export default function Home() {
             <Image
               src="/pulp_award.jpg"
               alt="Pulp+ Award"
-              className="w-full h-[700px] object-contain"
+              width={700}
+              height={700}
+              className=" object-contain"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-[#FFFBEF] px-4 py-12">
+      {/* Range Section */}
+      <section className="py-12">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
           <h2 className="text-2xl md:text-3xl font-bold text-[#220016]">
@@ -223,7 +231,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#FFFCF5] py-8">
+      {/* Categories Section */}
+      <section className="bg-[#FFFCF5] py-12">
         {/* Header Row */}
         <div className="max-w-6xl mx-auto px-4 flex justify-between items-center mb-6">
           <div>
@@ -235,11 +244,118 @@ export default function Home() {
               and frozen. You name it, we got it.
             </p>
           </div>
-          <a href="#" className="text-sm text-[#220016]">
+          <a href="#" className="text-sm text-[#220016] underline">
             All Categories
           </a>
         </div>
 
+        {/* Marquee Category Row */}
+        <div className="overflow-hidden bg-[#40023F]">
+          <div className="animate-marquee whitespace-nowrap py-3">
+            {["Taste Japan", "Canned", "Drinks", "Frozen", "Noodles"].map(
+              (item, i) => (
+                <span
+                  key={i}
+                  className="inline-block text-white font-semibold text-[40px] px-8"
+                >
+                  {item}
+                </span>
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Wow Chow Section */}
+      <section className=" py-12">
+        {/* Grid Content */}
+        <div className="max-w-6xl mx-auto px-4 flex md:flex-row flex-col gap-3">
+          {/* Left Images */}
+          <div className="flex flex-col justify-end">
+            <Image
+              src="/wowchow/4.png"
+              alt="wow1"
+              width={300}
+              height={350}
+              className="rounded-md mb-4 object-cover ml-auto"
+            />
+            <Image
+              src="/wowchow/5.png"
+              alt="wow2"
+              width={345}
+              height={150}
+              className="rounded-md object-cover"
+            />
+          </div>
+
+          {/* Center Image and Text */}
+          <div className="flex flex-col justify-center items-center">
+            <h3 className="text-2xl font-bold text-[#220016] mb-2 text-[40px]">
+              Put WOW in <br /> Your Chow
+            </h3>
+            <button className="mt-2 text-sm underline text-[#220016] mb-3">
+              Discover Wow Chow
+            </button>
+            <Image
+              src="/wowchow/1.png"
+              alt="wow2"
+              width={415}
+              height={300}
+              className="rounded-md  object-cover"
+            />
+          </div>
+
+          {/* Right Images */}
+          <div className="flex flex-col">
+            <Image
+              src="/wowchow/3.png"
+              alt="wow3"
+              width={250}
+              height={260}
+              className="rounded-md mb-4  object-cover"
+            />
+            <Image
+              src="/wowchow/4.png"
+              alt="wow4"
+              width={310}
+              height={250}
+              className="rounded-md object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Japanese Range Section */}
+      <section className="py-12">
+        {/* Header */}
+        <div className="max-w-6xl mx-auto px-4 mb-8">
+          <h2 className="text-lg md:text-3xl font-bold text-[#220016]">
+            Discover our Japanese Range
+          </h2>
+          <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+            Tiger Tiger Foods own Taste Japan range of authentic Japanese
+            products that will take your Japanese dishes to the next level
+          </p>
+        </div>
+
+        {/* Image Section */}
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="relative">
+            <img
+              src="/jk_banner.jpg"
+              alt="Japanese Range"
+              className="rounded-lg object-cover w-full  h-[550px]"
+            />
+            {/* Button in Top-Right corner */}
+            <button className="absolute top-4 right-4 bg-[#fff] hover:bg-[#40023F] text-[#000] hover:text-[#fff] px-6 py-2 rounded-full font-medium">
+              Discover Japanese Range
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12">
+        <SmoothSlider />
       </section>
     </>
   );
