@@ -2,28 +2,33 @@
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react"; // Correct import for Swiper and SwiperSlide
-import SwiperCore, { FreeMode, Pagination } from "swiper/core"; // Import core modules
+import SwiperCore, { FreeMode, Pagination, Autoplay } from "swiper/core"; // Import core modules
 
 // Import Swiper styles
 import "swiper/swiper-bundle.css"; // Import swiper styles
-import Image from "next/image";
 
 // Enable the modules
-SwiperCore.use([FreeMode, Pagination]);
+SwiperCore.use([FreeMode, Pagination, Autoplay]);
 
 export default function SmoothSlider() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 overflow-hidden">
-      {" "}
-      {/* Add overflow-hidden to prevent excess overflow */}
-      <h2 className="text-3xl font-bold mb-6">What's Cooking?</h2>
-      <p className="mb-5">Discover our social media and connect with us</p>
+    <>
+      <div className="max-w-6xl mx-auto px-4 py-8 overflow-hidden">
+        {" "}
+        {/* Add overflow-hidden to prevent excess overflow */}
+        <h2 className="text-3xl font-bold mb-6">What's Cooking?</h2>
+        <p className="mb-5">Discover our social media and connect with us</p>
+      </div>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={10}
+        slidesPerView={5}
+        spaceBetween={15}
         freeMode={true}
         pagination={{
           clickable: true,
+        }}
+        autoplay={{
+          delay: 1000, // 3 seconds per slide
+          disableOnInteraction: false, // Autoplay doesn't stop after user interaction
         }}
         className="mySwiper"
       >
@@ -34,7 +39,7 @@ export default function SmoothSlider() {
             <img
               src="/wowchow/1.png"
               alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[520px] transform translate-x-[-40px]" // Translate the image left to simulate overflow
+              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
             />
           </div>
         </SwiperSlide>
@@ -43,7 +48,7 @@ export default function SmoothSlider() {
             <img
               src="/wowchow/2.png"
               alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[520px] transform translate-x-[-40px]" // Translate the image left to simulate overflow
+              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
             />
           </div>
         </SwiperSlide>
@@ -52,7 +57,7 @@ export default function SmoothSlider() {
             <img
               src="/wowchow/3.png"
               alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[520px] transform translate-x-[-40px]" // Translate the image left to simulate overflow
+              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
             />
           </div>
         </SwiperSlide>
@@ -61,7 +66,7 @@ export default function SmoothSlider() {
             <img
               src="/wowchow/4.png"
               alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[520px] transform translate-x-[-40px]" // Translate the image left to simulate overflow
+              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
             />
           </div>
         </SwiperSlide>
@@ -70,11 +75,32 @@ export default function SmoothSlider() {
             <img
               src="/wowchow/5.png"
               alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[520px] transform translate-x-[-40px]" // Translate the image left to simulate overflow
+              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
+            />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className="relative">
+          <div className="overflow-visible">
+            <img
+              src="/wowchow/5.png"
+              alt="Tiger Tiger Logo"
+              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
+            />
+          </div>
+        </SwiperSlide>
+
+
+        <SwiperSlide className="relative">
+          <div className="overflow-visible">
+            <img
+              src="/wowchow/5.png"
+              alt="Tiger Tiger Logo"
+              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
             />
           </div>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </>
   );
 }
