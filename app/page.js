@@ -7,7 +7,7 @@ export default function Home() {
       <section className="relative w-full overflow-hidden">
         {/* Background Image */}
         <img
-          src="/tt/Hero_Bg.png"
+          src="/Hero_Bg.png"
           alt="Hero Background"
           width={1920}
           height={920} // Set based on Figma or image aspect ratio
@@ -61,28 +61,28 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex justify-center gap-10 flex-wrap items-center px-4">
           {/* Replace these with actual logos or styled text/images */}
           <img
-            src="/tt/brands/cococho.png"
+            src="/brands/cococho.png"
             alt="Coco Choo"
             width={170}
             height={68}
             className="object-contain"
           />
           <img
-            src="/tt/brands/wowchow.png"
+            src="/brands/wowchow.png"
             alt="Wow Chow"
             width={170}
             height={68}
             className="object-contain"
           />
           <img
-            src="/tt/brands/pulp.png"
+            src="/brands/pulp.png"
             alt="PULP+"
             width={170}
             height={68}
             className="object-contain"
           />
           <img
-            src="/tt/brands/taste_japan.png"
+            src="/brands/taste_japan.png"
             alt="Taste Japan"
             width={170}
             height={68}
