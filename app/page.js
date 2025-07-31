@@ -32,14 +32,14 @@ export default function Home() {
           src="/Hero_Bg.png"
           alt="Hero Background"
           width={1920}
-          height={920} // Set based on Figma or image aspect ratio
+          height={920}
           priority
           className="w-full h-auto object-cover"
         />
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 flex items-center justify-center px-4 text-center text-[#220016] z-10">
-          <div className="-mt-60">
+        <div className="absolute top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10">
+          <div>
             {/* Top Feature Row */}
             <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium mb-4 text-[#220016]">
               {[
@@ -79,6 +79,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="bg-[#40023F] py-4">
         <div className="max-w-7xl mx-auto flex justify-center gap-10 flex-wrap items-center px-4">
           {/* Replace these with actual logos or styled text/images */}
@@ -185,7 +186,7 @@ export default function Home() {
       </section>
 
       <section className="bg-[#FFFBEF] px-4 py-12">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto">
           {/* Heading */}
           <h2 className="text-2xl md:text-3xl font-bold text-[#220016]">
             Discover our range
