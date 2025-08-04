@@ -13,7 +13,7 @@ const outfit = Outfit({
 });
 
 const fields = localFont({
-  src: './fonts/fonnts.com-Fields-Display-Extra-Bold.otf',
+  src: './fonts/fonnts.com-Fields.otf',
   variable: '--font-fields',
   display: 'swap',
 });
