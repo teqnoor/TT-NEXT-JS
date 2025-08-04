@@ -1,13 +1,21 @@
-import {  Outfit } from "next/font/google";
+import { Outfit } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingCart from "./components/FloatingCart";
+import localFont from "next/font/local";
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
   display: "swap",
+});
+
+const fields = localFont({
+  src: './fonts/fonnts.com-Fields-Display-Extra-Bold.otf',
+  variable: '--font-fields',
+  display: 'swap',
 });
 
 export const metadata = {
@@ -18,7 +26,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} antialiased`}>
+      <body className={`${outfit.variable} antialiased  ${fields.variable}`}>
         <Header />
         <main className="">{children}</main>
         <Footer />

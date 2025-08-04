@@ -16,7 +16,9 @@ export default function SmoothSlider() {
       <div className="max-w-6xl mx-auto px-4 py-8 overflow-hidden">
         {" "}
         {/* Add overflow-hidden to prevent excess overflow */}
-        <h2 className="text-3xl font-bold mb-6">What's Cooking?</h2>
+        <h2 className="font-fields font-semibold text-[32px] text-[#220016]">
+          What's Cooking?
+        </h2>
         <p className="mb-5">Discover our social media and connect with us</p>
       </div>
       <Swiper
@@ -89,7 +91,6 @@ export default function SmoothSlider() {
             />
           </div>
         </SwiperSlide>
-
 
         <SwiperSlide className="relative">
           <div className="overflow-visible">
