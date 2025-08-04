@@ -100,7 +100,7 @@ export default function Header() {
                     New
                   </Link>
                   <Link
-                    href="/products/new"
+                    href="/products/categories"
                     className="px-4 py-2 text-[#220016] hover:bg-gray-100"
                   >
                     Categories
