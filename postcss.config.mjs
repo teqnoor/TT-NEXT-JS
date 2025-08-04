@@ -1,9 +1,5 @@
 const config = {
   plugins: ["@tailwindcss/postcss"],
-  // tailwind.config.js
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-  ],
   theme: {
     extend: {
       fontFamily: {
@@ -12,8 +8,6 @@ const config = {
       },
     },
   },
-  plugins: [],
-
 };
 
 export default config;
