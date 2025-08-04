@@ -82,13 +82,13 @@ export default function Header() {
                     Discover
                   </Link>
                   <Link
-                    href="/products/category2"
+                    href="/products"
                     className="px-4 py-2 text-[#220016] hover:bg-gray-100"
                   >
                     All Products
                   </Link>
                   <Link
-                    href="/products/category3"
+                    href="/products/featured"
                     className="px-4 py-2 text-[#220016] hover:bg-gray-100"
                   >
                     Featured

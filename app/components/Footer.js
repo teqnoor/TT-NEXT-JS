@@ -1,9 +1,19 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 
 export default function Footer() {
+
+  const pathname = usePathname();
+
+
   return (
-    <footer className="text-[#220016] pt-10 pb-4 text-sm font-outfit px-6 md:px-0">
+    <footer
+      className={`text-[#220016] pt-10 pb-4 text-sm font-outfit px-6 md:px-0 ${pathname !== "/" ? "bg-[#fff0b4]" : ""}`}
+    >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
         <div>
