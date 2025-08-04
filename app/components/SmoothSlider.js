@@ -13,9 +13,7 @@ SwiperCore.use([FreeMode, Pagination, Autoplay]);
 export default function SmoothSlider() {
   return (
     <>
-      <div className="max-w-6xl mx-auto py-8 overflow-hidden">
-        {" "}
-        {/* Add overflow-hidden to prevent excess overflow */}
+      <div className="max-w-6xl mx-auto py-8 overflow-hidden px-6 md:px-0">
         <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
           What's Cooking?
         </h2>
@@ -31,6 +29,17 @@ export default function SmoothSlider() {
         autoplay={{
           delay: 1000, // 3 seconds per slide
           disableOnInteraction: false, // Autoplay doesn't stop after user interaction
+        }}
+        breakpoints={{
+          0: {
+            slidesPerView: 3, // 👈 Mobile
+          },
+          768: {
+            slidesPerView: 4, // Tablet
+          },
+          1024: {
+            slidesPerView: 5, // Desktop
+          },
         }}
         className="mySwiper"
       >

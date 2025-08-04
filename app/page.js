@@ -40,7 +40,7 @@ export default function Home() {
         />
 
         {/* Overlay Content */}
-        <div className="absolute top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10">
+        <div className="absolute top-[25%] md:top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10">
           <div>
             {/* Top Feature Row */}
             <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium mb-4 text-[#220016]">
@@ -119,7 +119,7 @@ export default function Home() {
 
       {/* Flavours Section */}
       <section className="py-12">
-        <div className="max-w-6xl mx-auto text-center md:text-left">
+        <div className="max-w-6xl mx-auto text-center md:text-left px-6 md:px-0">
           <h2 className="font-fields text-2xl md:text-3xl font-extrabold text-[#220016] mb-2">
             4 Amazing Flavours
           </h2>
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Award Section */}
-      <section className="py-12">
+      <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center border border-black bg-[#FFF0B4] px-1 py-0">
           {/* Left Text Content */}
           <div className="w-full md:w-1/2 p-6 space-y-4">
@@ -193,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Range Section */}
-      <section className="py-12">
+      <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
           <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
@@ -235,7 +235,7 @@ export default function Home() {
       {/* Categories Section */}
       <section className="bg-[#FFFCF5] py-12">
         {/* Header Row */}
-        <div className="max-w-6xl mx-auto  flex justify-between items-center mb-6">
+        <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
             <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
               Product Categories
@@ -327,7 +327,7 @@ export default function Home() {
       </section>
 
       {/* Japanese Range Section */}
-      <section className="py-12">
+      <section className="py-12 px-6 md:px-0">
         {/* Header */}
         <div className="max-w-6xl mx-auto mb-8">
           <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
