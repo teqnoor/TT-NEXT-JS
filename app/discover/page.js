@@ -265,7 +265,6 @@ export default function DiscoverPage() {
             src="https://jk-foods-uk.paperturn-view.com/?pid=MzM338396&v=6.2"
             width="100%"
             height="800px"
-            allowTransparency="true"
             allowFullScreen
             style={{ margin: "0 auto" }}
           ></iframe>

@@ -27,7 +27,10 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <div className="max-w-6xl mx-auto fixed top-0 left-0 right-0 z-50" id="header">
+    <div
+      className="max-w-6xl mx-auto fixed top-0 left-0 right-0 z-50"
+      id="header"
+    >
       <header className="mt-6 flex items-center md:gap-[50px] rounded-full bg-white/30 shadow-[0px_4px_13.4px_0px_#0000001F] backdrop-blur-[24px] px-[15px] py-[10px]">
         <Link href="/" className="flex items-center">
           <Image
@@ -50,7 +53,9 @@ export default function Header() {
           <nav className="hidden md:flex space-x-[50px] font-medium text-gray-800 relative">
             <Link
               href="/"
-              className="font-outfit font-normal text-[18.04px] text-[#220016]"
+              className={`font-outfit text-[18.04px] text-[#220016] ${
+                pathname === "/" ? "font-bold" : "font-normal"
+              }`}
             >
               Home
             </Link>
@@ -83,25 +88,35 @@ export default function Header() {
                   </Link>
                   <Link
                     href="/products"
-                    className="px-4 py-2 text-[#220016] hover:bg-gray-100"
+                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                      pathname === "/products" ? "font-bold" : "font-normal"
+                    }`}
                   >
                     All Products
                   </Link>
                   <Link
                     href="/products/featured"
-                    className="px-4 py-2 text-[#220016] hover:bg-gray-100"
+                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                      pathname === "/products/featured"
+                        ? "font-bold"
+                        : "font-normal"
+                    }`}
                   >
                     Featured
                   </Link>
                   <Link
                     href="/products/new"
-                    className="px-4 py-2 text-[#220016] hover:bg-gray-100"
+                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                      pathname === "/products/new" ? "font-bold" : "font-normal"
+                    }`}
                   >
                     New
                   </Link>
                   <Link
                     href="/products/categories"
-                    className="px-4 py-2 text-[#220016] hover:bg-gray-100"
+                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                      pathname === "/products/categories" ? "font-bold" : "font-normal"
+                    }`}
                   >
                     Categories
                   </Link>
@@ -128,10 +143,12 @@ export default function Header() {
               Contact
             </Link>
             <Link
-              href="/blog"
-              className="font-outfit font-normal text-[18.04px] text-[#220016]"
+              href="/blogs"
+              className={`font-outfit text-[18.04px] text-[#220016] ${
+                pathname === "/blogs" ? "font-bold" : "font-normal"
+              }`}
             >
-              Blog
+              Blogs
             </Link>
           </nav>
 
