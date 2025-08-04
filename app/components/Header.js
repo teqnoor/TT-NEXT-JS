@@ -5,11 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi"; // Hamburger & Close
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // mobile menu
-  const dropdownRef = useRef(null); // ✅ Ref for DOM
+  const dropdownRef = useRef(null);
+
+  const pathname = usePathname();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -20,11 +23,11 @@ export default function Header() {
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-    document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'auto';
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
   }, [mobileMenuOpen]);
 
   return (
-    <div className="max-w-6xl mx-auto fixed top-0 left-0 right-0 z-50">
+    <div className="max-w-6xl mx-auto fixed top-0 left-0 right-0 z-50" id="header">
       <header className="mt-6 flex items-center md:gap-[50px] rounded-full bg-white/30 shadow-[0px_4px_13.4px_0px_#0000001F] backdrop-blur-[24px] px-[15px] py-[10px]">
         <Link href="/" className="flex items-center">
           <Image
@@ -62,10 +65,19 @@ export default function Header() {
               </div>
 
               {isOpen && (
-                <div className="absolute top-full left-0 flex flex-col bg-white shadow-md rounded-md mt-2 min-w-[150px] z-50">
+                <div
+                  className="absolute top-full left-0 flex flex-col bg-white shadow-md rounded-md mt-2 min-w-[150px] z-50"
+                  style={{
+                    backdropFilter: "blur(16.6px)",
+                    boxShadow: "-3px 3px 0px 0px #000000",
+                    border: "2px solid #40023F",
+                  }}
+                >
                   <Link
-                    href="/products/category1"
-                    className="px-4 py-2 text-[#220016] hover:bg-gray-100"
+                    href="/discover"
+                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                      pathname === "/discover" ? "font-bold" : "font-normal"
+                    }`}
                   >
                     Discover
                   </Link>
@@ -139,7 +151,6 @@ export default function Header() {
           }`}
         >
           <div className="p-6 flex flex-col h-full">
-            
             {/* Navigation */}
             <nav className="flex flex-col space-y-6 text-[#220016] font-outfit text-[18px]">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>

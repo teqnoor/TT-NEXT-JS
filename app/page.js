@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import SmoothSlider from "./components/SmoothSlider";
+import CategoryMarquee from "./components/categoryMarquee";
 
 export default function Home() {
   const flavours = [
@@ -251,24 +252,11 @@ export default function Home() {
         </div>
 
         {/* Marquee Category Row */}
-        <div className="overflow-hidden bg-[#40023F]">
-          <div className="animate-marquee whitespace-nowrap py-3">
-            {["Taste Japan", "Canned", "Drinks", "Frozen", "Noodles"].map(
-              (item, i) => (
-                <span
-                  key={i}
-                  className="inline-block text-white font-semibold text-[40px] px-8"
-                >
-                  {item}
-                </span>
-              )
-            )}
-          </div>
-        </div>
+        <CategoryMarquee />
       </section>
 
       {/* Wow Chow Section */}
-      <section className=" py-12">
+      <section className=" py-12 md:hidden">
         {/* Grid Content */}
         <div className="max-w-6xl mx-auto flex md:flex-row flex-col gap-3">
           {/* Left Images */}
@@ -333,7 +321,7 @@ export default function Home() {
           <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
             Discover our Japanese Range
           </h2>
-          
+
           <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
             Tiger Tiger Foods own Taste Japan range of authentic Japanese
             products that will take your Japanese dishes to the next level
