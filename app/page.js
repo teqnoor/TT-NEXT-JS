@@ -59,7 +59,7 @@ export default function Home() {
 
             {/* Heading */}
             <p className="text-lg font-outfit mb-2">Made with real fruit</p>
-            <h1 className="text-4xl md:text-5xl font-bold font-outfit mb-2">
+            <h1 className="text-4xl md:text-5xl font-bold mb-2">
               Award Winning <span className="text-[#FF9E02]">PULP+</span>
             </h1>
 
@@ -120,7 +120,7 @@ export default function Home() {
       {/* Flavours Section */}
       <section className="py-12">
         <div className="max-w-6xl mx-auto text-center md:text-left">
-          <h2 className="font-fields text-2xl md:text-3xl font-bold text-[#220016] mb-2">
+          <h2 className="font-fields text-2xl md:text-3xl font-extrabold text-[#220016] mb-2">
             4 Amazing Flavours
           </h2>
           <p className="text-sm text-[#220016] mb-6">
@@ -196,7 +196,7 @@ export default function Home() {
       <section className="py-12">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h2 className="font-fields font-semibold text-[32px] text-[#220016]">
+          <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
             Discover our range
           </h2>
 
@@ -237,7 +237,7 @@ export default function Home() {
         {/* Header Row */}
         <div className="max-w-6xl mx-auto px-4 flex justify-between items-center mb-6">
           <div>
-            <h2 className="font-fields font-semibold text-[32px] text-[#220016]">
+            <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
               Product Categories
             </h2>
             <p>
@@ -330,7 +330,7 @@ export default function Home() {
       <section className="py-12">
         {/* Header */}
         <div className="max-w-6xl mx-auto px-4 mb-8">
-          <h2 className="font-fields font-semibold text-[32px] text-[#220016]">
+          <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
             Discover our Japanese Range
           </h2>
           

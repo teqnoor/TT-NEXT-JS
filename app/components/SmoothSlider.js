@@ -16,7 +16,7 @@ export default function SmoothSlider() {
       <div className="max-w-6xl mx-auto px-4 py-8 overflow-hidden">
         {" "}
         {/* Add overflow-hidden to prevent excess overflow */}
-        <h2 className="font-fields font-semibold text-[32px] text-[#220016]">
+        <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
           What's Cooking?
         </h2>
         <p className="mb-5">Discover our social media and connect with us</p>
