@@ -7,7 +7,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="container mx-auto fixed top-0 left-0 right-0 z-50">
+    <div className="max-w-6xl mx-auto fixed top-0 left-0 right-0 z-50">
       <header className="mt-6 flex items-center gap-[50px] rounded-full bg-white/30 shadow-[0px_4px_13.4px_0px_#0000001F] backdrop-blur-[24px] px-[15px] py-[10px]">
         {/* Logo */}
         <Link href="/" className="flex items-center">

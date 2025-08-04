@@ -13,7 +13,7 @@ SwiperCore.use([FreeMode, Pagination, Autoplay]);
 export default function SmoothSlider() {
   return (
     <>
-      <div className="max-w-6xl mx-auto px-4 py-8 overflow-hidden">
+      <div className="max-w-6xl mx-auto py-8 overflow-hidden">
         {" "}
         {/* Add overflow-hidden to prevent excess overflow */}
         <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">

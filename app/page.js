@@ -235,7 +235,7 @@ export default function Home() {
       {/* Categories Section */}
       <section className="bg-[#FFFCF5] py-12">
         {/* Header Row */}
-        <div className="max-w-6xl mx-auto px-4 flex justify-between items-center mb-6">
+        <div className="max-w-6xl mx-auto  flex justify-between items-center mb-6">
           <div>
             <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
               Product Categories
@@ -270,7 +270,7 @@ export default function Home() {
       {/* Wow Chow Section */}
       <section className=" py-12">
         {/* Grid Content */}
-        <div className="max-w-6xl mx-auto px-4 flex md:flex-row flex-col gap-3">
+        <div className="max-w-6xl mx-auto flex md:flex-row flex-col gap-3">
           {/* Left Images */}
           <div className="flex flex-col justify-end">
             <Image
@@ -329,7 +329,7 @@ export default function Home() {
       {/* Japanese Range Section */}
       <section className="py-12">
         {/* Header */}
-        <div className="max-w-6xl mx-auto px-4 mb-8">
+        <div className="max-w-6xl mx-auto mb-8">
           <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
             Discover our Japanese Range
           </h2>
@@ -341,7 +341,7 @@ export default function Home() {
         </div>
 
         {/* Image Section */}
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
           <div className="relative">
             <img
               src="/jk_banner.jpg"
