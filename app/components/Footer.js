@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="text-[#220016] pt-10 pb-4 text-sm font-outfit">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
         <div>
           <Image
@@ -90,7 +90,7 @@ export default function Footer() {
       </div>
 
       {/* Social Row */}
-      <div className="max-w-7xl mx-auto p-6 mt-4">
+      <div className="max-w-6xl mx-auto pt-4 pb-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Text */}
           <p className="mb-3 md:mb-0 text-center md:text-left">
@@ -127,7 +127,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-[#220016]/20 pt-4 px-6 text-center md:text-left max-w-7xl mx-auto text-xs flex flex-col md:flex-row justify-between items-center gap-2">
+      <div className="border-t border-[#220016]/20 pt-4 text-center md:text-left max-w-6xl mx-auto text-xs flex flex-col md:flex-row justify-between items-center gap-2">
         <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
         <div className="flex gap-4">
           <Link href="#">Privacy Policy</Link>
