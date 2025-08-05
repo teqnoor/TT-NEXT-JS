@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-
+import Link from "next/link";
 export default function BlogsPage() {
   const pathname = usePathname();
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -26,6 +26,28 @@ export default function BlogsPage() {
 
   const shouldOffset = pathname !== "/";
 
+  const blogs = [
+    {
+      slug: "japanese-cooking-for-beginners",
+      title: "Japanese Cooking for Beginners: 5 Simple Recipes to Start With",
+      description: "A guide to simple Japanese food recipes for beginners.",
+      color: "#FEE600",
+    },
+    {
+      slug: "simple-japanese-dips-tiger-sauces",
+      title: "How To Make Simple Japanese Dips Using Tiger Tiger Sauces",
+      description:
+        "A simple guide to making delicious Japanese dips with Tiger Tiger sauces.",
+      color: "#E597FF",
+    },
+    {
+      slug: "rise-of-japanese-cuisine-uk",
+      title: "The Rise of Japanese Cuisine in the UK: What You Need to Know",
+      description: "The growing popularity of Japanese food in the UK.",
+      color: "#97E0FF",
+    },
+  ];
+
   return (
     <>
       <section className="py-12">
@@ -47,60 +69,23 @@ export default function BlogsPage() {
       <section className="py-4">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-            <div
-              className={`bg-[#FEE600] text-black p-[32px] ${
-                hoveredIndex === 0 ? "shadow-[-11px_12px_0px_0px_#000000]" : ""
-              }`}
-              onMouseEnter={() => setHoveredIndex(0)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <h2 className="text-xl font-semibold mb-[70px]">
-                Japanese Cooking for Beginners: 5 Simple Recipes to Start With
-              </h2>
-              <p className="mb-[40px]">
-                A guide to simple Japanese food recipes for beginners.
-              </p>
-              <a href="#" className="text-black mt-2 block">
-                READ MORE
-              </a>
-            </div>
-
-            <div
-              className={`bg-[#E597FF] text-black p-[32px] ${
-                hoveredIndex === 1 ? "shadow-[-11px_12px_0px_0px_#000000]" : ""
-              }`}
-              onMouseEnter={() => setHoveredIndex(1)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <h2 className="text-xl font-semibold mb-[70px]">
-                How To Make Simple Japanese Dips Using Tiger Tiger Sauces
-              </h2>
-              <p className="mb-[40px]">
-                A simple guide to making delicious Japanese dips with Tiger
-                Tiger sauces.
-              </p>
-              <a href="#" className="text-black mt-2 block">
-                READ MORE
-              </a>
-            </div>
-
-            <div
-              className={`bg-[#97E0FF] text-black p-[32px] ${
-                hoveredIndex === 2 ? "shadow-[-11px_12px_0px_0px_#000000]" : ""
-              }`}
-              onMouseEnter={() => setHoveredIndex(2)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <h2 className="text-xl font-semibold mb-[70px]">
-                The Rise of Japanese Cuisine in the UK: What You Need to Know
-              </h2>
-              <p className="mb-[40px]">
-                The growing popularity of Japanese food in the UK.
-              </p>
-              <a href="#" className="text-black mt-2 block">
-                READ MORE
-              </a>
-            </div>
+            {blogs.map((blog, index) => (
+              <Link
+                href={`/blogs/${blog.slug}`}
+                key={blog.slug}
+                className={`block p-[32px] text-black transition-all duration-200 hover:shadow-[-11px_12px_0px_0px_#000000]`}
+                style={{
+                  backgroundColor: blog.color,
+                  
+                }}
+              >
+                <h2 className="text-xl font-semibold mb-[70px]">
+                  {blog.title}
+                </h2>
+                <p className="mb-[40px]">{blog.description}</p>
+                <span className="text-black mt-2 block">READ MORE</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
