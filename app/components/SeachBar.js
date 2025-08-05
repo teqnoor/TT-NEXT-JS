@@ -62,7 +62,7 @@ export default function SearchBox() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-20 h-20 object-cover rounded mr-4"
+                  className="w-20 h-20 object-cover  rounded mr-4"
                 />
                 <div>
                   <div className="font-semibold text-gray-800">
