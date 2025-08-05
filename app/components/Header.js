@@ -70,14 +70,7 @@ export default function Header() {
               </div>
 
               {isOpen && (
-                <div
-                  className="absolute top-full left-0 flex flex-col bg-white shadow-md rounded-md mt-2 min-w-[150px] z-50"
-                  style={{
-                    backdropFilter: "blur(16.6px)",
-                    boxShadow: "-3px 3px 0px 0px #000000",
-                    border: "2px solid #40023F",
-                  }}
-                >
+                <div className="absolute top-full left-0 flex flex-col bg-white/60 shadow-[-3px_3px_0px_0px_#000000] backdrop-blur-[16.600000381469727px] border-[2px] border-[#40023F] rounded-md mt-2 min-w-[150px] z-60">
                   <Link
                     href="/discover"
                     className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
@@ -115,7 +108,9 @@ export default function Header() {
                   <Link
                     href="/products/categories"
                     className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                      pathname === "/products/categories" ? "font-bold" : "font-normal"
+                      pathname === "/products/categories"
+                        ? "font-bold"
+                        : "font-normal"
                     }`}
                   >
                     Categories
