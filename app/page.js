@@ -29,8 +29,8 @@ export default function Home() {
   ];
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative w-full overflow-hidden">
+      {/* Hero Desktop Section */}
+      <section className="relative w-full hidden md:block overflow-hidden">
         {/* Background Image */}
         <Image
           src="/Hero_Bg.png"
@@ -38,14 +38,14 @@ export default function Home() {
           width={1920}
           height={920}
           priority
-          className="w-full h-auto object-cover"
+          className="w-full h-full object-contain"
         />
 
         {/* Overlay Content */}
-        <div className="w-full absolute top-[25%] md:top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10">
+        <div className="absolute top-[10%] md:top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10 w-full max-w-[90%] md:max-w-full">
           <div>
             {/* Top Feature Row */}
-            <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium mb-4 text-[#220016]">
+            <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium mb-2 text-[#220016]">
               {[
                 "High Quality",
                 "Competitive Prices",
@@ -61,12 +61,58 @@ export default function Home() {
 
             {/* Heading */}
             <p className="text-lg font-outfit mb-2">Made with real fruit</p>
-            <h1 className="eczar text-[64px] font-bold">
+            <h1 className="eczar text-[40px] md:text-[64px] font-bold">
               Award Winning <span className="text-[#FF9E02]">PULP+</span>
             </h1>
 
             {/* Subtext */}
-            <p className="text-base font-outfit mb-2">
+            <p className="text-base font-outfit mb-4">
+              Thirst <span className="text-[#FF9E02]">quenching</span> drink
+              made just for you.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex justify-center gap-4 flex-wrap">
+              <button className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition">
+                Drink It Up
+              </button>
+              <button className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#40023F] transition">
+                Discover all products
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Mobile Section */}
+      <section className="relative w-full h-screen block md:hdden overflow-hidden bg-[#fff0b4]">
+        
+        {/* Overlay Content */}
+        <div className="absolute top-[20%]  left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10 w-full max-w-[90%] md:max-w-full">
+          <div>
+            {/* Top Feature Row */}
+            <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium mb-2 text-[#220016]">
+              {[
+                "High Quality",
+                "Competitive Prices",
+                "1000+ UK F&B Businesses Served",
+                "Bulk Orders",
+              ].map((text, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <FaStar className="text-orange-400 text-sm" />
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Heading */}
+            <p className="text-lg font-outfit mb-2">Made with real fruit</p>
+            <h1 className="eczar text-[40px] md:text-[64px] font-bold">
+              Award Winning <span className="text-[#FF9E02]">PULP+</span>
+            </h1>
+
+            {/* Subtext */}
+            <p className="text-base font-outfit mb-4">
               Thirst <span className="text-[#FF9E02]">quenching</span> drink
               made just for you.
             </p>
@@ -225,7 +271,7 @@ export default function Home() {
       </section>
 
       {/* Wow Chow Section */}
-      <section className=" py-12 md:hidden">
+      <section className=" py-12 hidden md:block">
         {/* Grid Content */}
         <div className="max-w-6xl mx-auto flex md:flex-row flex-col gap-3">
           {/* Left Images */}

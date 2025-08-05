@@ -1,116 +1,73 @@
 "use client"; // Make this a client-side component
 
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react"; // Correct import for Swiper and SwiperSlide
-import SwiperCore, { FreeMode, Pagination, Autoplay } from "swiper/core"; // Import core modules
 
-// Import Swiper styles
-import "swiper/swiper-bundle.css"; // Import swiper styles
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
-// Enable the modules
-SwiperCore.use([FreeMode, Pagination, Autoplay]);
+import { useRef } from "react";
+import Image from "next/image";
 
 export default function SmoothSlider() {
+  const timer = useRef();
+  const [sliderRef, slider] = useKeenSlider({
+    loop: true,
+    slides: {
+      perView: 6,
+      spacing: 10,
+    },
+    breakpoints: {
+      "(max-width: 768px)": {
+        slides: { perView: 2, spacing: 10 },
+      },
+      "(max-width: 1024px)": {
+        slides: { perView: 3, spacing: 12 },
+      },
+    },
+    created: () => {
+      timer.current = setInterval(() => {
+        slider.current?.next();
+      }, 2000); // Change slide every 2 seconds
+    },
+    destroyed: () => {
+      clearInterval(timer.current);
+    },
+  });
+
+  const images = [
+    { src: "/wowchow/1.png", alt: "Coco Choo" },
+    { src: "/wowchow/2.png", alt: "Wow Chow" },
+    { src: "/wowchow/3.png", alt: "PULP+" },
+    { src: "/wowchow/4.png", alt: "Taste Japan 1" },
+    { src: "/wowchow/5.png", alt: "Taste Japan 2" },
+    { src: "/wowchow/1.png", alt: "Taste Japan 3" },
+    { src: "/wowchow/2.png", alt: "Taste Japan 4" },
+  ];
+
   return (
     <>
-      <div className="max-w-6xl mx-auto py-8 overflow-hidden px-6 md:px-0">
+      <div className="max-w-6xl mx-auto  overflow-hidden">
         <h2 className="eczar font-semibold text-[32px] text-[#220016]">
           What's Cooking?
         </h2>
         <p className="mb-5">Discover our social media and connect with us</p>
       </div>
-      <Swiper
-        slidesPerView={5}
-        spaceBetween={15}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 1000, // 3 seconds per slide
-          disableOnInteraction: false, // Autoplay doesn't stop after user interaction
-        }}
-        breakpoints={{
-          0: {
-            slidesPerView: 3, // 👈 Mobile
-          },
-          768: {
-            slidesPerView: 4, // Tablet
-          },
-          1024: {
-            slidesPerView: 5, // Desktop
-          },
-        }}
-        className="mySwiper"
-      >
-        <SwiperSlide className="relative">
-          <div className="overflow-visible">
-            {" "}
-            {/* Allow the image to overflow */}
-            <img
-              src="/wowchow/1.png"
-              alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
+      <div ref={sliderRef} className="keen-slider">
+        {images.map((brand, index) => (
+          <div
+            className="keen-slider__slide flex justify-center items-center"
+            key={index}
+          >
+            <Image
+              src={brand.src}
+              alt={brand.alt}
+              width={270}
+              height={550}
+              className="object-cover h-[550px]"
             />
           </div>
-        </SwiperSlide>
-        <SwiperSlide className="relative">
-          <div className="overflow-visible">
-            <img
-              src="/wowchow/2.png"
-              alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="relative">
-          <div className="overflow-visible">
-            <img
-              src="/wowchow/3.png"
-              alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="relative">
-          <div className="overflow-visible">
-            <img
-              src="/wowchow/4.png"
-              alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="relative">
-          <div className="overflow-visible">
-            <img
-              src="/wowchow/5.png"
-              alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
-            />
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className="relative">
-          <div className="overflow-visible">
-            <img
-              src="/wowchow/5.png"
-              alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
-            />
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className="relative">
-          <div className="overflow-visible">
-            <img
-              src="/wowchow/5.png"
-              alt="Tiger Tiger Logo"
-              className="object-cover w-full h-[500px] " // Translate the image left to simulate overflow
-            />
-          </div>
-        </SwiperSlide>
-      </Swiper>
+        ))}
+      </div>
     </>
   );
 }

@@ -70,51 +70,55 @@ export default function Header() {
               </div>
 
               {isOpen && (
-                <div className="absolute top-full left-0 flex flex-col bg-white/60 shadow-[-3px_3px_0px_0px_#000000] backdrop-blur-lg border-[2px] border-[#40023F] rounded-md mt-2 min-w-[150px] z-[99999]">
-                  <Link
-                    href="/discover"
-                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                      pathname === "/discover" ? "font-bold" : "font-normal"
-                    }`}
-                  >
-                    Discover
-                  </Link>
-                  <Link
-                    href="/products"
-                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                      pathname === "/products" ? "font-bold" : "font-normal"
-                    }`}
-                  >
-                    All Products
-                  </Link>
-                  <Link
-                    href="/products/featured"
-                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                      pathname === "/products/featured"
-                        ? "font-bold"
-                        : "font-normal"
-                    }`}
-                  >
-                    Featured
-                  </Link>
-                  <Link
-                    href="/products/new"
-                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                      pathname === "/products/new" ? "font-bold" : "font-normal"
-                    }`}
-                  >
-                    New
-                  </Link>
-                  <Link
-                    href="/products/categories"
-                    className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                      pathname === "/products/categories"
-                        ? "font-bold"
-                        : "font-normal"
-                    }`}
-                  >
-                    Categories
-                  </Link>
+                <div className="absolute">
+                  <div>
+                    <Link
+                      href="/discover"
+                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                        pathname === "/discover" ? "font-bold" : "font-normal"
+                      }`}
+                    >
+                      Discover
+                    </Link>
+                    <Link
+                      href="/products"
+                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                        pathname === "/products" ? "font-bold" : "font-normal"
+                      }`}
+                    >
+                      All Products
+                    </Link>
+                    <Link
+                      href="/products/featured"
+                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                        pathname === "/products/featured"
+                          ? "font-bold"
+                          : "font-normal"
+                      }`}
+                    >
+                      Featured
+                    </Link>
+                    <Link
+                      href="/products/new"
+                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                        pathname === "/products/new"
+                          ? "font-bold"
+                          : "font-normal"
+                      }`}
+                    >
+                      New
+                    </Link>
+                    <Link
+                      href="/products/categories"
+                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
+                        pathname === "/products/categories"
+                          ? "font-bold"
+                          : "font-normal"
+                      }`}
+                    >
+                      Categories
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
