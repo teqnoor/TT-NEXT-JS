@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import CategoryMarquee from "../components/categoryMarquee";
+import Link from "next/link";
 
 export default function ProductsPage() {
   const pathname = usePathname();
@@ -46,32 +47,76 @@ export default function ProductsPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
               {/* Card Template */}
               {[
-                { title: "Wow Chow Noodles", image: "/wow.jpg" },
-                { title: "Bubble Tea", image: "/buble_tea.jpg" },
-                { title: "Coco Choo Drink", image: "/cococho.jpg" },
-                { title: "Japanese Range", image: "/sauces.jpg" },
+                {
+                  title: "Wow Chow Noodles",
+                  image: "/wow.jpg",
+                  slug: "product-detail-test",
+                },
+                {
+                  title: "Bubble Tea",
+                  image: "/buble_tea.jpg",
+                  slug: "product-detail-test",
+                },
+                {
+                  title: "Coco Choo Drink",
+                  image: "/cococho.jpg",
+                  slug: "product-detail-test",
+                },
+                {
+                  title: "Japanese Range",
+                  image: "/sauces.jpg",
+                  slug: "product-detail-test",
+                },
 
-                { title: "Coco Choo Drink", image: "/cococho.jpg" },
-                { title: "Japanese Range", image: "/sauces.jpg" },
-                { title: "Japanese Range", image: "/sauces.jpg" },
-                { title: "Japanese Range", image: "/sauces.jpg" },
-                { title: "Wow Chow Noodles", image: "/wow.jpg" },
-                { title: "Japanese Range", image: "/sauces.jpg" },
-                { title: "Bubble Tea", image: "/buble_tea.jpg" },
+                {
+                  title: "Coco Choo Drink",
+                  image: "/cococho.jpg",
+                  slug: "product-detail-test",
+                },
+                {
+                  title: "Japanese Range",
+                  image: "/sauces.jpg",
+                  slug: "product-detail-test",
+                },
+                {
+                  title: "Japanese Range",
+                  image: "/sauces.jpg",
+                  slug: "product-detail-test",
+                },
+                {
+                  title: "Japanese Range",
+                  image: "/sauces.jpg",
+                  slug: "product-detail-test",
+                },
+                {
+                  title: "Wow Chow Noodles",
+                  image: "/wow.jpg",
+                  slug: "product-detail-test",
+                },
+                {
+                  title: "Japanese Range",
+                  image: "/sauces.jpg",
+                  slug: "product-detail-test",
+                },
+                {
+                  title: "Bubble Tea",
+                  image: "/buble_tea.jpg",
+                  slug: "product-detail-test",
+                },
               ].map((card, i) => (
-                <div
-                  key={i}
-                  className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
-                  style={{ backgroundImage: `url('${card.image}')` }}
-                >
-                  <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
-                    {card.title}
-                  </span>
-                </div>
+                <Link href={`/products/${card.slug}`} key={i}>
+                  <div
+                    key={i}
+                    className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
+                    style={{ backgroundImage: `url('${card.image}')` }}
+                  >
+                    <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
+                      {card.title}
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
-
-
           </div>
         </div>
       </section>
