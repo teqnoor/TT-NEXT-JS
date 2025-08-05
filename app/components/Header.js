@@ -3,9 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaMagnifyingGlass } from "react-icons/fa6";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi"; // Hamburger & Close
 import { usePathname } from "next/navigation";
+import SearchBox from "./SeachBar";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +49,7 @@ export default function Header() {
             {mobileMenuOpen ? <HiOutlineX /> : <HiOutlineMenu />}
           </button>
         </div>
-        <div className="flex items-center justify-between flex-1">
+        <div className="flex items-center justify-between flex-1 gap-4">
           <nav className="hidden md:flex space-x-[50px] font-medium text-gray-800 relative">
             <Link
               href="/"
@@ -147,14 +147,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          <div className="relative hidden md:flex items-center bg-[#40023F] rounded-full px-[10px] py-[14px]">
-            <FaMagnifyingGlass className="text-white text-sm mr-[10px]" />
-            <input
-              type="text"
-              placeholder="Search"
-              className="bg-transparent text-white placeholder-white focus:outline-none"
-            />
-          </div>
+          <SearchBox />
         </div>
         {/* Mobile Slide-in Menu */}
         <div
