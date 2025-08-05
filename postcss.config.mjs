@@ -4,7 +4,6 @@ const config = {
     extend: {
       fontFamily: {
         outfit: ['var(--font-outfit)', 'sans-serif'],
-        fields: ['var(--font-fields)', 'sans-serif'],
       },
     },
   },

@@ -1,10 +1,8 @@
-import { Outfit } from "next/font/google";
-import localFont from "next/font/local";
+import { Outfit , Eczar } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingCart from "./components/FloatingCart";
-import localFont from "next/font/local";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -12,9 +10,9 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const fields = localFont({
-  src: './fonts/fonnts.com-Fields.otf',
-  variable: '--font-fields',
+const eczar = Eczar({
+  subsets: ["latin"],
+  variable: '--font-eczar',
   display: 'swap',
 });
 
@@ -26,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} antialiased  ${fields.variable}`}>
+      <body className={`${outfit.variable} antialiased  ${eczar.variable}`}>
         <Header />
         <main className="">{children}</main>
         <Footer />

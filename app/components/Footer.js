@@ -10,9 +10,11 @@ export default function Footer() {
   return (
     <footer
       className={`text-[#220016] pt-10 pb-4 text-sm font-outfit px-6 md:px-0 ${
-        pathname !== "/" &&
-        pathname !== "/blogs" &&
-        !/^\/blogs\/[^/]+$/.test(pathname)
+        pathname === "/products/featured"
+          ? "bg-[#ECD3FF]"
+          : pathname !== "/" &&
+            pathname !== "/blogs" &&
+            !/^\/blogs\/[^/]+$/.test(pathname)
           ? "bg-[#fff0b4]"
           : ""
       }`}

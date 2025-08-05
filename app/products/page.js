@@ -35,7 +35,7 @@ export default function ProductsPage() {
         >
           <div className="max-w-6xl mx-auto">
             {/* Heading */}
-            <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+            <h2 className="eczar font-semibold text-[32px] text-[#220016]">
               All Products
             </h2>
 
@@ -81,7 +81,7 @@ export default function ProductsPage() {
         {/* Header Row */}
         <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
-            <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+            <h2 className="eczar font-semibold text-[32px] text-[#220016]">
               Product Categories
             </h2>
             <p>

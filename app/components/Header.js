@@ -31,7 +31,7 @@ export default function Header() {
       className="max-w-6xl mx-auto fixed top-0 left-0 right-0 z-50"
       id="header"
     >
-      <header className="mt-6 flex items-center md:gap-[50px] rounded-full bg-white/30 shadow-[0px_4px_13.4px_0px_#0000001F] backdrop-blur-[24px] px-[15px] py-[10px]">
+      <header className="mt-6 flex items-center md:gap-[50px] rounded-full bg-white/60 shadow-[0px_4px_13.4px_0px_#0000001F] backdrop-blur-[24px] px-[15px] py-[10px]">
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
@@ -70,7 +70,7 @@ export default function Header() {
               </div>
 
               {isOpen && (
-                <div className="absolute top-full left-0 flex flex-col bg-white/60 shadow-[-3px_3px_0px_0px_#000000] backdrop-blur-[16.600000381469727px] border-[2px] border-[#40023F] rounded-md mt-2 min-w-[150px] z-60">
+                <div className="absolute top-full left-0 flex flex-col bg-white/60 shadow-[-3px_3px_0px_0px_#000000] backdrop-blur-lg border-[2px] border-[#40023F] rounded-md mt-2 min-w-[150px] z-[99999]">
                   <Link
                     href="/discover"
                     className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${

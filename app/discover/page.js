@@ -89,7 +89,7 @@ export default function DiscoverPage() {
       <section className="py-12 px-6 md:px-0 bg-[#fff0b4]">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+          <h2 className="eczar font-semibold text-[32px] text-[#220016]">
             Discover our range
           </h2>
 
@@ -134,7 +134,7 @@ export default function DiscoverPage() {
         {/* Header Row */}
         <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
-            <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+            <h2 className="eczar font-semibold text-[32px] text-[#220016]">
               Product Categories
             </h2>
             <p>
@@ -156,7 +156,7 @@ export default function DiscoverPage() {
         <div className="max-w-6xl mx-auto mb-8">
           <div className="flex flex-wrap justify-between items-center">
             <div>
-              <h2 className="font-fields font-semibold text-[32px] text-[#220016]">
+              <h2 className="eczar font-semibold text-[32px] text-[#220016]">
                 New Products
               </h2>
 
@@ -204,7 +204,7 @@ export default function DiscoverPage() {
         <div className="max-w-6xl mx-auto mb-8">
           <div className="flex flex-wrap justify-between items-center">
             <div>
-              <h2 className="font-fields font-semibold text-[32px] text-[#220016]">
+              <h2 className="eczar font-semibold text-[32px] text-[#220016]">
                 Featured Products
               </h2>
 
@@ -250,7 +250,7 @@ export default function DiscoverPage() {
       {/* Product Catalog Section */}
       <section className="py-12 px-6 md:px-0 bg-[#fff0b4]">
         <div className="max-w-6xl mx-auto mb-8">
-          <h2 className="font-fields font-semibold text-[32px] text-[#220016]">
+          <h2 className="eczar font-semibold text-[32px] text-[#220016]">
             Product Catalogue
           </h2>
 

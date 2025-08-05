@@ -38,5 +38,9 @@
 
 body {
   background: var(--background);
-  font-family: var(--font-outfit), sans-serif;;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.eczar {
+  font-family: var(--font-eczar), serif;
 }

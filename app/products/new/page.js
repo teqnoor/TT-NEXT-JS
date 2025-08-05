@@ -35,7 +35,7 @@ export default function ProductNewPage() {
         >
           <div className="max-w-6xl mx-auto">
             {/* Heading */}
-            <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+            <h2 className="eczar font-semibold text-[32px] text-[#220016]">
               New Products
             </h2>
 
@@ -51,7 +51,7 @@ export default function ProductNewPage() {
 
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h3 className="font-fields font-extrabold text-[32px] text-[#220016]">
+          <h3 className="eczar font-semibold text-[32px] text-[#220016]">
             Pulp+
           </h3>
 
@@ -127,7 +127,7 @@ export default function ProductNewPage() {
 
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h3 className="font-fields font-extrabold text-[32px] text-[#220016]">
+          <h3 className="eczar font-semibold text-[32px] text-[#220016]">
             Wow Chow
           </h3>
 

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import SmoothSlider from "./components/SmoothSlider";
 import CategoryMarquee from "./components/categoryMarquee";
+import BrandsSlider from "./components/Brands";
 
 export default function Home() {
   const flavours = [
@@ -41,7 +42,7 @@ export default function Home() {
         />
 
         {/* Overlay Content */}
-        <div className="absolute top-[25%] md:top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10">
+        <div className="w-full absolute top-[25%] md:top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10">
           <div>
             {/* Top Feature Row */}
             <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium mb-4 text-[#220016]">
@@ -60,12 +61,12 @@ export default function Home() {
 
             {/* Heading */}
             <p className="text-lg font-outfit mb-2">Made with real fruit</p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">
+            <h1 className="eczar text-[64px] font-bold">
               Award Winning <span className="text-[#FF9E02]">PULP+</span>
             </h1>
 
             {/* Subtext */}
-            <p className="text-base font-outfit mb-6">
+            <p className="text-base font-outfit mb-2">
               Thirst <span className="text-[#FF9E02]">quenching</span> drink
               made just for you.
             </p>
@@ -84,44 +85,12 @@ export default function Home() {
       </section>
 
       {/* Brands Section */}
-      <section className="bg-[#40023F] py-4">
-        <div className="max-w-7xl mx-auto flex justify-center gap-10 flex-wrap items-center px-4">
-          {/* Replace these with actual logos or styled text/images */}
-          <Image
-            src="/brands/cococho.png"
-            alt="Coco Choo"
-            width={170}
-            height={68}
-            className="object-contain"
-          />
-          <Image
-            src="/brands/wowchow.png"
-            alt="Wow Chow"
-            width={170}
-            height={68}
-            className="object-contain"
-          />
-          <Image
-            src="/brands/pulp.png"
-            alt="PULP+"
-            width={170}
-            height={68}
-            className="object-contain"
-          />
-          <Image
-            src="/brands/taste_japan.png"
-            alt="Taste Japan"
-            width={170}
-            height={68}
-            className="object-contain"
-          />
-        </div>
-      </section>
+      <BrandsSlider />
 
       {/* Flavours Section */}
       <section className="py-12">
         <div className="max-w-6xl mx-auto text-center md:text-left px-6 md:px-0">
-          <h2 className="font-fields text-2xl md:text-3xl font-extrabold text-[#220016] mb-2">
+          <h2 className="eczar text-2xl md:text-3xl font-semibold text-[#220016] mb-2">
             4 Amazing Flavours
           </h2>
           <p className="text-sm text-[#220016] mb-6">
@@ -148,14 +117,14 @@ export default function Home() {
 
       {/* Award Section */}
       <section className="py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center border border-black bg-[#FFF0B4] px-1 py-0">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center border border-black bg-[#FFF0B4] py-0">
           {/* Left Text Content */}
           <div className="w-full md:w-1/2 p-6 space-y-4">
-            <h2 className="text-xl md:text-2xl font-bold text-[#220016]">
+            <h2 className="eczar text-[32px] md:text-[24px] font-semibold text-[#220016] ">
               Tiger Tiger’s Pulp+ Mango Awarded 'Best Fruit Juice Drink' at UK
               Soft Drinks Awards 2025
             </h2>
-            <p className="text-sm md:text-base text-[#220016] ">
+            <p className="text-sm md:text-base text-[#220016] leading-[2]">
               We're absolutely thrilled to share some fantastic news – our Pulp+
               Mango has just scooped up the 'Best Fruit Juice Drink' award at
               the 2025 UK Soft Drinks Awards by FoodBev Awards! This recognition
@@ -197,7 +166,7 @@ export default function Home() {
       <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+          <h2 className="eczar font-semibold text-[32px] text-[#220016]">
             Discover our range
           </h2>
 
@@ -238,7 +207,7 @@ export default function Home() {
         {/* Header Row */}
         <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
-            <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+            <h2 className="eczar font-semibold text-[32px] text-[#220016]">
               Product Categories
             </h2>
             <p>
@@ -318,7 +287,7 @@ export default function Home() {
       <section className="py-12 px-6 md:px-0">
         {/* Header */}
         <div className="max-w-6xl mx-auto mb-8">
-          <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+          <h2 className="eczar font-semibold text-[32px] text-[#220016]">
             Discover our Japanese Range
           </h2>
 

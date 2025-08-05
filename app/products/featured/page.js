@@ -28,14 +28,14 @@ export default function ProductFeaturedPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#fff0b4]">
+      <section className="py-12 bg-[#ECD3FF]">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
           <div className="max-w-6xl mx-auto">
             {/* Heading */}
-            <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+            <h2 className="eczar font-semibold text-[32px] text-[#220016]">
               Featured Products
             </h2>
 
@@ -46,12 +46,12 @@ export default function ProductFeaturedPage() {
         </div>
       </section>
 
-      <section className="py-4 bg-[#fff0b4]">
+      <section className="py-4 bg-[#ECD3FF]">
         {/* Grid Content */}
 
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h3 className="font-fields font-extrabold text-[32px] text-[#220016]">
+          <h3 className="eczar font-semibold text-[32px] text-[#220016]">
             Pulp+
           </h3>
 
@@ -122,12 +122,12 @@ export default function ProductFeaturedPage() {
         </div>
       </section>
 
-      <section className="py-4 bg-[#fff0b4]">
+      <section className="py-4 bg-[#ECD3FF]">
         {/* Grid Content */}
 
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h3 className="font-fields font-extrabold text-[32px] text-[#220016]">
+          <h3 className="eczar font-semibold text-[32px] text-[#220016]">
             Wow Chow
           </h3>
 

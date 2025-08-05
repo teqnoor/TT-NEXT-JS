@@ -57,7 +57,7 @@ export default function BlogsPage() {
         >
           <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
             <div>
-              <h2 className="font-fields font-extrabold text-[32px] text-[#220016]">
+              <h2 className="eczar font-semibold text-[32px] text-[#220016]">
                 Latest Blogs
               </h2>
               <p>Read news, blogs and latest articles from Tiger Tiger Foods</p>
@@ -67,7 +67,7 @@ export default function BlogsPage() {
       </section>
 
       <section className="py-4">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {blogs.map((blog, index) => (
               <Link
