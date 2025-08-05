@@ -70,7 +70,7 @@ export default function Header() {
               </div>
 
               {isOpen && (
-                <div className="absolute top-full left-0 flex flex-col bg-white/60 shadow-[-3px_3px_0px_0px_#000000] backdrop-blur-[16.600000381469727px] border-[2px] border-[#40023F] rounded-md mt-2 min-w-[150px]">
+                <div className="absolute top-full left-0 flex flex-col bg-white/60 shadow-[-3px_3px_0px_0px_#000000] backdrop-blur-[16px] border-[2px] border-[#40023F] rounded-md mt-2 min-w-[150px]">
                   <Link
                     href="/discover"
                     className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
