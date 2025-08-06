@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-export default function BlogsPage() {
+export default function AboutPage() {
   const pathname = usePathname();
   const [headerHeight, setHeaderHeight] = useState(0);
 

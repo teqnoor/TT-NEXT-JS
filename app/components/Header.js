@@ -13,8 +13,6 @@ export default function Header() {
 
   const path = usePathname();
 
-  const pathname =
-    typeof window !== "undefined" ? window.location.pathname : "";
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -113,9 +111,7 @@ export default function Header() {
                     <Link
                       href="/products/new"
                       className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                        path === "/products/new"
-                          ? "font-bold"
-                          : "font-normal"
+                        path === "/products/new" ? "font-bold" : "font-normal"
                       }`}
                     >
                       New
@@ -136,19 +132,25 @@ export default function Header() {
 
               <Link
                 href="/cuisines"
-                className="font-outfit font-normal text-[18.04px] text-[#220016]"
+                className={`font-outfit  text-[18.04px] text-[#220016] ${
+                  path === "/cuisines" ? "font-bold" : "font-normal"
+                }`}
               >
                 Cuisines
               </Link>
               <Link
                 href="/about"
-                className="font-outfit font-normal text-[18.04px] text-[#220016]"
+                className={`font-outfit  text-[18.04px] text-[#220016] ${
+                  path === "/about" ? "font-bold" : "font-normal"
+                }`}
               >
                 About
               </Link>
               <Link
                 href="/contact"
-                className="font-outfit font-normal text-[18.04px] text-[#220016]"
+                className={`font-outfit  text-[18.04px] text-[#220016] ${
+                  path === "/contact" ? "font-bold" : "font-normal"
+                }`}
               >
                 Contact
               </Link>
