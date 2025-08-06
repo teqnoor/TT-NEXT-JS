@@ -1,9 +1,10 @@
+"use client";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import SmoothSlider from "./components/SmoothSlider";
 import CategoryMarquee from "./components/categoryMarquee";
 import BrandsSlider from "./components/Brands";
-
+import { motion } from "framer-motion";
 export default function Home() {
   const flavours = [
     {
@@ -86,7 +87,6 @@ export default function Home() {
 
       {/* Hero Mobile Section */}
       <section className="relative w-full h-screen  md:hidden overflow-hidden bg-[#fff0b4]">
-        
         {/* Overlay Content */}
         <div className="absolute top-[20%]  left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10 w-full max-w-[90%] md:max-w-full">
           <div>
@@ -146,16 +146,32 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {flavours.map((flavour, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`rounded-md overflow-hidden  flex items-center justify-center`}
+                whileHover={{
+                  scale: [null, 1.1],
+                  transition: {
+                    duration: 0.5,
+                    times: [0, 0.6],
+                    ease: ["easeInOut", "easeOut"],
+                  },
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeOut",
+                }}
               >
-                <img
-                  src={flavour.image}
-                  alt={flavour.name}
-                  className="object-contain"
-                />
-              </div>
+                <div
+                  key={index}
+                  className={`rounded-md overflow-hidden  flex items-center justify-center`}
+                >
+                  <img
+                    src={flavour.image}
+                    alt={flavour.name}
+                    className="object-contain"
+                  />
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -228,15 +244,31 @@ export default function Home() {
               { title: "Coco Choo Drink", image: "/cococho.jpg" },
               { title: "Japanese Range", image: "/sauces.jpg" },
             ].map((card, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
-                style={{ backgroundImage: `url('${card.image}')` }}
+                whileHover={{
+                  scale: [null, 1.1],
+                  transition: {
+                    duration: 0.5,
+                    times: [0, 0.6],
+                    ease: ["easeInOut", "easeOut"],
+                  },
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeOut",
+                }}
               >
-                <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
-                  {card.title}
-                </span>
-              </div>
+                <div
+                  key={i}
+                  className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
+                  style={{ backgroundImage: `url('${card.image}')` }}
+                >
+                  <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
+                    {card.title}
+                  </span>
+                </div>
+              </motion.div>
             ))}
           </div>
 
@@ -276,20 +308,51 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex md:flex-row flex-col gap-3">
           {/* Left Images */}
           <div className="flex flex-col justify-end">
-            <Image
-              src="/wowchow/4.png"
-              alt="wow1"
-              width={300}
-              height={350}
-              className="rounded-md mb-4 object-cover ml-auto"
-            />
-            <Image
-              src="/wowchow/5.png"
-              alt="wow2"
-              width={345}
-              height={150}
-              className="rounded-md object-cover"
-            />
+            <motion.div
+              whileHover={{
+                scale: [null, 1.1],
+                transition: {
+                  duration: 0.5,
+                  times: [0, 0.6],
+                  ease: ["easeInOut", "easeOut"],
+                },
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
+              }}
+            >
+              <Image
+                src="/wowchow/4.png"
+                alt="wow1"
+                width={300}
+                height={350}
+                className="rounded-md mb-4 object-cover ml-auto"
+              />
+            </motion.div>
+
+            <motion.div
+              whileHover={{
+                scale: [null, 1.1],
+                transition: {
+                  duration: 0.5,
+                  times: [0, 0.6],
+                  ease: ["easeInOut", "easeOut"],
+                },
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
+              }}
+            >
+              <Image
+                src="/wowchow/5.png"
+                alt="wow2"
+                width={345}
+                height={150}
+                className="rounded-md object-cover"
+              />
+            </motion.div>
           </div>
 
           {/* Center Image and Text */}
@@ -300,31 +363,77 @@ export default function Home() {
             <button className="mt-2 text-sm underline text-[#220016] mb-3">
               Discover Wow Chow
             </button>
-            <Image
-              src="/wowchow/1.png"
-              alt="wow2"
-              width={415}
-              height={300}
-              className="rounded-md  object-cover"
-            />
+            <motion.div
+              whileHover={{
+                scale: [null, 1.1],
+                transition: {
+                  duration: 0.5,
+                  times: [0, 0.6],
+                  ease: ["easeInOut", "easeOut"],
+                },
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
+              }}
+            >
+              <Image
+                src="/wowchow/1.png"
+                alt="wow2"
+                width={415}
+                height={300}
+                className="rounded-md  object-cover"
+              />
+            </motion.div>
           </div>
 
           {/* Right Images */}
           <div className="flex flex-col">
-            <Image
-              src="/wowchow/3.png"
-              alt="wow3"
-              width={250}
-              height={260}
-              className="rounded-md mb-4  object-cover"
-            />
-            <Image
-              src="/wowchow/4.png"
-              alt="wow4"
-              width={310}
-              height={250}
-              className="rounded-md object-cover"
-            />
+            <motion.div
+              whileHover={{
+                scale: [null, 1.1],
+                transition: {
+                  duration: 0.5,
+                  times: [0, 0.6],
+                  ease: ["easeInOut", "easeOut"],
+                },
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
+              }}
+            >
+              <Image
+                src="/wowchow/3.png"
+                alt="wow3"
+                width={250}
+                height={260}
+                className="rounded-md mb-4  object-cover"
+              />
+            </motion.div>
+
+            <motion.div
+              whileHover={{
+                scale: [null, 1.1],
+                transition: {
+                  duration: 0.5,
+                  times: [0, 0.6],
+                  ease: ["easeInOut", "easeOut"],
+                },
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeOut",
+              }}
+            >
+              <Image
+                src="/wowchow/4.png"
+                alt="wow4"
+                width={310}
+                height={250}
+                className="rounded-md object-cover"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
