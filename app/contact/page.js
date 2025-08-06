@@ -47,7 +47,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-[#fff0b4] py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 align-center">
           {/* Contact Form */}
           <div className="md:w-1/2 flex flex-col gap-4">
             <input
@@ -70,6 +70,14 @@ export default function ContactPage() {
               rows="5"
               className="w-full bg-white p-3 border border-gray-300 rounded-md resize-none"
             ></textarea>
+            {/* Fake Captcha */}
+            <div className="bg-white border border-black rounded-lg p-4 flex items-center gap-4">
+              <input
+                type="checkbox"
+                className="bg-white w-5 h-5 border border-black"
+              />
+              <span>I'm not a robot</span>
+            </div>
             <button
               type="submit"
               className="bg-[#FFEB57] hover:bg-[#f9e141] border border-black text-black py-2 rounded-md"
@@ -94,12 +102,6 @@ export default function ContactPage() {
               <p className="text-sm break-words">
                 customer.service@tigertigerfoods.com
               </p>
-            </div>
-
-            {/* Fake Captcha */}
-            <div className="bg-white border border-black rounded-lg p-4 flex items-center gap-4">
-              <input type="checkbox" className="bg-white w-5 h-5 border border-black" />
-              <span>I'm not a robot</span>
             </div>
           </div>
         </div>
