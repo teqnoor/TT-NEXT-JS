@@ -6,6 +6,8 @@ import CategoryMarquee from "./components/categoryMarquee";
 import BrandsSlider from "./components/Brands";
 import { motion } from "framer-motion";
 import { HiOutlineArrowRight } from "react-icons/hi";
+import { FiArrowUpRight } from "react-icons/fi";
+
 export default function Home() {
   const flavours = [
     {
@@ -464,8 +466,12 @@ export default function Home() {
               className="rounded-lg object-cover w-full  h-[550px]"
             />
             {/* Button in Top-Right corner */}
-            <button className="absolute top-4 right-4 bg-[#fff] hover:bg-[#40023F] text-[#000] hover:text-[#fff] px-6 py-2 rounded-full font-medium">
+            <button className="absolute top-4 right-4 bg-[#fff] hover:bg-[#40023F] text-[#000] hover:text-[#fff] px-6 py-2 rounded-full font-medium flex items-center gap-2">
               Discover Japanese Range
+              <span className="flex items-center justify-center  text-black rounded-full">
+                <FiArrowUpRight size={20} />
+              </span>
+              
             </button>
           </div>
         </div>
