@@ -122,7 +122,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Categories Section */}
-      <section className="bg-[#fff0b4] py-12 px-6 md:px-0">
+      <section className="bg-[#fff0b4] py-12">
         {/* Header Row */}
         <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
