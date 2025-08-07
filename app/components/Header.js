@@ -13,7 +13,6 @@ export default function Header() {
 
   const path = usePathname();
 
-
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
@@ -81,7 +80,12 @@ export default function Header() {
                 </div>
 
                 {isOpen && (
-                  <div className="absolute top-full left-0 flex flex-col bg-white border-[2px] border-[#40023F] rounded-md mt-2 min-w-[150px] z-50">
+                  <div
+                    className="absolute top-full left-0 flex flex-col min-w-[150px] mt-2 z-50
+                          border-[2px] border-[#40023F] rounded-md
+                          bg-white/60 backdrop-blur-[8.3px]
+                          shadow-[-3px_3px_0_0_#000]"
+                  >
                     <Link
                       href="/discover"
                       className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${

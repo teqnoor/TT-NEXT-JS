@@ -82,7 +82,7 @@ export default function ProductsPage() {
                 className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
                 style={{ backgroundImage: `url('${card.image}')` }}
               >
-                <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
+                <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-[43px] py-[13px]">
                   {card.title}
                 </span>
               </div>
