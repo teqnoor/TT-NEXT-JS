@@ -6,7 +6,9 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
 import { useRef } from "react";
+
 import Image from "next/image";
+import SocialLinks from "./SocialLinks";
 
 export default function SmoothSlider() {
   const timer = useRef();
@@ -69,6 +71,8 @@ export default function SmoothSlider() {
           </div>
         ))}
       </div>
+
+      <SocialLinks />
     </>
   );
 }
