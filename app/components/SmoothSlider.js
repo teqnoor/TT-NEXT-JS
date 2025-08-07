@@ -14,14 +14,14 @@ export default function SmoothSlider() {
     loop: true,
     slides: {
       perView: 6,
-      spacing: 10,
+      spacing: 5,
     },
     breakpoints: {
       "(max-width: 768px)": {
-        slides: { perView: 2, spacing: 10 },
+        slides: { perView: 2, spacing: 5 },
       },
       "(max-width: 1024px)": {
-        slides: { perView: 3, spacing: 12 },
+        slides: { perView: 3, spacing: 5 },
       },
     },
     created: () => {
@@ -64,7 +64,7 @@ export default function SmoothSlider() {
               muted
               loop
               playsInline
-              className="object-cover h-[550px] w-[270px] rounded-lg"
+              className="object-cover h-full w-full"
             />
           </div>
         ))}
