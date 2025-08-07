@@ -116,7 +116,7 @@ export default function AboutPage() {
           <Image src="/red.png" alt="about" width={100} height={100} />
         </motion.div>
         <motion.div
-          drag
+          drag whileDrag={{ scale: 1.2}}
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
           animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }} // Loop movement
           transition={{
