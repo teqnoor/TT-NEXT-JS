@@ -34,7 +34,7 @@ export default function ProductsPage() {
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto px-6 md:px-0">
             {/* Heading */}
             <h2 className="eczar font-semibold text-[32px] text-[#220016]">
               All Products

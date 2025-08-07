@@ -53,7 +53,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="py-4 bg-[#fff0b4]">
+      <section className="py-4 bg-[#fff0b4] px-6 md:px-0">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
           <h2 className="eczar font-semibold text-[32px] mb-5 text-[#220016]">
