@@ -71,7 +71,7 @@ export default function Header() {
               </Link>
 
               {/* Dropdown */}
-              <div ref={dropdownRef} className="relative z-40">
+              <div ref={dropdownRef} className="relative ">
                 <div
                   onClick={() => setIsOpen((prev) => !prev)}
                   className="cursor-pointer font-outfit font-normal text-[18.04px] text-[#220016]"
@@ -80,56 +80,42 @@ export default function Header() {
                 </div>
 
                 {isOpen && (
-                  <div
-                    className="absolute top-full left-0 flex flex-col min-w-[150px] mt-2 z-50
-                          border-[2px] border-[#40023F] rounded-md
-                          bg-white/60 backdrop-blur-[8.3px]
-                          shadow-[-3px_3px_0_0_#000]"
-                  >
-                    <Link
-                      href="/discover"
-                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                        path === "/discover" ? "font-bold" : "font-normal"
-                      }`}
+                  <div className="absolute top-full left-0 mt-2  min-w-[150px] z-50">
+                    <div
+                      className="flex flex-col border-2 border-[#40023F] rounded-[8px]
+      bg-[#fff] backdrop-blur-[16px] shadow-[-3px_3px_0_0_#000]"
                     >
-                      Discover
-                    </Link>
-                    <Link
-                      href="/products"
-                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                        path === "/products" ? "font-bold" : "font-normal"
-                      }`}
-                    >
-                      All Products
-                    </Link>
-                    <Link
-                      href="/products/featured"
-                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                        path === "/products/featured"
-                          ? "font-bold"
-                          : "font-normal"
-                      }`}
-                    >
-                      Featured
-                    </Link>
-                    <Link
-                      href="/products/new"
-                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                        path === "/products/new" ? "font-bold" : "font-normal"
-                      }`}
-                    >
-                      New
-                    </Link>
-                    <Link
-                      href="/products/categories"
-                      className={`px-4 py-2 text-[#220016] hover:bg-gray-100 ${
-                        path === "/products/categories"
-                          ? "font-bold"
-                          : "font-normal"
-                      }`}
-                    >
-                      Categories
-                    </Link>
+                      <Link
+                        href="/discover"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                      >
+                        Discover
+                      </Link>
+                      <Link
+                        href="/products"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                      >
+                        All Products
+                      </Link>
+                      <Link
+                        href="/products/featured"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                      >
+                        Featured
+                      </Link>
+                      <Link
+                        href="/products/new"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                      >
+                        New
+                      </Link>
+                      <Link
+                        href="/products/categories"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                      >
+                        Categories
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>

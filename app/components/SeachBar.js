@@ -48,23 +48,27 @@ export default function SearchBox() {
       </div>
 
       {showDropdown && (
-        <div className="absolute top-full mt-2 w-[320px] bg-white/60 backdrop-blur-[16px] rounded-xl z-40 border-[2px] border-[#40023F] shadow-[-3px_3px_0px_0px_#000000]">
-          {mockResults.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center p-3 hover:bg-gray-100 rounded-xl cursor-pointer"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-20 h-20 object-cover  rounded mr-4"
-              />
-              <div>
-                <div className="font-semibold text-gray-800">{item.title}</div>
-                <div className="text-sm text-gray-500">{item.size}</div>
+        <div className="absolute top-full mt-2 w-[320px] z-10">
+          <div className="bg-white rounded-xl border-[2px] border-[#40023F] shadow-[-3px_3px_0px_0px_#000000]">
+            {mockResults.map((item) => (
+              <div
+                key={item.id}
+                className="flex items-center p-3 hover:bg-gray-100 rounded-xl cursor-pointer"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-20 h-20 object-cover  rounded mr-4"
+                />
+                <div>
+                  <div className="font-semibold text-gray-800">
+                    {item.title}
+                  </div>
+                  <div className="text-sm text-gray-500">{item.size}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       )}
     </div>
