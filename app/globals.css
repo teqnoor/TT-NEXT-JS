@@ -42,5 +42,7 @@ body {
 }
 
 .eczar {
-  font-family: var(--font-eczar), serif;
+  font-family: "fields", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }

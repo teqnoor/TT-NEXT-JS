@@ -65,7 +65,7 @@ export default function Home() {
 
             {/* Heading */}
             <p className="text-lg font-outfit mb-2">Made with real fruit</p>
-            <h1 className="eczar text-[40px] md:text-[64px] font-bold">
+            <h1 className="eczar text-[40px] md:text-[64px]">
               Award Winning <span className="text-[#FF9E02]">PULP+</span>
             </h1>
 
@@ -139,7 +139,7 @@ export default function Home() {
       {/* Flavours Section */}
       <section className="py-12">
         <div className="max-w-6xl mx-auto text-center md:text-left px-6 md:px-0">
-          <h2 className="eczar text-2xl md:text-3xl font-semibold text-[#220016] mb-2">
+          <h2 className="eczar text-2xl md:text-3xl  text-[#220016] mb-2">
             4 Amazing Flavours
           </h2>
           <p className="text-sm text-[#220016] mb-6">
@@ -185,7 +185,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center border border-black bg-[#FFF0B4] py-0">
           {/* Left Text Content */}
           <div className="w-full md:w-1/2 p-6 space-y-4">
-            <h2 className="eczar text-[32px] md:text-[24px] font-semibold text-[#220016] ">
+            <h2 className="eczar text-[32px] md:text-[24px]  text-[#220016] ">
               Tiger Tiger’s Pulp+ Mango Awarded 'Best Fruit Juice Drink' at UK
               Soft Drinks Awards 2025
             </h2>
@@ -290,7 +290,7 @@ export default function Home() {
         {/* Header Row */}
         <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
-            <h2 className="eczar font-semibold text-[32px] text-[#220016]">
+            <h2 className="eczar  text-[32px] text-[#220016]">
               Product Categories
             </h2>
             <p>
@@ -447,7 +447,7 @@ export default function Home() {
       <section className="py-12 px-6 md:px-0">
         {/* Header */}
         <div className="max-w-6xl mx-auto mb-8">
-          <h2 className="eczar font-semibold text-[32px] text-[#220016]">
+          <h2 className="eczar  text-[32px] text-[#220016]">
             Discover our Japanese Range
           </h2>
 
