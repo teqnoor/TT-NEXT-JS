@@ -34,7 +34,7 @@ export default function BlogClient({ slug }) {
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
           <div className="bg-[#97E0FF] max-w-6xl mx-auto flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
-            <div className="p-[50px] mb-[20px]">
+            <div className="p-[20px] mb-[10px] md:mb-[20px] md:p-[50px]">
               <h1 className="font-fields font-extrabold text-[32px] text-[#220016] mb-5">
                 Blog Slug: {slug}
               </h1>
@@ -61,7 +61,7 @@ export default function BlogClient({ slug }) {
       </section>
 
       <section className="py-4">
-        <div className="max-w-6xl mx-auto px-4 md:flex md:gap-8">
+        <div className="max-w-6xl mx-auto px-6 md:px-0 md:flex md:gap-8">
           {/* Left Content */}
           <div className="md:w-2/3">
             <p className="mb-4">
