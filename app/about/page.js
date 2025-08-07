@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 export default function AboutPage() {
   const pathname = usePathname();
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -51,12 +53,26 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#fff0b4]">
+      <section className="py-12 bg-[#fff0b4] relative">
+        <motion.div
+          drag
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
+          animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }} // Loop movement
+          transition={{
+            repeat: Infinity,
+            duration: 3, // Slower animation
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-[20px] left-[20px]"
+        >
+          <Image src="/yello.png" alt="about" width={100} height={100} />
+        </motion.div>
+
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
-          <div className="max-w-5xl mx-auto text-center px-6 md:px-0">
+          <div className="max-w-5xl mx-auto text-center px-6 md:px-0 ">
             <h6 className="text-[20px] text-[#220016]">About us</h6>
             <h1 className="eczar font-semibold text-[32px] text-[#220016]">
               Who We Are
@@ -85,7 +101,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#fff0b4] px-6 md:px-0">
+      <section className="py-12 bg-[#fff0b4] px-6 md:px-0 relative">
+        <motion.div
+          drag
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
+          animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }} // Loop movement
+          transition={{
+            repeat: Infinity,
+            duration: 3, // Slower animation
+            ease: "easeInOut",
+          }}
+          className="absolute top-0 right-[20px]"
+        >
+          <Image src="/red.png" alt="about" width={100} height={100} />
+        </motion.div>
+        <motion.div
+          drag
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
+          animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }} // Loop movement
+          transition={{
+            repeat: Infinity,
+            duration: 3, // Slower animation
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-[0] Left-[20px]"
+        >
+          <Image src="/yello.png" alt="about" width={100} height={100} />
+        </motion.div>
         <div className="bg-[#F0FDFF] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl  max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
