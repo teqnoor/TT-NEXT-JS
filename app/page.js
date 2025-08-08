@@ -150,24 +150,27 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {flavours.map((flavour, index) => (
               <motion.div
-                  key={index}
-                  whileHover={{
-                    scale: [null, 1.05],
-                    transition: {
-                      duration: 0.2,
-                      times: [0, 0.6],
-                      ease: ["easeInOut", "easeOut"],
-                    },
-                  }}
-                  transition={{
+                key={index}
+                whileHover={{
+                  scale: [null, 1.05],
+                  transition: {
                     duration: 0.2,
-                    ease: "easeOut",
-                  }}
-                  className="cursor-link"
-                >
+                    times: [0, 0.6],
+                    ease: ["easeInOut", "easeOut"],
+                  },
+                }}
+                transition={{
+                  duration: 0.2,
+                  ease: "easeOut",
+                }}
+                className="cursor-pointer"
+                style={{
+                  cursor: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer'
+                }}
+              >
                 <div
                   key={index}
-                  className={`rounded-md overflow-hidden  flex items-center justify-center`}
+                  className={`rounded-md overflow-hidden flex items-center justify-center`}
                 >
                   <img
                     src={flavour.image}
@@ -178,6 +181,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
         </div>
       </section>
 
@@ -251,16 +255,20 @@ export default function Home() {
               <motion.div
                 key={i}
                 whileHover={{
-                  scale: [null, 1.1],
+                  scale: [null, 1.05],
                   transition: {
-                    duration: 0.5,
+                    duration: 0.2,
                     times: [0, 0.6],
                     ease: ["easeInOut", "easeOut"],
                   },
                 }}
                 transition={{
-                  duration: 0.3,
+                  duration: 0.2,
                   ease: "easeOut",
+                }}
+                className="cursor-pointer"
+                style={{
+                  cursor: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer'
                 }}
               >
                 <div
@@ -268,16 +276,17 @@ export default function Home() {
                   className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
                   style={{ backgroundImage: `url('${card.image}')` }}
                 >
-                  <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-[43px] py-[13px]">
+                  <span className="absolute bottom-[5%] left-5 right-5 px-[5%] bg-white text-[#220016] font-semibold text-[18px] py-2 text-center eczar">
                     {card.title}
                   </span>
+
                 </div>
               </motion.div>
             ))}
           </div>
 
           {/* Button */}
-          <button className="border border-[#220016] px-6 py-2 rounded-full font-medium text-[#220016] hover:bg-[#220016] hover:text-white transition flex items-center gap-3 mx-auto">
+          <button className="border border-[#220016] px-2 py-2 rounded-full font-medium text-[#220016] hover:bg-[#220016] hover:text-white transition flex items-center gap-2 mx-auto">
             Discover All Ranges
             <span className="w-7 h-7 flex items-center justify-center bg-[#220016] text-white rounded-full">
               <HiOutlineArrowRight size={16} />
@@ -313,74 +322,68 @@ export default function Home() {
         {/* Grid Content */}
         <div className="max-w-6xl mx-auto flex md:flex-row flex-col gap-3">
           {/* Left Images */}
-          <div className="flex flex-col justify-end">
-            <motion.div
-              whileHover={{
-                scale: [null, 1.1],
-                transition: {
-                  duration: 0.5,
-                  times: [0, 0.6],
-                  ease: ["easeInOut", "easeOut"],
-                },
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "easeOut",
-              }}
-            >
-              <Image
-                src="/wowchow/4.png"
-                alt="wow1"
-                width={300}
-                height={350}
-                className="rounded-md mb-4 object-cover ml-auto"
-              />
-            </motion.div>
+      <div className="flex flex-col justify-end">
+        <motion.div
+          whileHover={{
+            rotate: 5,
+            scale: 1.05,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 600,
+            damping: 25,
+            duration: 0.2
+          }}
+        >
+          <Image
+            src="/wowchow/4.png"
+            alt="wow1"
+            width={300}
+            height={350}
+            className="rounded-md mb-4 object-cover ml-auto"
+          />
+        </motion.div>
 
-            <motion.div
-              whileHover={{
-                scale: [null, 1.1],
-                transition: {
-                  duration: 0.5,
-                  times: [0, 0.6],
-                  ease: ["easeInOut", "easeOut"],
-                },
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "easeOut",
-              }}
-            >
-              <Image
-                src="/wowchow/5.png"
-                alt="wow2"
-                width={345}
-                height={150}
-                className="rounded-md object-cover"
-              />
-            </motion.div>
-          </div>
+        <motion.div
+          whileHover={{
+            rotate: 5,
+            scale: 1.05,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 600,
+            damping: 25,
+            duration: 0.2
+          }}
+        >
+          <Image
+            src="/wowchow/5.png"
+            alt="wow2"
+            width={345}
+            height={150}
+            className="rounded-md object-cover"
+          />
+        </motion.div>
+      </div>
 
           {/* Center Image and Text */}
           <div className="flex flex-col justify-center items-center">
-            <h3 className="text-2xl font-bold text-[#220016] mb-2 text-[40px]">
+            <h3 className="text-5xl font-extrabold text-[#220016] mb-2 text-[44px] eczar">
               Put WOW in <br /> Your Chow
             </h3>
-            <button className="mt-2 text-sm underline text-[#220016] mb-3">
+            <button className="mt-0 mb-6 text-sm underline text-[#220016] mb-3">
               Discover Wow Chow
             </button>
             <motion.div
               whileHover={{
-                scale: [null, 1.1],
-                transition: {
-                  duration: 0.5,
-                  times: [0, 0.6],
-                  ease: ["easeInOut", "easeOut"],
-                },
+                rotate: 5,
+                scale: 1.05,
               }}
               transition={{
-                duration: 0.3,
-                ease: "easeOut",
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2
               }}
             >
               <Image
@@ -397,16 +400,14 @@ export default function Home() {
           <div className="flex flex-col">
             <motion.div
               whileHover={{
-                scale: [null, 1.1],
-                transition: {
-                  duration: 0.5,
-                  times: [0, 0.6],
-                  ease: ["easeInOut", "easeOut"],
-                },
+                rotate: 5,
+                scale: 1.05,
               }}
               transition={{
-                duration: 0.3,
-                ease: "easeOut",
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2
               }}
             >
               <Image
@@ -418,18 +419,16 @@ export default function Home() {
               />
             </motion.div>
 
-            <motion.div
+           <motion.div
               whileHover={{
-                scale: [null, 1.1],
-                transition: {
-                  duration: 0.5,
-                  times: [0, 0.6],
-                  ease: ["easeInOut", "easeOut"],
-                },
+                rotate: 5,
+                scale: 1.05,
               }}
               transition={{
-                duration: 0.3,
-                ease: "easeOut",
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2
               }}
             >
               <Image
@@ -445,38 +444,51 @@ export default function Home() {
       </section>
 
       {/* Japanese Range Section */}
-      <section className="py-12 px-6 md:px-0">
-        {/* Header */}
-        <div className="max-w-6xl mx-auto mb-8">
-          <h2 className="eczar  text-[32px] text-[#220016]">
-            Discover our Japanese Range
-          </h2>
+          <section className="py-12 px-6 md:px-0">
+            {/* Header */}
+            <div className="max-w-6xl mx-auto mb-8">
+              <h2 className="eczar  text-[32px] text-[#220016]">
+                Discover our Japanese Range
+              </h2>
 
-          <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
-            Tiger Tiger Foods own Taste Japan range of authentic Japanese
-            products that will take your Japanese dishes to the next level
-          </p>
-        </div>
+              <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+                Tiger Tiger Foods own Taste Japan range of authentic Japanese
+                products that will take your Japanese dishes to the next level
+              </p>
+            </div>
 
-        {/* Image Section */}
-        <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            <img
-              src="/jk_banner.jpg"
-              alt="Japanese Range"
-              className="rounded-lg object-cover w-full  h-[550px]"
-            />
-            {/* Button in Top-Right corner */}
-            <button className="absolute top-4 right-4 bg-[#fff] hover:bg-[#40023F] text-[#000] hover:text-[#fff] px-6 py-2 rounded-full font-medium flex items-center gap-2">
-              Discover Japanese Range
-              <span className="flex items-center justify-center  text-black rounded-full">
-                <FiArrowUpRight size={20} />
-              </span>
-              
-            </button>
-          </div>
-        </div>
-      </section>
+            {/* Image Section */}
+            <div className="max-w-6xl mx-auto">
+              <div 
+                className="relative cursor-pointer"
+                style={{
+                  cursor: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer'
+                }}
+                onClick={() => {
+                  // Add your click handler here
+                  console.log('Navigate to Japanese Range');
+                }}
+              >
+                <img
+                  src="/jk_banner.jpg"
+                  alt="Japanese Range"
+                  className="rounded-lg object-cover w-full h-[550px]"
+                />
+                {/* Button in Top-Right corner */}
+                <button 
+                  className="absolute top-4 right-4 bg-[#fff] hover:bg-[#40023F] text-[#000] hover:text-[#fff] px-6 py-2 rounded-full font-medium flex items-center gap-2 cursor-pointer pointer-events-none"
+                  style={{
+                    cursor: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer'
+                  }}
+                >
+                  Discover Japanese Range
+                  <span className="flex items-center justify-center  text-black rounded-full">
+                    <FiArrowUpRight size={20} />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </section>
 
       <section className="py-12">
         <SmoothSlider />

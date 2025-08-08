@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import CategoryMarquee from "../components/categoryMarquee";
+import { motion } from "framer-motion";
 
 export default function DiscoverPage() {
   const pathname = usePathname();
@@ -37,35 +38,84 @@ export default function DiscoverPage() {
           <div className="max-w-6xl mx-auto flex md:flex-row flex-col gap-3">
             {/* Left Images */}
             <div className="flex flex-col">
-              <Image
+             <motion.div
+              whileHover={{
+                rotate: 5,
+                scale: 1.05,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2
+              }}
+            >
+          <Image
                 src="/wowchow/4.png"
                 alt="wow1"
                 width={300}
                 height={350}
                 className="rounded-md mb-4 object-cover"
               />
+            </motion.div>
+            <motion.div
+              whileHover={{
+                rotate: 5,
+                scale: 1.05,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2
+              }}
+            >
               <Image
                 src="/wowchow/5.png"
                 alt="wow2"
                 width={345}
                 height={150}
                 className="rounded-md object-cover"
-              />
+              /></motion.div>
             </div>
 
             {/* Center Image and Text */}
             <div className="flex flex-col justify-center items-center">
+              <motion.div
+              whileHover={{
+                rotate: 5,
+                scale: 1.05,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2
+              }}
+            >
               <Image
                 src="/wowchow/1.png"
                 alt="wow2"
                 width={415}
                 height={300}
                 className="rounded-md  object-cover"
-              />
+              /></motion.div>
             </div>
 
             {/* Right Images */}
             <div className="flex flex-col">
+              <motion.div
+              whileHover={{
+                rotate: 5,
+                scale: 1.05,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2
+              }}
+            >
               <Image
                 src="/wowchow/3.png"
                 alt="wow3"
@@ -73,6 +123,20 @@ export default function DiscoverPage() {
                 height={260}
                 className="rounded-md mb-4  object-cover ml-auto"
               />
+              </motion.div>
+
+              <motion.div
+              whileHover={{
+                rotate: 5,
+                scale: 1.05,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2
+              }}
+            >
               <Image
                 src="/wowchow/4.png"
                 alt="wow4"
@@ -80,6 +144,7 @@ export default function DiscoverPage() {
                 height={250}
                 className="rounded-md object-cover"
               />
+              </motion.div>
             </div>
           </div>
         </div>
