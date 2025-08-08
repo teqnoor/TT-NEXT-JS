@@ -14,10 +14,11 @@ export default function Home() {
 
   useEffect(() => {
     // Make sure this URL matches the backend route
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`)
+    // fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`)
+    fetch(`https://tigertigerfoods.com/api/get-categories`)
       .then((res) => res.json()) // Parse the response as JSON
-      .then((data) => {
-        setData(data); // Store the data in the state
+      .then((response) => {
+        setData(response.data); // Only store the "data" array
       })
       .catch((error) => {
         console.error("Error fetching data:", error); // Handle errors
