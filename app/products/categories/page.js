@@ -7,7 +7,18 @@ export default function ProductsPage() {
   const pathname = usePathname();
   const [headerHeight, setHeaderHeight] = useState(0);
 
+  const [data, setData] = useState([]);
+
   useEffect(() => {
+    fetch(`https://tigertigerfoods.com/api/get-categories`)
+      .then((res) => res.json()) // Parse the response as JSON
+      .then((response) => {
+        setData(response.data); // Only store the "data" array
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error); // Handle errors
+      });
+
     const header = document.getElementById("header"); // Select global header
     if (header) {
       setHeaderHeight(header.offsetHeight);
@@ -49,7 +60,7 @@ export default function ProductsPage() {
           </div>
 
           {/* Marquee Category Row */}
-          <CategoryMarquee />
+          <CategoryMarquee categories={data} />
         </div>
       </section>
 
@@ -59,7 +70,6 @@ export default function ProductsPage() {
           <h2 className="eczar font-semibold text-[32px] mb-5 text-[#220016]">
             Canned Products
           </h2>
-
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
             {/* Card Template */}
