@@ -7,8 +7,23 @@ import BrandsSlider from "./components/Brands";
 import { motion } from "framer-motion";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { FiArrowUpRight } from "react-icons/fi";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Make sure this URL matches the backend route
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`)
+      .then((res) => res.json()) // Parse the response as JSON
+      .then((data) => {
+        setData(data); // Store the data in the state
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error); // Handle errors
+      });
+  }, []);
+
   const flavours = [
     {
       name: "Coconut",
@@ -64,15 +79,18 @@ export default function Home() {
             </div>
 
             {/* Heading */}
-           <p className="text-lg font-outfit mt-10">Made with real fruit</p>
+            <p className="text-lg font-outfit mt-10">Made with real fruit</p>
             <h1 className="eczar text-[40px] md:text-[64px]">
               Award Winning <span className="text-[#FF9E02]">PULP+</span>
             </h1>
 
             {/* Subtext */}
             <p className="text-base font-outfit mb-4">
-              Thirst <span className="text-[#FF9E02] eczar text-[16px]">quenching</span>  drink
-              made just for you.
+              Thirst{" "}
+              <span className="text-[#FF9E02] eczar text-[16px]">
+                quenching
+              </span>{" "}
+              drink made just for you.
             </p>
 
             {/* Buttons */}
@@ -81,8 +99,8 @@ export default function Home() {
                 Drink It Up
               </button>
               <button className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium border-2 border-transparent hover:bg-yellow-200 hover:text-black hover:border-black transition">
-  Discover all products
-</button>
+                Discover all products
+              </button>
             </div>
           </div>
         </div>
@@ -165,7 +183,8 @@ export default function Home() {
                 }}
                 className="cursor-pointer"
                 style={{
-                  cursor: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer'
+                  cursor:
+                    'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
                 }}
               >
                 <div
@@ -181,7 +200,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -268,7 +286,8 @@ export default function Home() {
                 }}
                 className="cursor-pointer"
                 style={{
-                  cursor: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer'
+                  cursor:
+                    'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
                 }}
               >
                 <div
@@ -279,7 +298,6 @@ export default function Home() {
                   <span className="absolute bottom-[5%] left-5 right-5 px-[5%] bg-white text-[#220016] font-semibold text-[18px] py-2 text-center eczar">
                     {card.title}
                   </span>
-
                 </div>
               </motion.div>
             ))}
@@ -314,7 +332,7 @@ export default function Home() {
         </div>
 
         {/* Marquee Category Row */}
-        <CategoryMarquee />
+        <CategoryMarquee categories={data} />
       </section>
 
       {/* Wow Chow Section */}
@@ -322,49 +340,49 @@ export default function Home() {
         {/* Grid Content */}
         <div className="max-w-6xl mx-auto flex md:flex-row flex-col gap-3">
           {/* Left Images */}
-      <div className="flex flex-col justify-end">
-        <motion.div
-          whileHover={{
-            rotate: 5,
-            scale: 1.05,
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 600,
-            damping: 25,
-            duration: 0.2
-          }}
-        >
-          <Image
-            src="/wowchow/4.png"
-            alt="wow1"
-            width={300}
-            height={350}
-            className="rounded-md mb-4 object-cover ml-auto"
-          />
-        </motion.div>
+          <div className="flex flex-col justify-end">
+            <motion.div
+              whileHover={{
+                rotate: 5,
+                scale: 1.05,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2,
+              }}
+            >
+              <Image
+                src="/wowchow/4.png"
+                alt="wow1"
+                width={300}
+                height={350}
+                className="rounded-md mb-4 object-cover ml-auto"
+              />
+            </motion.div>
 
-        <motion.div
-          whileHover={{
-            rotate: 5,
-            scale: 1.05,
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 600,
-            damping: 25,
-            duration: 0.2
-          }}
-        >
-          <Image
-            src="/wowchow/5.png"
-            alt="wow2"
-            width={345}
-            height={150}
-            className="rounded-md object-cover"
-          />
-        </motion.div>
-      </div>
+            <motion.div
+              whileHover={{
+                rotate: 5,
+                scale: 1.05,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.2,
+              }}
+            >
+              <Image
+                src="/wowchow/5.png"
+                alt="wow2"
+                width={345}
+                height={150}
+                className="rounded-md object-cover"
+              />
+            </motion.div>
+          </div>
 
           {/* Center Image and Text */}
           <div className="flex flex-col justify-center items-center">
@@ -383,7 +401,7 @@ export default function Home() {
                 type: "spring",
                 stiffness: 600,
                 damping: 25,
-                duration: 0.2
+                duration: 0.2,
               }}
             >
               <Image
@@ -407,7 +425,7 @@ export default function Home() {
                 type: "spring",
                 stiffness: 600,
                 damping: 25,
-                duration: 0.2
+                duration: 0.2,
               }}
             >
               <Image
@@ -419,7 +437,7 @@ export default function Home() {
               />
             </motion.div>
 
-           <motion.div
+            <motion.div
               whileHover={{
                 rotate: 5,
                 scale: 1.05,
@@ -428,7 +446,7 @@ export default function Home() {
                 type: "spring",
                 stiffness: 600,
                 damping: 25,
-                duration: 0.2
+                duration: 0.2,
               }}
             >
               <Image
@@ -444,51 +462,53 @@ export default function Home() {
       </section>
 
       {/* Japanese Range Section */}
-          <section className="py-12 px-6 md:px-0">
-            {/* Header */}
-            <div className="max-w-6xl mx-auto mb-8">
-              <h2 className="eczar  text-[32px] text-[#220016]">
-                Discover our Japanese Range
-              </h2>
+      <section className="py-12 px-6 md:px-0">
+        {/* Header */}
+        <div className="max-w-6xl mx-auto mb-8">
+          <h2 className="eczar  text-[32px] text-[#220016]">
+            Discover our Japanese Range
+          </h2>
 
-              <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
-                Tiger Tiger Foods own Taste Japan range of authentic Japanese
-                products that will take your Japanese dishes to the next level
-              </p>
-            </div>
+          <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+            Tiger Tiger Foods own Taste Japan range of authentic Japanese
+            products that will take your Japanese dishes to the next level
+          </p>
+        </div>
 
-            {/* Image Section */}
-            <div className="max-w-6xl mx-auto">
-              <div 
-                className="relative cursor-pointer"
-                style={{
-                  cursor: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer'
-                }}
-                onClick={() => {
-                  // Add your click handler here
-                  console.log('Navigate to Japanese Range');
-                }}
-              >
-                <img
-                  src="/jk_banner.jpg"
-                  alt="Japanese Range"
-                  className="rounded-lg object-cover w-full h-[550px]"
-                />
-                {/* Button in Top-Right corner */}
-                <button 
-                  className="absolute top-4 right-4 bg-[#fff] hover:bg-[#40023F] text-[#000] hover:text-[#fff] px-6 py-2 rounded-full font-medium flex items-center gap-2 cursor-pointer pointer-events-none"
-                  style={{
-                    cursor: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer'
-                  }}
-                >
-                  Discover Japanese Range
-                  <span className="flex items-center justify-center  text-black rounded-full">
-                    <FiArrowUpRight size={20} />
-                  </span>
-                </button>
-              </div>
-            </div>
-          </section>
+        {/* Image Section */}
+        <div className="max-w-6xl mx-auto">
+          <div
+            className="relative cursor-pointer"
+            style={{
+              cursor:
+                'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
+            }}
+            onClick={() => {
+              // Add your click handler here
+              console.log("Navigate to Japanese Range");
+            }}
+          >
+            <img
+              src="/jk_banner.jpg"
+              alt="Japanese Range"
+              className="rounded-lg object-cover w-full h-[550px]"
+            />
+            {/* Button in Top-Right corner */}
+            <button
+              className="absolute top-4 right-4 bg-[#fff] hover:bg-[#40023F] text-[#000] hover:text-[#fff] px-6 py-2 rounded-full font-medium flex items-center gap-2 cursor-pointer pointer-events-none"
+              style={{
+                cursor:
+                  'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
+              }}
+            >
+              Discover Japanese Range
+              <span className="flex items-center justify-center  text-black rounded-full">
+                <FiArrowUpRight size={20} />
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
 
       <section className="py-12">
         <SmoothSlider />
