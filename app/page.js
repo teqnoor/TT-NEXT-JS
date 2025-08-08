@@ -64,14 +64,14 @@ export default function Home() {
             </div>
 
             {/* Heading */}
-            <p className="text-lg font-outfit mb-2">Made with real fruit</p>
+           <p className="text-lg font-outfit mt-10">Made with real fruit</p>
             <h1 className="eczar text-[40px] md:text-[64px]">
               Award Winning <span className="text-[#FF9E02]">PULP+</span>
             </h1>
 
             {/* Subtext */}
             <p className="text-base font-outfit mb-4">
-              Thirst <span className="text-[#FF9E02]">quenching</span> drink
+              Thirst <span className="text-[#FF9E02] eczar text-[16px]">quenching</span>  drink
               made just for you.
             </p>
 
@@ -80,9 +80,9 @@ export default function Home() {
               <button className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition">
                 Drink It Up
               </button>
-              <button className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#40023F] transition">
-                Discover all products
-              </button>
+              <button className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium border-2 border-transparent hover:bg-yellow-200 hover:text-black hover:border-black transition">
+  Discover all products
+</button>
             </div>
           </div>
         </div>
@@ -150,20 +150,21 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {flavours.map((flavour, index) => (
               <motion.div
-                key={index}
-                whileHover={{
-                  scale: [null, 1.1],
-                  transition: {
-                    duration: 0.5,
-                    times: [0, 0.6],
-                    ease: ["easeInOut", "easeOut"],
-                  },
-                }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
-              >
+                  key={index}
+                  whileHover={{
+                    scale: [null, 1.05],
+                    transition: {
+                      duration: 0.2,
+                      times: [0, 0.6],
+                      ease: ["easeInOut", "easeOut"],
+                    },
+                  }}
+                  transition={{
+                    duration: 0.2,
+                    ease: "easeOut",
+                  }}
+                  className="cursor-link"
+                >
                 <div
                   key={index}
                   className={`rounded-md overflow-hidden  flex items-center justify-center`}
@@ -190,7 +191,7 @@ export default function Home() {
               Soft Drinks Awards 2025
             </h2>
             <p className="text-sm md:text-base text-[#220016] leading-[2]">
-              We're absolutely thrilled to share some fantastic news – our Pulp+
+              We're absolutely thrilled to share some fantastic news. Our Pulp+
               Mango has just scooped up the 'Best Fruit Juice Drink' award at
               the 2025 UK Soft Drinks Awards by FoodBev Awards! This recognition
               means the world to us, especially coming from such a respected
