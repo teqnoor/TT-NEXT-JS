@@ -8,9 +8,11 @@ import { motion } from "framer-motion";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { FiArrowUpRight } from "react-icons/fi";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [data, setData] = useState([]);
+  const [pulpData, setPulpData] = useState([]);
 
   useEffect(() => {
     // Make sure this URL matches the backend route
@@ -23,30 +25,17 @@ export default function Home() {
       .catch((error) => {
         console.error("Error fetching data:", error); // Handle errors
       });
+
+    fetch(`https://tigertigerfoods.com/api/get-pulp`)
+      .then((res) => res.json()) // Parse the response as JSON
+      .then((response) => {
+        setPulpData(response.data); // Only store the "data" array
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error); // Handle errors
+      });
   }, []);
 
-  const flavours = [
-    {
-      name: "Coconut",
-      image: "/pulp1.png",
-      bg: "bg-[#A6CF3C]",
-    },
-    {
-      name: "Mango",
-      image: "/pulp2.png",
-      bg: "bg-[#FFB511]",
-    },
-    {
-      name: "Lychee",
-      image: "/pulp3.png",
-      bg: "bg-[#F7328B]",
-    },
-    {
-      name: "Guava",
-      image: "/pulp4.png",
-      bg: "bg-[#EF4D6C]",
-    },
-  ];
   return (
     <>
       {/* Hero Desktop Section */}
@@ -167,7 +156,7 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {flavours.map((flavour, index) => (
+            {pulpData.map((flavour, index) => (
               <motion.div
                 key={index}
                 whileHover={{
@@ -183,20 +172,22 @@ export default function Home() {
                   ease: "easeOut",
                 }}
                 className="cursor-pointer"
-                style={{
-                  cursor:
-                    'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
-                }}
               >
                 <div
                   key={index}
                   className={`rounded-md overflow-hidden flex items-center justify-center`}
                 >
-                  <img
-                    src={flavour.image}
-                    alt={flavour.name}
-                    className="object-contain"
-                  />
+                   <Link href={`/products/${flavour.slug}`} key={index}>
+                    <img
+                      src={
+                        flavour.featured_image
+                          ? flavour.featured_image
+                          : flavour.images
+                      }
+                      alt={flavour.name}
+                      className="object-contain"
+                    />
+                  </Link>
                 </div>
               </motion.div>
             ))}
