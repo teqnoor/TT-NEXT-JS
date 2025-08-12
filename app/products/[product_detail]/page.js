@@ -1,15 +1,15 @@
 import ProductDetail from "@/app/components/ProductDetail";
 
 export async function generateStaticParams() {
-  const products = [{ product_detail: "product-detail-test" }];
+  const res = await fetch("https://tigertigerfoods.com/api/get-products");
+  const data = await res.json();
 
-  return products.map((product) => ({
-    product_detail: product.product_detail,
+  return data.data.map((product) => ({
+    product_detail: product.slug,
   }));
 }
 
 export default function ProductDetailPage({ params }) {
-  const { product_detail } = params;
-
-  return <ProductDetail product_detail={product_detail} />; // if no JSX
+  // Pass slug to the client component
+  return <ProductDetail slug={params.product_detail} />;
 }

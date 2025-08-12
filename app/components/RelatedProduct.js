@@ -3,48 +3,48 @@
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
-import { useRef } from "react";
+import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
 
-const products = [
-  {
-    image: "/pulp1.png",
-  },
-  {
-    image: "/pulp2.png",
-  },
-  {
-    image: "/pulp3.png",
-  },
-  {
-    image: "/pulp4.png",
-  },
-];
+export default function RelatedProductsSlider({ product_id }) {
+  const [relatedProducts, setRelatedProducts] = useState([]);
 
-export default function RelatedProductsSlider() {
-  const timer = useRef();
-  const [sliderRef, slider] = useKeenSlider({
-    loop: true,
-    slides: {
-      perView: 4,
-      spacing: 10,
-    },
-    breakpoints: {
-      "(max-width: 768px)": {
-        slides: { perView: 2, spacing: 10 },
+  // Fetch related products
+  useEffect(() => {
+    fetch(`https://tigertigerfoods.com/api/get-related-product/${product_id}`)
+      .then((res) => res.json())
+      .then((response) => {
+        if (response?.data) setRelatedProducts(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching related products:", error);
+      });
+  }, [product_id]);
+
+  const count = relatedProducts.length;
+
+  // Keen options based on how many items you actually have
+  const options = useMemo(() => {
+    const perViewLg = Math.min(4, Math.max(count, 1));
+    const perViewMd = Math.min(3, Math.max(count, 1));
+    const perViewSm = Math.min(2, Math.max(count, 1));
+
+    return {
+      loop: count > 4, // only loop if enough slides
+      renderMode: "performance",
+      slides: { perView: perViewLg, spacing: 10 },
+      breakpoints: {
+        "(max-width: 1024px)": {
+          slides: { perView: perViewMd, spacing: 12 },
+        },
+        "(max-width: 768px)": {
+          slides: { perView: perViewSm, spacing: 10 },
+        },
       },
-      "(max-width: 1024px)": {
-        slides: { perView: 3, spacing: 12 },
-      },
-    },
-    created: () => {
-      timer.current = setInterval(() => {
-        slider.current?.next();
-      }, 2000); // Change slide every 2 seconds
-    },
-    destroyed: () => {
-      clearInterval(timer.current);
-    },
-  });
+    };
+  }, [count]);
+
+  const [sliderRef] = useKeenSlider(options);
 
   return (
     <div className="w-full">
@@ -53,39 +53,36 @@ export default function RelatedProductsSlider() {
         <h2 className="text-[32px] eczar font-semibold text-[#220016]">
           Related Products
         </h2>
-        <div className="flex space-x-2">
-          <button
-            onClick={() => slider.current?.prev()}
-            className="border border-[#220016] px-2 py-1 text-[#220016] text-lg rounded hover:bg-[#f5f5f5]"
-          >
-            &lt;
-          </button>
-          <button
-            onClick={() => slider.current?.next()}
-            className="border border-[#220016] px-2 py-1 text-[#220016] text-lg rounded hover:bg-[#f5f5f5]"
-          >
-            &gt;
-          </button>
-        </div>
       </div>
 
       {/* Slider */}
-      <div ref={sliderRef} className="keen-slider">
-        {products.map((product, index) => (
+      {/* min-w-0 is crucial if parent is flex; overflow-hidden helps layout */}
+      <div ref={sliderRef} className="keen-slider min-w-0 overflow-hidden">
+        {relatedProducts.map((product, index) => (
           <div
-            key={index}
-            className="keen-slider__slide flex justify-center items-center"
+            key={product?.id ?? index}
+            className="keen-slider__slide flex items-center justify-center"
           >
-            <Image
-              src={product.image}
-              alt={`Product ${index}`}
-              width={300}
-              height={300}
-              className="w-full h-full"
-            />
+            <Link href={`/products/${product.slug}`} prefetch={false}>
+              <Image
+                src={product.images}
+                alt={product.name ?? `Product ${index + 1}`}
+                width={300}
+                height={300}
+                className="w-full h-full object-cover"
+                sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw"
+                priority={index < 4}
+              />
+            </Link>
           </div>
         ))}
       </div>
+
+      {/* If you *must* always see 4 tiles even with <4 products,
+          render a simple CSS grid instead of a slider as a fallback. */}
+      {count === 0 && (
+        <div className="text-sm text-gray-500 mt-4">No related products.</div>
+      )}
     </div>
   );
 }
