@@ -4,16 +4,30 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import CategoryMarquee from "../components/categoryMarquee";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export default function DiscoverPage() {
   const pathname = usePathname();
   const [headerHeight, setHeaderHeight] = useState(0);
   const [data, setData] = useState([]);
+  const [featureData, setFeatureData] = useState([]);
+  const [newData, setNewData] = useState([]);
   useEffect(() => {
     fetch(`https://tigertigerfoods.com/api/get-categories`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setData(response.data); // Only store the "data" array
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error); // Handle errors
+      });
+
+    fetch(`https://tigertigerfoods.com/api/get-new-arrival-and-featured`)
+      .then((res) => res.json()) // Parse the response as JSON
+      .then((response) => {
+        setFeatureData(response.data.featured_product);
+        setNewData(response.data.new_arrival);
       })
       .catch((error) => {
         console.error("Error fetching data:", error); // Handle errors
@@ -197,9 +211,11 @@ export default function DiscoverPage() {
           </div>
 
           {/* Button */}
-          <button className="border border-[#220016] px-6 py-2 rounded-full font-medium hover:bg-[#220016] hover:text-white transition flex items-center gap-2 mx-auto">
+          <button className="group border border-[#220016] px-6 py-2 rounded-full font-medium hover:bg-[#220016] hover:text-white transition flex items-center gap-2 mx-auto">
             Discover All Ranges
-            <span className="w-3 h-3 bg-[#220016] rounded-full"></span>
+            <span className="flex items-center justify-center text-black rounded-full group-hover:text-white">
+              <FiArrowUpRight size={20} />
+            </span>
           </button>
         </div>
       </section>
@@ -217,13 +233,16 @@ export default function DiscoverPage() {
               and frozen. You name it, we got it.
             </p>
           </div>
-          <a href="#" className="text-sm text-[#220016] underline">
+          <a
+            href="/products/categories"
+            className="text-sm text-[#220016] underline"
+          >
             All Categories
           </a>
         </div>
 
         {/* Marquee Category Row */}
-        <CategoryMarquee categories={data}/>
+        <CategoryMarquee categories={data} />
       </section>
 
       {/* New Arrivals Section */}
@@ -249,21 +268,14 @@ export default function DiscoverPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
             {/* Card Template */}
-            {[
-              { title: "Wow Chow Noodles", image: "/wow.jpg" },
-              { title: "Bubble Tea", image: "/buble_tea.jpg" },
-              { title: "Coco Choo Drink", image: "/cococho.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
-                style={{ backgroundImage: `url('${card.image}')` }}
-              ></div>
+            {newData.map((card, i) => (
+              <Link href={`/products/${card.slug}`} key={i}>
+                <div
+                  key={i}
+                  className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
+                  style={{ backgroundImage: `url('${card.images}')` }}
+                ></div>
+              </Link>
             ))}
           </div>
 
@@ -297,21 +309,14 @@ export default function DiscoverPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
             {/* Card Template */}
-            {[
-              { title: "Wow Chow Noodles", image: "/wow.jpg" },
-              { title: "Bubble Tea", image: "/buble_tea.jpg" },
-              { title: "Coco Choo Drink", image: "/cococho.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
-                style={{ backgroundImage: `url('${card.image}')` }}
-              ></div>
+            {featureData.map((card, i) => (
+              <Link href={`/products/${card.slug}`} key={i}>
+                <div
+                  key={i}
+                  className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
+                  style={{ backgroundImage: `url('${card.images}')` }}
+                ></div>
+              </Link>
             ))}
           </div>
 
