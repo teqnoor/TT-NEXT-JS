@@ -52,7 +52,7 @@ export default function DiscoverPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#fff0b4]">
+      <section className="py-12 bg-[#FFF7D8]">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
@@ -175,7 +175,7 @@ export default function DiscoverPage() {
       </section>
 
       {/* Range Section */}
-      <section className="py-12 px-6 md:px-0 bg-[#fff0b4]">
+      <section className="py-12 px-6 md:px-0 bg-[#FFF7D8]">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
           <h2 className="eczar font-semibold text-[32px] text-[#220016]">
@@ -221,7 +221,7 @@ export default function DiscoverPage() {
       </section>
 
       {/* Categories Section */}
-      <section className="bg-[#fff0b4] py-12 px-6 md:px-0">
+      <section className="bg-[#FFF7D8] py-12 px-6 md:px-0">
         {/* Header Row */}
         <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
@@ -246,7 +246,7 @@ export default function DiscoverPage() {
       </section>
 
       {/* New Arrivals Section */}
-      <section className="py-12 px-6 md:px-0 bg-[#fff0b4]">
+      <section className="py-12 px-6 md:px-0 bg-[#FFF7D8]">
         <div className="max-w-6xl mx-auto mb-8">
           <div className="flex flex-wrap justify-between items-center">
             <div>
@@ -287,7 +287,7 @@ export default function DiscoverPage() {
       </section>
 
       {/* Featured Section */}
-      <section className="py-12 px-6 md:px-0 bg-[#fff0b4]">
+      <section className="py-12 px-6 md:px-0 bg-[#FFF7D8]">
         <div className="max-w-6xl mx-auto mb-8">
           <div className="flex flex-wrap justify-between items-center">
             <div>
@@ -328,7 +328,7 @@ export default function DiscoverPage() {
       </section>
 
       {/* Product Catalog Section */}
-      <section className="py-12 px-6 md:px-0 bg-[#fff0b4]">
+      <section className="py-12 px-6 md:px-0 bg-[#FFF7D8]">
         <div className="max-w-6xl mx-auto mb-8">
           <h2 className="eczar font-semibold text-[32px] text-[#220016]">
             Product Catalogue
