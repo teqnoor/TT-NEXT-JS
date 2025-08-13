@@ -203,9 +203,9 @@ export default function DiscoverPage() {
                 className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
                 style={{ backgroundImage: `url('${card.image}')` }}
               >
-                <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-4 py-1 rounded-full">
-                  {card.title}
-                </span>
+                <span className="absolute bottom-[5%] left-5 right-5 px-[5%] bg-white text-[#220016] font-semibold text-[18px] py-2 text-center eczar">
+                    {card.title}
+                  </span>
               </div>
             ))}
           </div>

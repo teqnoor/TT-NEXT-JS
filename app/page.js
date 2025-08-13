@@ -40,6 +40,62 @@ export default function Home() {
     <>
       {/* Hero Desktop Section */}
       <section className="relative w-full hidden md:block overflow-hidden">
+        <motion.div
+          drag
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
+          animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }} // Loop movement
+          transition={{
+            repeat: Infinity,
+            duration: 3, // Slower animation
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-[15%] left-[15%]"
+        >
+          <Image src="/yello.png" alt="about" width={100} height={100} />
+        </motion.div>
+
+        <motion.div
+          drag
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
+          animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }} // Loop movement
+          transition={{
+            repeat: Infinity,
+            duration: 3, // Slower animation
+            ease: "easeInOut",
+          }}
+          className="absolute top-[40px] left-[150px]"
+        >
+          <Image src="/red.png" alt="about" width={100} height={100} />
+        </motion.div>
+
+        <motion.div
+          drag
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
+          animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }} // Loop movement
+          transition={{
+            repeat: Infinity,
+            duration: 3, // Slower animation
+            ease: "easeInOut",
+          }}
+          className="absolute top-[25%] right-[20%]"
+        >
+          <Image src="/yello.png" alt="about" width={100} height={100} />
+        </motion.div>
+
+        <motion.div
+          drag
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
+          animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }} // Loop movement
+          transition={{
+            repeat: Infinity,
+            duration: 3, // Slower animation
+            ease: "easeInOut",
+          }}
+          className="absolute top-[3%] right-[5%]"
+        >
+          <Image src="/white.png" alt="about" width={100} height={100} />
+        </motion.div>
+
         {/* Background Image */}
         <Image
           src="/Hero_Bg.png"
@@ -172,12 +228,16 @@ export default function Home() {
                   ease: "easeOut",
                 }}
                 className="cursor-pointer"
+                style={{
+                  cursor:
+                    'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
+                }}
               >
                 <div
                   key={index}
                   className={`rounded-md overflow-hidden flex items-center justify-center`}
                 >
-                   <Link href={`/products/${flavour.slug}`} key={index}>
+                  <Link href={`/products/${flavour.slug}`} key={index}>
                     <img
                       src={
                         flavour.featured_image

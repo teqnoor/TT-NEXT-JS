@@ -35,15 +35,15 @@ export default function BlogClient({ slug }) {
         >
           <div className="bg-[#97E0FF] max-w-6xl mx-auto flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
             <div className="p-[20px] mb-[10px] md:mb-[20px] md:p-[50px]">
-              <h1 className="font-fields font-extrabold text-[32px] text-[#220016] mb-5">
-                Blog Slug: {slug}
+              <h1 className="eczar font-extrabold text-[54px] text-[#220016] mb-5">
+                Blog : {slug}
               </h1>
 
-              <h2 className="font-fields font-extrabold text-[20px]">
+              <h2 className="eczar font-extrabold text-[16px]">
                 Summary
               </h2>
 
-              <p>
+              <p className="text-[14px] font-light">
                 Japanese food has become one of the fastest-growing culinary
                 trends in the UK, driven by diners' shift towards lighter,
                 cleaner meals and increased cultural exposure through media and

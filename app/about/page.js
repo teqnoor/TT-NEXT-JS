@@ -74,7 +74,7 @@ export default function AboutPage() {
         >
           <div className="max-w-5xl mx-auto text-center px-6 md:px-0 ">
             <h6 className="text-[20px] text-[#220016]">About us</h6>
-            <h1 className="eczar font-semibold text-[32px] text-[#220016]">
+            <h1 className="eczar font-semibold text-[64px] text-[#220016]">
               Who We Are
             </h1>
             <p>

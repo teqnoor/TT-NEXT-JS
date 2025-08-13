@@ -50,12 +50,12 @@ export default function BlogsPage() {
 
   return (
     <>
-      <section className="py-12">
+      <section className="py-6 px-6 md:px-0">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
-          <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
+          <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center">
             <div>
               <h2 className="eczar font-semibold text-[32px] text-[#220016]">
                 Latest Blogs
@@ -66,7 +66,7 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      <section className="py-4">
+      <section className="py-6">
         <div className="max-w-6xl mx-auto px-6 md:px-0">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {blogs.map((blog, index) => (

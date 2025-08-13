@@ -9,15 +9,7 @@ export default function Footer() {
 
   return (
     <footer
-      className={`text-[#220016] pt-10 pb-4 text-sm font-outfit px-6 md:px-0 ${
-        pathname === "/products/featured"
-          ? "bg-[#ECD3FF]"
-          : pathname !== "/" &&
-            pathname !== "/blogs" &&
-            !/^\/blogs\/[^/]+$/.test(pathname)
-          ? "bg-[#fff0b4]"
-          : ""
-      }`}
+      className={`text-[#220016] pt-10 pb-4 text-sm font-outfit px-6 md:px-0 bg-[#FFF7D8]`}
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}

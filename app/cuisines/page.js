@@ -58,7 +58,7 @@ export default function CuisinesPage() {
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
           <div className="max-w-5xl mx-auto text-center px-6 md:px-0">
-            <h1 className="eczar font-semibold text-[54px] md:text-[64px] text-[#220016]">
+            <h1 className="eczar font-semibold text-[54px] md:text-[6 4px] text-[#220016]">
               Cuisine
             </h1>
           </div>

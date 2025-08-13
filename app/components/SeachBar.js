@@ -37,7 +37,7 @@ export default function SearchBox() {
     <div className="relative hidden md:flex flex-col items-start z-50">
       {/* Search Input */}
       <div className="flex items-center bg-[#40023F] rounded-full px-[10px] py-[14px] w-[320px]">
-        <FaMagnifyingGlass className="text-white text-sm mr-[10px]" />
+        <FaMagnifyingGlass className="text-white text-sm mr-[10px] ms-[10px]" size={20} />
         <input
           type="text"
           placeholder="Search"
