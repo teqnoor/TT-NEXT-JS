@@ -28,7 +28,7 @@ export default function ProductFeaturedPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#ECD3FF]">
+      <section className="py-12 bg-[#FFF7D8]">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
@@ -46,7 +46,7 @@ export default function ProductFeaturedPage() {
         </div>
       </section>
 
-      <section className="py-4 bg-[#ECD3FF]">
+      <section className="py-4 bg-[#FFF7D8]">
         {/* Grid Content */}
 
         <div className="max-w-6xl mx-auto">
@@ -122,7 +122,7 @@ export default function ProductFeaturedPage() {
         </div>
       </section>
 
-      <section className="py-4 bg-[#ECD3FF]">
+      <section className="py-4 bg-[#FFF7D8]">
         {/* Grid Content */}
 
         <div className="max-w-6xl mx-auto">

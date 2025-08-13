@@ -53,7 +53,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#fff0b4] relative">
+      <section className="py-12 bg-[#FFF7D8] relative">
         <motion.div
           drag
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
@@ -101,7 +101,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#fff0b4] px-6 md:px-0 relative">
+      <section className="py-12 bg-[#FFF7D8] px-6 md:px-0 relative">
         <motion.div
           drag
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
@@ -156,7 +156,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#fff0b4] px-6 md:px-0">
+      <section className="py-12 bg-[#FFF7D8] px-6 md:px-0">
         <div className="bg-[#FEE600] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl  max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
             {/* Right Side */}
@@ -195,7 +195,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#fff0b4] px-6 md:px-0">
+      <section className="py-12 bg-[#FFF7D8] px-6 md:px-0">
         <div className="max-w-6xl mx-auto text-center">
           <h6 className="text-[20px] text-[#220016]">Ok but why</h6>
           <h1 className="eczar font-semibold text-[50px] text-[#220016]">
@@ -205,7 +205,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-4 bg-[#fff0b4] px-6 md:px-0">
+      <section className="py-4 bg-[#FFF7D8] px-6 md:px-0">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {blogs.map((blog, index) => (
@@ -227,7 +227,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#fff0b4] px-6 md:px-0">
+      <section className="py-12 bg-[#FFF7D8] px-6 md:px-0">
         <div className="max-w-6xl mx-auto text-center">
           <h6 className="text-[20px] text-[#220016]">
             Want to know more about us?
@@ -246,7 +246,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#fff0b4] py-4 px-6 md:px-0">
+      <section className="bg-[#FFF7D8] py-4 px-6 md:px-0">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-[#9CD3D1] border border-black rounded-lg p-6">
             <h3 className="font-bold text-lg mb-2">Cultural Expertise</h3>

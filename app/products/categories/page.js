@@ -39,7 +39,7 @@ export default function ProductsPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#fff0b4]">
+      <section className="py-12 bg-[#FFF7D8]">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
@@ -64,7 +64,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="py-4 bg-[#fff0b4] px-6 md:px-0">
+      <section className="py-4 bg-[#FFF7D8] px-6 md:px-0">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
           <h2 className="eczar font-semibold text-[32px] mb-5 text-[#220016]">
