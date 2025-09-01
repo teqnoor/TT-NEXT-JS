@@ -14,15 +14,19 @@ export default function ProductRangerSlider() {
   return (
     <div className="max-w-6xl mx-auto py-12">
       <Swiper
-        slidesPerView={3}       // always 3 visible
-        spaceBetween={24}       // spacing between cards
-        loop={true}             // optional: keeps sliding infinitely
-        grabCursor={true}
+        loop
+        grabCursor
+        spaceBetween={24}
+        breakpoints={{
+          0: { slidesPerView: 1 },     // 📱 mobile
+          640: { slidesPerView: 2 },   // small tablets
+          1024: { slidesPerView: 3 },  // desktops
+        }}
         className="range-swiper pb-10"
       >
         {products.map((p, i) => (
           <SwiperSlide key={i}>
-            <div className="relative h-[380px] md:h-[420px] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative h-[320px] md:h-[420px] rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src={p.image}
                 alt={p.name}
@@ -31,7 +35,7 @@ export default function ProductRangerSlider() {
               {/* FULL WIDTH LABEL */}
               <div className="absolute bottom-5 left-0 right-0 px-6">
                 <div className="w-full bg-[#FCE7A2] rounded-xl py-3 text-center shadow-md">
-                  <p className="text-base md:text-lg font-semibold text-black">
+                  <p className="text-sm md:text-lg font-semibold text-black">
                     {p.name}
                   </p>
                 </div>

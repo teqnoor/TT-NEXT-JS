@@ -272,13 +272,13 @@ export default function Home() {
           {/* Bottom Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
             <div className="flex flex-col items-center border-b md:border-b-0 md:border-r border-white/40 pb-4 md:pb-0">
-              <p className="font-bold text-[32px]">100% Real Fruit</p>
+              <p className="font-bold text-[24px] md:text-[32px]">100% Real Fruit</p>
             </div>
             <div className="flex flex-col items-center border-b md:border-b-0 md:border-r border-white/40 pb-4 md:pb-0">
-              <p className="font-bold text-[32px]">No Added Sugar</p>
+              <p className="font-bold text-[24px] md:text-[32px]">No Added Sugar</p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="font-bold text-[32px]">Never From Concentrate</p>
+              <p className="font-bold text-[24px] md:text-[32px]">Never From Concentrate</p>
             </div>
           </div>
         </div>
@@ -287,58 +287,61 @@ export default function Home() {
       {/* Product Range  */}
       <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto">
-          {/* Heading */}
-          <div className="flex justify-between items-center">
+          {/* Heading row */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
-              <h2 className="eczar font-semibold text-[64px] text-[#30523E]">
+              <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 Popular Ranges
               </h2>
-              <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+              <p className="text-sm md:text-base text-[#220016] mt-1 mb-4 md:mb-8">
                 Our most popular product line up.
               </p>
             </div>
 
-            <a className="bg-[#F1D98F] px-6 py-4 rounded-sm">View All</a>
+            <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
+              View All
+            </a>
           </div>
-          <ProductRangerSlider />
+
+          <div className="mt-4 md:mt-0">
+            <ProductRangerSlider />
+          </div>
         </div>
       </section>
 
       {/* Crammid Section */}
-      <section className="py-12 px-6 md:px-0">
-        {/* Overlay */}
+      <section className="py-12">
+        {/* Large banner only on desktop to avoid huge mobile scroll */}
         <Image
           src="/cramid.jpg"
-          alt="about"
-          width={100}
-          height={100}
-          className="w-full h-full"
+          alt="Crammid"
+          width={1600}
+          height={600}
+          className="w-full h-auto"
         />
         <Image
           src="/cramid-footer.png"
-          alt="about"
-          width={100}
-          height={100}
-          className="w-full"
+          alt="Crammid footer"
+          width={1600}
+          height={200}
+          className="w-full h-auto"
         />
 
         <div className="max-w-6xl mx-auto px-4">
-          {/* Grid */}
           <ul
             className="
-            grid gap-x-8 gap-y-12
-            grid-cols-2 md:grid-cols-3 lg:grid-cols-4
-            place-items-center
-          "
+        grid place-items-center
+        grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+        gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-12
+      "
           >
             {items.map((p) => (
               <li key={p.name} className="w-full flex flex-col items-center">
-                {/* Image box with fixed visual size so all rows align */}
                 <div
                   className="
-                  w-[210px] h-[250px]
-                  flex items-end justify-center
-                "
+              w-[150px] h-[180px] md:w-[210px] md:h-[250px]
+              flex items-end justify-center
+            "
                 >
                   <img
                     src={p.image}
@@ -348,11 +351,7 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Caption */}
-                <p
-                  className="mt-3 text-center text-[15px] md:text-base font-semibold tracking-tight
-                             text-[#2F5D27]"
-                >
+                <p className="mt-3 text-center text-sm md:text-base font-semibold tracking-tight text-[#2F5D27]">
                   {p.name}
                 </p>
               </li>
@@ -362,7 +361,7 @@ export default function Home() {
       </section>
 
       {/* Wow Chow Section */}
-      <section className="py-12 px-6 md:px-0">
+      <section className="py-12">
         {/* Overlay */}
         <Image
           src="/wow_chow_bg.png"
@@ -415,7 +414,7 @@ export default function Home() {
       <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="eczar font-semibold text-[64px] text-[#30523E]">
+          <h2 className="eczar font-semibold text-[32px] md:text-[64px] text-[#30523E]">
             We have a lot more to offer
           </h2>
           <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
@@ -435,17 +434,20 @@ export default function Home() {
       {/* Categories Section */}
       <section className="py-12">
         {/* Header Row */}
-        <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6 px-6 md:px-0">
           <div>
-            <h2 className="eczar  text-[32px] text-[#220016]">
+            <h2 className="eczar text-2xl md:text-[32px] text-[#220016]">
               Product Categories
             </h2>
-            <p>
+            <p className="text-sm md:text-base">
               We have wide variety of products ranging from drinks to noodles
               and frozen. You name it, we got it.
             </p>
           </div>
-          <a href="#" className="text-sm text-[#220016] underline">
+          <a
+            href="#"
+            className="text-sm text-[#220016] underline self-start md:self-auto"
+          >
             All Categories
           </a>
         </div>
@@ -480,20 +482,27 @@ export default function Home() {
             up your taste game?
           </p>
 
-
           {/* Bottom Features */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
             <div className="flex flex-col items-center  pb-4 md:pb-0">
-              <p className="font-bold text-[24px] text-black">200+ <br /> Products</p>
+              <p className="font-bold text-[24px] text-black">
+                200+ <br /> Products
+              </p>
             </div>
             <div className="flex flex-col items-center  pb-4 md:pb-0">
-              <p className="font-bold text-[24px] text-black">Competitive <br /> Prices</p>
+              <p className="font-bold text-[20px] md:text-[24px] text-black">
+                Competitive <br /> Prices
+              </p>
             </div>
             <div className="flex flex-col items-center pb-4 md:pb-0">
-              <p className="font-bold text-[24px] text-black">1000+ <br /> UK F&B Businesses <br /> Served</p>
+              <p className="font-bold text-[20px] md:text-[24px] text-black">
+                1000+ <br /> UK F&B Businesses <br /> Served
+              </p>
             </div>
-             <div className="flex flex-col items-center pb-4 md:pb-0">
-              <p className="font-bold text-[24px] text-black">Bulk <br /> Orders</p>
+            <div className="flex flex-col items-center pb-4 md:pb-0">
+              <p className="font-bold text-[20px] md:text-[24px] text-black">
+                Bulk <br /> Orders
+              </p>
             </div>
           </div>
         </div>
