@@ -9,14 +9,20 @@ import { HiOutlineArrowRight } from "react-icons/hi";
 import { FiArrowUpRight } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import ProductRangerSlider from "./components/ProductRangeSlider";
 
 export default function Home() {
   const [data, setData] = useState([]);
   const [pulpData, setPulpData] = useState([]);
 
+  const items = [
+    { name: "Mixed Seeds & Nuts", image: "/1.png" },
+    { name: "Pumpkin Seeds & Peanuts", image: "/2.png" },
+    { name: "Sesame Seeds & Peanuts", image: "/3.png" },
+    { name: "Sunflower Seeds & Peanuts", image: "/4.png" },
+  ];
+
   useEffect(() => {
-    // Make sure this URL matches the backend route
-    // fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`)
     fetch(`https://tigertigerfoods.com/api/get-categories`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
@@ -201,16 +207,24 @@ export default function Home() {
       <BrandsSlider />
 
       {/* Flavours Section */}
-      <section className="py-12">
-        <div className="max-w-6xl mx-auto text-center md:text-left px-6 md:px-0">
-          <h2 className="eczar text-2xl md:text-3xl  text-[#220016] mb-2">
+      <section
+        className="relative py-16 bg-cover bg-center"
+        style={{ backgroundImage: "url('/flavour_bg.png')" }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[#405305]/90"></div>
+
+        <div className="relative max-w-6xl mx-auto px-6 md:px-0">
+          {/* Title */}
+          <h2 className="eczar text-2xl md:text-3xl text-white mb-2">
             4 Amazing Flavours
           </h2>
-          <p className="text-sm text-[#220016] mb-6">
+          <p className="text-sm text-white mb-10">
             Pulp+ now available in 4 amazing flavours, Mango, Lychee, Guava and
             Coconut water. Made with real fruit with pulp.
           </p>
 
+          {/* Flavours Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {pulpData.map((flavour, index) => (
               <motion.div
@@ -252,121 +266,174 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Award Section */}
-      <section className="py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center border border-black bg-[#FFF0B4] py-0">
-          {/* Left Text Content */}
-          <div className="w-full md:w-1/2 p-6 space-y-4">
-            <h2 className="eczar text-[32px] md:text-[24px]  text-[#220016] ">
-              Tiger Tiger’s Pulp+ Mango Awarded 'Best Fruit Juice Drink' at UK
-              Soft Drinks Awards 2025
-            </h2>
-            <p className="text-sm md:text-base text-[#220016] leading-[2]">
-              We're absolutely thrilled to share some fantastic news. Our Pulp+
-              Mango has just scooped up the 'Best Fruit Juice Drink' award at
-              the 2025 UK Soft Drinks Awards by FoodBev Awards! This recognition
-              means the world to us, especially coming from such a respected
-              industry event that celebrates the very best in innovation and
-              quality across the UK's competitive soft drinks scene. The award
-              was presented at the UK Soft Drinks Conference, where all the
-              industry's top players – from producers and retailers to the
-              brilliant minds shaping the future of beverages – come together to
-              celebrate what's next. It's incredible validation that our
-              commitment to creating drinks people genuinely love is hitting the
-              mark. Here's to many more sips of award-winning goodness!
-            </p>
-            {/* Buttons */}
-            <div className="flex gap-4 pt-2">
-              <button className="border border-[#220016] px-6 py-2 rounded-full font-medium hover:bg-[#220016] hover:text-white transition">
-                Read More
-              </button>
-              <button className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#2c012b] transition">
-                Discover Pulp+
-              </button>
+          <div className="my-12"></div>
+
+          {/* Bottom Features */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+            <div className="flex flex-col items-center border-b md:border-b-0 md:border-r border-white/40 pb-4 md:pb-0">
+              <p className="font-bold text-[32px]">100% Real Fruit</p>
+            </div>
+            <div className="flex flex-col items-center border-b md:border-b-0 md:border-r border-white/40 pb-4 md:pb-0">
+              <p className="font-bold text-[32px]">No Added Sugar</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <p className="font-bold text-[32px]">Never From Concentrate</p>
             </div>
           </div>
-
-          {/* Right Image */}
-          <div className="w-full md:w-1/2">
-            <Image
-              src="/pulp_award.jpg"
-              alt="Pulp+ Award"
-              width={700}
-              height={700}
-              className=" object-contain"
-            />
-          </div>
         </div>
       </section>
 
-      {/* Range Section */}
+      {/* Product Range  */}
       <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h2 className="eczar font-semibold text-[32px] text-[#220016]">
-            Discover our range
-          </h2>
+          <div className="flex justify-between items-center">
+            <div>
+              <h2 className="eczar font-semibold text-[64px] text-[#30523E]">
+                Popular Ranges
+              </h2>
+              <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+                Our most popular product line up.
+              </p>
+            </div>
 
+            <a className="bg-[#F1D98F] px-6 py-4 rounded-sm">View All</a>
+          </div>
+          <ProductRangerSlider />
+        </div>
+      </section>
+
+      {/* Crammid Section */}
+      <section className="py-12 px-6 md:px-0">
+        {/* Overlay */}
+        <Image
+          src="/cramid.jpg"
+          alt="about"
+          width={100}
+          height={100}
+          className="w-full h-full"
+        />
+        <Image
+          src="/cramid-footer.png"
+          alt="about"
+          width={100}
+          height={100}
+          className="w-full"
+        />
+
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Grid */}
+          <ul
+            className="
+            grid gap-x-8 gap-y-12
+            grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+            place-items-center
+          "
+          >
+            {items.map((p) => (
+              <li key={p.name} className="w-full flex flex-col items-center">
+                {/* Image box with fixed visual size so all rows align */}
+                <div
+                  className="
+                  w-[210px] h-[250px]
+                  flex items-end justify-center
+                "
+                >
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="max-h-full max-w-full object-contain drop-shadow-md"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Caption */}
+                <p
+                  className="mt-3 text-center text-[15px] md:text-base font-semibold tracking-tight
+                             text-[#2F5D27]"
+                >
+                  {p.name}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Wow Chow Section */}
+      <section className="py-12 px-6 md:px-0">
+        {/* Overlay */}
+        <Image
+          src="/wow_chow_bg.png"
+          alt="about"
+          width={100}
+          height={100}
+          className="w-full h-full"
+        />
+
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Grid */}
+          <ul
+            className="
+            grid gap-x-8 gap-y-12
+            grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+            place-items-center
+          "
+          >
+            {items.map((p) => (
+              <li key={p.name} className="w-full flex flex-col items-center">
+                {/* Image box with fixed visual size so all rows align */}
+                <div
+                  className="
+                  w-[210px] h-[250px]
+                  flex items-end justify-center
+                "
+                >
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="max-h-full max-w-full object-contain drop-shadow-md"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Caption */}
+                <p
+                  className="mt-3 text-center text-[15px] md:text-base font-semibold tracking-tight
+                             text-[#2F5D27]"
+                >
+                  {p.name}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* We Offer Alot Section  */}
+      <section className="py-12 px-6 md:px-0">
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Heading */}
+          <h2 className="eczar font-semibold text-[64px] text-[#30523E]">
+            We have a lot more to offer
+          </h2>
           <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
-            From Drinks to Sauces, Tiger Tiger Foods has it all for you
+            Tiger Tiger Food has more than 200 products from wide variety of
+            ranges.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-            {/* Card Template */}
-            {[
-              { title: "Wow Chow Noodles", image: "/wow.jpg" },
-              { title: "Bubble Tea", image: "/buble_tea.jpg" },
-              { title: "Coco Choo Drink", image: "/cococho.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-            ].map((card, i) => (
-              <motion.div
-                key={i}
-                whileHover={{
-                  scale: [null, 1.05],
-                  transition: {
-                    duration: 0.2,
-                    times: [0, 0.6],
-                    ease: ["easeInOut", "easeOut"],
-                  },
-                }}
-                transition={{
-                  duration: 0.2,
-                  ease: "easeOut",
-                }}
-                className="cursor-pointer"
-                style={{
-                  cursor:
-                    'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
-                }}
-              >
-                <div
-                  key={i}
-                  className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
-                  style={{ backgroundImage: `url('${card.image}')` }}
-                >
-                  <span className="absolute bottom-[5%] left-5 right-5 px-[5%] bg-white text-[#220016] font-semibold text-[18px] py-2 text-center eczar">
-                    {card.title}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Button */}
-          <button className="border border-[#220016] px-2 py-2 rounded-full font-medium text-[#220016] hover:bg-[#220016] hover:text-white transition flex items-center gap-2 mx-auto">
-            Discover All Ranges
-            <span className="w-7 h-7 flex items-center justify-center bg-[#220016] text-white rounded-full">
-              <HiOutlineArrowRight size={16} />
-            </span>
-          </button>
+          <Link
+            href={"/products"}
+            className="bg-[#F1D98F] px-6 py-4 rounded-sm"
+          >
+            Browse all products
+          </Link>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section className="bg-[#FFFCF5] py-12">
+      <section className="py-12">
         {/* Header Row */}
         <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
@@ -387,177 +454,47 @@ export default function Home() {
         <CategoryMarquee categories={data} />
       </section>
 
-      {/* Wow Chow Section */}
-      <section className=" py-12 hidden md:block">
-        {/* Grid Content */}
-        <div className="max-w-6xl mx-auto flex md:flex-row flex-col gap-3">
-          {/* Left Images */}
-          <div className="flex flex-col justify-end">
-            <motion.div
-              whileHover={{
-                rotate: 5,
-                scale: 1.05,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 600,
-                damping: 25,
-                duration: 0.2,
-              }}
-            >
-              <Image
-                src="/wowchow/4.png"
-                alt="wow1"
-                width={300}
-                height={350}
-                className="rounded-md mb-4 object-cover ml-auto"
-              />
-            </motion.div>
-
-            <motion.div
-              whileHover={{
-                rotate: 5,
-                scale: 1.05,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 600,
-                damping: 25,
-                duration: 0.2,
-              }}
-            >
-              <Image
-                src="/wowchow/5.png"
-                alt="wow2"
-                width={345}
-                height={150}
-                className="rounded-md object-cover"
-              />
-            </motion.div>
-          </div>
-
-          {/* Center Image and Text */}
-          <div className="flex flex-col justify-center items-center">
-            <h3 className="text-5xl font-extrabold text-[#220016] mb-2 text-[44px] eczar">
-              Put WOW in <br /> Your Chow
-            </h3>
-            <button className="mt-0 mb-6 text-sm underline text-[#220016] mb-3">
-              Discover Wow Chow
-            </button>
-            <motion.div
-              whileHover={{
-                rotate: 5,
-                scale: 1.05,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 600,
-                damping: 25,
-                duration: 0.2,
-              }}
-            >
-              <Image
-                src="/wowchow/1.png"
-                alt="wow2"
-                width={415}
-                height={300}
-                className="rounded-md  object-cover"
-              />
-            </motion.div>
-          </div>
-
-          {/* Right Images */}
-          <div className="flex flex-col">
-            <motion.div
-              whileHover={{
-                rotate: 5,
-                scale: 1.05,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 600,
-                damping: 25,
-                duration: 0.2,
-              }}
-            >
-              <Image
-                src="/wowchow/3.png"
-                alt="wow3"
-                width={250}
-                height={260}
-                className="rounded-md mb-4  object-cover"
-              />
-            </motion.div>
-
-            <motion.div
-              whileHover={{
-                rotate: 5,
-                scale: 1.05,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 600,
-                damping: 25,
-                duration: 0.2,
-              }}
-            >
-              <Image
-                src="/wowchow/4.png"
-                alt="wow4"
-                width={310}
-                height={250}
-                className="rounded-md object-cover"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Japanese Range Section */}
+      {/* We Offer Alot Section  */}
       <section className="py-12 px-6 md:px-0">
-        {/* Header */}
-        <div className="max-w-6xl mx-auto mb-8">
-          <h2 className="eczar  text-[32px] text-[#220016]">
-            Discover our Japanese Range
-          </h2>
-
-          <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
-            Tiger Tiger Foods own Taste Japan range of authentic Japanese
-            products that will take your Japanese dishes to the next level
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Heading */}
+          <Image
+            src="/logo.png"
+            alt="Tiger Tiger Logo"
+            width={250}
+            height={40}
+            className="mx-auto" // 👈 centers the logo
+          />
+          <p className="text-sm md:text-base text-[#220016] mt-8 mb-8">
+            We're obsessed with bringing you the real deal, authentic Asian
+            flavours that actually slap. From Japanese classics to spicy Thai
+            hits, plus all your Chinese and Indian favourites, we've curated a
+            line-up that's basically your passport to flavour town. Every single
+            ingredient we use? Premium quality, no compromises. We're not just
+            making food, we're crafting experiences that'll have you coming back
+            for more. Think restaurant-level taste without the restaurant
+            prices, because good food shouldn't break the bank. Tiger Tiger
+            Foods is where authenticity meets accessibility. We're on a mission
+            to deliver those bold, crave-worthy flavours straight to your
+            kitchen, because life's too short for boring meals. Ready to level
+            up your taste game?
           </p>
-        </div>
 
-        {/* Image Section */}
-        <div className="max-w-6xl mx-auto">
-          <div
-            className="relative cursor-pointer"
-            style={{
-              cursor:
-                'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
-            }}
-            onClick={() => {
-              // Add your click handler here
-              console.log("Navigate to Japanese Range");
-            }}
-          >
-            <img
-              src="/jk_banner.jpg"
-              alt="Japanese Range"
-              className="rounded-lg object-cover w-full h-[550px]"
-            />
-            {/* Button in Top-Right corner */}
-            <button
-              className="absolute top-4 right-4 bg-[#fff] hover:bg-[#40023F] text-[#000] hover:text-[#fff] px-6 py-2 rounded-full font-medium flex items-center gap-2 cursor-pointer pointer-events-none"
-              style={{
-                cursor:
-                  'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
-              }}
-            >
-              Discover Japanese Range
-              <span className="flex items-center justify-center  text-black rounded-full">
-                <FiArrowUpRight size={20} />
-              </span>
-            </button>
+
+          {/* Bottom Features */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
+            <div className="flex flex-col items-center  pb-4 md:pb-0">
+              <p className="font-bold text-[24px] text-black">200+ <br /> Products</p>
+            </div>
+            <div className="flex flex-col items-center  pb-4 md:pb-0">
+              <p className="font-bold text-[24px] text-black">Competitive <br /> Prices</p>
+            </div>
+            <div className="flex flex-col items-center pb-4 md:pb-0">
+              <p className="font-bold text-[24px] text-black">1000+ <br /> UK F&B Businesses <br /> Served</p>
+            </div>
+             <div className="flex flex-col items-center pb-4 md:pb-0">
+              <p className="font-bold text-[24px] text-black">Bulk <br /> Orders</p>
+            </div>
           </div>
         </div>
       </section>
