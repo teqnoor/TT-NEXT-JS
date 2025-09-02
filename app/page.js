@@ -209,10 +209,8 @@ export default function Home() {
       {/* Flavours Section */}
       <section
         className="relative py-16 bg-cover bg-center"
-        style={{ backgroundImage: "url('/flavour_bg.png')" }}
+        style={{ backgroundImage: "url('/flavour_bg.jpg')" }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-[#405305]/90"></div>
 
         <div className="relative max-w-6xl mx-auto px-6 md:px-0">
           {/* Title */}
