@@ -11,6 +11,7 @@ export default function SearchBox() {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const loaderRef = useRef(null);
+  const wrapperRef = useRef(null); // wrapper ref
 
   // Fetch products from API
   const fetchProducts = async (reset = false) => {
@@ -19,9 +20,7 @@ export default function SearchBox() {
     try {
       const response = await axios.get(
         "https://tigertigerfoods.com/api/get-products",
-        {
-          params: { search: searchTerm, page },
-        }
+        { params: { search: searchTerm, page } }
       );
 
       if (response.data.success) {
@@ -29,7 +28,6 @@ export default function SearchBox() {
 
         setResults((prev) => {
           const combined = reset ? newProducts : [...prev, ...newProducts];
-          // 🔑 remove duplicates by product id
           const unique = combined.filter(
             (item, index, self) =>
               index === self.findIndex((p) => p.id === item.id)
@@ -37,16 +35,23 @@ export default function SearchBox() {
           return unique;
         });
 
-        // stop scrolling if we already loaded all (<= total 5 items in your case)
-        setHasMore(
-          newProducts.length > 0 && results.length + newProducts.length < 50
-        );
+        // ✅ Hide loader when no new products come back
+        if (!newProducts.length) {
+          setHasMore(false);
+        } else {
+          // ✅ If we already loaded all 5 items (your DB example), stop further loading
+          setHasMore(
+            (reset ? newProducts.length : results.length + newProducts.length) <
+              5
+          );
+        }
       } else {
         if (reset) setResults([]);
         setHasMore(false);
       }
     } catch (error) {
       console.error("Error fetching products:", error);
+      setHasMore(false);
     }
   };
 
@@ -55,7 +60,7 @@ export default function SearchBox() {
     if (searchTerm.length > 0) {
       setShowDropdown(true);
       setPage(1);
-      fetchProducts(true); // reset results
+      fetchProducts(true);
     } else {
       setShowDropdown(false);
       setResults([]);
@@ -65,7 +70,6 @@ export default function SearchBox() {
   // Infinite Scroll Observer
   useEffect(() => {
     if (!loaderRef.current) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && hasMore) {
@@ -74,21 +78,33 @@ export default function SearchBox() {
       },
       { threshold: 1 }
     );
-
     observer.observe(loaderRef.current);
-
     return () => observer.disconnect();
   }, [loaderRef.current, hasMore]);
 
   // Fetch more when page increases
   useEffect(() => {
-    if (page > 1) {
-      fetchProducts();
-    }
+    if (page > 1) fetchProducts();
   }, [page]);
 
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative hidden md:flex flex-col items-start z-50">
+    <div
+      ref={wrapperRef}
+      className="relative hidden md:flex flex-col items-start z-50"
+    >
       {/* Search Input */}
       <div className="flex items-center bg-[#40023F] rounded-full px-[10px] py-[14px] w-[320px]">
         <FaMagnifyingGlass
@@ -105,15 +121,12 @@ export default function SearchBox() {
       </div>
 
       {showDropdown && (
-        <div className="absolute top-full mt-2 w-[320px] z-10 max-h-[400px] overflow-auto">
+        <div className="absolute top-full mt-2 w-[320px] z-10 max-h-[400px] overflow-auto scrollbar-thin scrollbar-thumb-[#40023F] scrollbar-track-gray-100">
           <div className="bg-white rounded-xl border-[2px] border-[#40023F] shadow-[-3px_3px_0px_0px_#000000]">
             {results.length > 0 ? (
               results.map((item) => (
                 <Link href={`/products/${item.slug}`} key={item.id}>
-                  <div
-                    key={item.id}
-                    className="flex items-center p-3 hover:bg-gray-100 rounded-xl cursor-pointer"
-                  >
+                  <div className="flex items-center p-3 hover:bg-gray-100 rounded-xl cursor-pointer">
                     <img
                       src={item.featured_image || item.images}
                       alt={item.name}
@@ -132,7 +145,7 @@ export default function SearchBox() {
               <div className="p-3 text-gray-500 text-sm">No results found</div>
             )}
 
-            {/* Loader / Observer */}
+            {/* Loader */}
             {hasMore && (
               <div
                 ref={loaderRef}
