@@ -11,9 +11,42 @@ export default function ProductDetail({ slug }) {
   const [headerHeight, setHeaderHeight] = useState(0);
   const pathname = usePathname();
   const [showAlert, setShowAlert] = useState(false);
+  const [selectedUnit, setSelectedUnit] = useState(null);
+
+  const handleSelectUnit = (unit) => {
+    setSelectedUnit(unit);
+  };
 
   const handleAddToCart = () => {
-    // Perform add-to-cart logic here...
+    if (!selectedUnit) {
+      alert("Please select either Case or Palette before adding to inquiry.");
+      return;
+    }
+    // Store in sessionStorage
+    const cart = JSON.parse(sessionStorage.getItem("inquiry_cart") || "[]");
+    const newQuantity =
+      selectedUnit === "palette" ? product.palette_quantity : 1;
+    const existingItemIndex = cart.findIndex(
+      (item) => item.id === product.id && item.unit === selectedUnit
+    );
+    if (existingItemIndex !== -1) {
+      cart[existingItemIndex].quantity += newQuantity;
+    } else {
+      const item = {
+        id: product.id,
+        name: product.name,
+        unit: selectedUnit,
+        quantity: newQuantity,
+        product_quantity: product.quantity,
+        sku: product.SKU,
+        images: product.images,
+      };
+      cart.push(item);
+    }
+    sessionStorage.setItem("inquiry_cart", JSON.stringify(cart));
+
+    // 🔥 Fire custom event
+    window.dispatchEvent(new Event("cartUpdated"));
     setShowAlert(true);
   };
 
@@ -58,7 +91,6 @@ export default function ProductDetail({ slug }) {
   }, [slug]);
 
   const shouldOffset = pathname !== "/";
-
 
   return (
     <section className="py-12 px-6 md:px-0">
@@ -125,15 +157,34 @@ export default function ProductDetail({ slug }) {
                   ))}
                 </div>
                 <div className="flex gap-4 flex-wrap">
-                  <button className="bg-[#40023F] text-white px-4 py-2 rounded-xl font-medium">
+                  <button
+                    onClick={() => handleSelectUnit("case")}
+                    className={`px-4 py-2 rounded-xl font-medium ${
+                      selectedUnit === "case"
+                        ? "bg-[#40023F] text-white"
+                        : "bg-transparent text-black border-[2px] border-[#40023F]"
+                    }`}
+                  >
                     Case
                   </button>
-                  <button className="bg-transparent text-black border-[2px] border-[#40023F] rounded-xl px-4 py-2 font-medium">
+                  <button
+                    onClick={() => handleSelectUnit("palette")}
+                    className={`px-4 py-2 rounded-xl font-medium ${
+                      selectedUnit === "palette"
+                        ? "bg-[#40023F] text-white"
+                        : "bg-transparent text-black border-[2px] border-[#40023F]"
+                    }`}
+                  >
                     Palette
                   </button>
                   <button
                     onClick={handleAddToCart}
-                    className="bg-[#9747FF] text-white px-4 py-2 rounded-xl font-medium"
+                    disabled={!selectedUnit}
+                    className={`px-4 py-2 rounded-xl font-medium ${
+                      !selectedUnit
+                        ? "bg-gray-400 text-gray-600 cursor-not-allowed"
+                        : "bg-[#9747FF] text-white"
+                    }`}
                   >
                     Add to Inquiry
                   </button>
