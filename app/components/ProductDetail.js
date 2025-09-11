@@ -34,6 +34,7 @@ export default function ProductDetail({ slug }) {
     } else {
       const item = {
         id: product.id,
+        product_id: product.id,
         name: product.name,
         unit: selectedUnit,
         quantity: newQuantity,

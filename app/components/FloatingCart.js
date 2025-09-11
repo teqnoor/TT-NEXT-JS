@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 
@@ -70,23 +71,46 @@ export default function FloatingCart() {
           className="fixed right-[90px] top-1/2 -translate-y-1/2 w-[320px] bg-white/60 backdrop-blur-[16px] rounded-xl z-40 border-[2px] border-[#40023F] shadow-[-3px_3px_0px_0px_#000000]"
         >
           {latestItem ? (
-            <div className="flex items-center p-4">
-              <img
-                src={latestItem.images}
-                alt={latestItem.name}
-                className="w-20 h-20 object-cover rounded-md mr-4"
-              />
-              <div>
-                <div className="font-semibold text-[#40023F]">
-                  {latestItem.name}
-                </div>
-                <div className="text-sm text-gray-700">
-                  {latestItem.product_quantity} ({latestItem.unit})
+            <>
+              <div className="flex items-center p-4 border-b border-[#40023F]/20">
+                <img
+                  src={latestItem.images}
+                  alt={latestItem.name}
+                  className="w-20 h-20 object-cover rounded-md mr-4"
+                />
+                <div>
+                  <div className="font-semibold text-[#40023F]">
+                    {latestItem.name}
+                  </div>
+                  <div className="text-sm text-gray-700">
+                    {latestItem.product_quantity} ({latestItem.unit})
+                  </div>
                 </div>
               </div>
-            </div>
+
+              {/* ✅ View Enquiry link */}
+              <div className="mt-3 mb-3 text-center">
+                <Link
+                  href="/enquiry"
+                  className="text-sm text-[#220016] underline"
+                >
+                  View Enquiry
+                </Link>
+              </div>
+            </>
           ) : (
+            <>
             <div className="p-4 text-center text-gray-600">Cart is empty</div>
+            {/* ✅ View Enquiry link */}
+              <div className="mt-3 mb-3 text-center">
+                <Link
+                  href="/enquiry"
+                  className="text-sm text-[#220016] underline"
+                >
+                  View Enquiry
+                </Link>
+              </div>
+            </>
           )}
         </div>
       )}

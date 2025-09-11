@@ -54,9 +54,7 @@ export default function ProductsPage() {
                 and frozen. You name it, we got it.
               </p>
             </div>
-            <a href="#" className="text-sm text-[#220016] underline">
-              All Categories
-            </a>
+            
           </div>
 
           {/* Marquee Category Row */}
