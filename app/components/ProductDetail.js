@@ -2,15 +2,15 @@
 import { useEffect, useState } from "react";
 import RelatedProductsSlider from "./RelatedProduct";
 import { usePathname } from "next/navigation";
-import AlertBar from "./AlertBar";
 import Image from "next/image";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // 👈 import styles
 export default function ProductDetail({ slug }) {
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [headerHeight, setHeaderHeight] = useState(0);
   const pathname = usePathname();
-  const [showAlert, setShowAlert] = useState(false);
   const [selectedUnit, setSelectedUnit] = useState(null);
 
   const handleSelectUnit = (unit) => {
@@ -48,7 +48,11 @@ export default function ProductDetail({ slug }) {
 
     // 🔥 Fire custom event
     window.dispatchEvent(new Event("cartUpdated"));
-    setShowAlert(true);
+     // 👇 show success toast instead of alert
+    toast.success(`Product added to enquiry!`, {
+      position: "top-right",
+      autoClose: 3000,
+    });
   };
 
   useEffect(() => {
@@ -99,11 +103,7 @@ export default function ProductDetail({ slug }) {
         style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
       >
         {/* Alert Bar */}
-        <AlertBar
-          show={showAlert}
-          message="Product added to inquiry cart."
-          onClose={() => setShowAlert(false)}
-        />
+        <ToastContainer />
 
         {/* Loading / No record found / Content */}
         {loading ? (

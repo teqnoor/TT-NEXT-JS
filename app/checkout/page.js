@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // 👈 import styles
 
 export default function CheckoutPage() {
   const pathname = usePathname();
@@ -69,6 +71,13 @@ export default function CheckoutPage() {
         });
         sessionStorage.removeItem("inquiry_cart");
         setCart([]);
+        toast.success(
+          { successMsg },
+          {
+            position: "top-right",
+            autoClose: 3000,
+          }
+        );
       } else {
         setErrors({ general: response.data.message });
       }
@@ -99,14 +108,6 @@ export default function CheckoutPage() {
       setMounted(true);
     }
   }, []);
-
-    // ⏳ Auto-remove after 3 seconds
-  useEffect(() => {
-    if (successMsg) {
-      const timer = setTimeout(() => setSuccessMsg(""), 3000);
-      return () => clearTimeout(timer); // cleanup on unmount
-    }
-  }, [successMsg]);
 
   if (!mounted) return null;
 
@@ -299,9 +300,6 @@ export default function CheckoutPage() {
 
             {errors.general && (
               <p className="text-red-500 text-sm">{errors.general}</p>
-            )}
-            {successMsg && (
-              <p className="text-green-600 font-semibold">{successMsg}</p>
             )}
 
             <button
