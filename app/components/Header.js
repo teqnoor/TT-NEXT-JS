@@ -60,7 +60,7 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <div className="flex items-center justify-between flex-1 gap-4">
-            <nav className="hidden md:flex space-x-[50px] font-medium text-gray-800 relative">
+            <nav className="hidden md:flex space-x-6 font-medium text-gray-800 relative">
               <Link
                 href="/"
                 className={`font-outfit text-[18.04px] text-[#220016] ${
@@ -152,6 +152,14 @@ export default function Header() {
               >
                 Blogs
               </Link>
+              <Link
+                href="/login"
+                className={`font-outfit text-[18.04px] text-[#220016] ${
+                  path === "/login" ? "font-bold" : "font-normal"
+                }`}
+              >
+                Login
+              </Link>
             </nav>
 
             <SearchBox />
@@ -202,6 +210,9 @@ export default function Header() {
               </Link>
               <Link href="/blogs" onClick={() => setMobileMenuOpen(false)}>
                 Blog
+              </Link>
+              <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                Login
               </Link>
             </nav>
           </div>
