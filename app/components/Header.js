@@ -6,15 +6,21 @@ import { useEffect, useRef, useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import SearchBox from "./SeachBar";
 import { usePathname } from "next/navigation";
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // ✅ Track login
   const dropdownRef = useRef(null);
 
   const path = usePathname();
 
   // Close dropdown when clicking outside
   useEffect(() => {
+
+    const token = localStorage.getItem("token"); // set this when user logs in
+    setIsLoggedIn(!!token);
+
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
@@ -32,7 +38,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Header */}
       <div
         className="max-w-6xl mx-auto fixed top-0 left-0 right-0 z-50"
         id="header"
@@ -152,14 +157,27 @@ export default function Header() {
               >
                 Blogs
               </Link>
-              <Link
-                href="/login"
-                className={`font-outfit text-[18.04px] text-[#220016] ${
-                  path === "/login" ? "font-bold" : "font-normal"
-                }`}
-              >
-                Login
-              </Link>
+
+              {/* ✅ Show Dashboard if logged in, else Login */}
+              {isLoggedIn ? (
+                <Link
+                  href="/dashboard"
+                  className={`font-outfit text-[18.04px] text-[#220016] ${
+                    path === "/dashboard" ? "font-bold" : "font-normal"
+                  }`}
+                >
+                  Dashboard
+                </Link>
+              ) : (
+                <Link
+                  href="/login"
+                  className={`font-outfit text-[18.04px] text-[#220016] ${
+                    path === "/login" ? "font-bold" : "font-normal"
+                  }`}
+                >
+                  Login
+                </Link>
+              )}
             </nav>
 
             <SearchBox />
@@ -211,9 +229,20 @@ export default function Header() {
               <Link href="/blogs" onClick={() => setMobileMenuOpen(false)}>
                 Blog
               </Link>
-              <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
-                Login
-              </Link>
+
+              {/* ✅ Mobile view toggle */}
+              {isLoggedIn ? (
+                <Link
+                  href="/dashboard"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Dashboard
+                </Link>
+              ) : (
+                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                  Login
+                </Link>
+              )}
             </nav>
           </div>
         </div>
