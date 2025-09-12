@@ -76,8 +76,8 @@ export default function LoginPage() {
   };
 
   return (
-    <section className="py-12">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8"
+    <section className="py-12 ">
+      <div className="max-w-6xl mx-auto flex flex-col px-6 md:px-0 md:flex-row gap-8"
       style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}>
         <div className="md:w-1/2 flex flex-col gap-6">
           <h6 className="eczar text-[20px] text-[#220016]">Login</h6>

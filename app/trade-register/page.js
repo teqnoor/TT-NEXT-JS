@@ -109,7 +109,7 @@ export default function TradeRegisterPage() {
       {/* Form */}
       <section className="py-12">
         <form onSubmit={handleSubmit}>
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 align-center">
+          <div className="max-w-6xl mx-auto px-6 md:px-0 flex flex-col md:flex-row gap-8 align-center">
             {/* Billing Information */}
             <div className="md:w-1/2 flex flex-col gap-6">
               <h6 className="eczar text-[30px] text-[#220016]">
@@ -336,7 +336,7 @@ export default function TradeRegisterPage() {
             </div>
           </div>
 
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto px-6 md:px-0">
             <button
               type="submit"
               disabled={loading}
