@@ -1,3 +1,4 @@
+// components/Header.jsx
 "use client";
 
 import Link from "next/link";
@@ -10,26 +11,35 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // ✅ Track login
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const dropdownRef = useRef(null);
 
   const path = usePathname();
 
-  // Close dropdown when clicking outside
+  // ✅ Update login status (on mount, on route change, on custom event, on other tabs)
   useEffect(() => {
-
-    const token = localStorage.getItem("token"); // set this when user logs in
-    setIsLoggedIn(!!token);
-
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
+    function checkAuth() {
+      try {
+        const token = localStorage.getItem("token");
+        setIsLoggedIn(!!token);
+      } catch {
+        setIsLoggedIn(false);
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    checkAuth(); // run on mount + whenever path changes (e.g., /login -> /dashboard)
+
+    // Listen for storage changes (other tabs/windows)
+    window.addEventListener("storage", checkAuth);
+
+    // Listen for custom event when login/logout happens in this app
+    window.addEventListener("auth-changed", checkAuth);
+
+    return () => {
+      window.removeEventListener("storage", checkAuth);
+      window.removeEventListener("auth-changed", checkAuth);
+    };
+  }, [path]); // 👈 add path here to re-check on navigation
 
   // Lock background scroll when mobile menu is open
   useEffect(() => {
@@ -50,6 +60,7 @@ export default function Header() {
               alt="Tiger Tiger Logo"
               width={175}
               height={50}
+              priority
             />
           </Link>
 
@@ -58,6 +69,7 @@ export default function Header() {
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               className="text-[#220016] text-3xl"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <HiOutlineX /> : <HiOutlineMenu />}
             </button>
@@ -76,7 +88,7 @@ export default function Header() {
               </Link>
 
               {/* Dropdown */}
-              <div ref={dropdownRef} className="relative ">
+              <div ref={dropdownRef} className="relative">
                 <div
                   onClick={() => setIsOpen((prev) => !prev)}
                   className="cursor-pointer font-outfit font-normal text-[18.04px] text-[#220016]"
@@ -85,11 +97,8 @@ export default function Header() {
                 </div>
 
                 {isOpen && (
-                  <div className="absolute top-full left-0 mt-2  min-w-[150px] z-50">
-                    <div
-                      className="flex flex-col border-2 border-[#40023F] rounded-[8px]
-      bg-[#fff] backdrop-blur-[16px] shadow-[-3px_3px_0_0_#000]"
-                    >
+                  <div className="absolute top-full left-0 mt-2 min-w-[150px] z-50">
+                    <div className="flex flex-col border-2 border-[#40023F] rounded-[8px] bg-[#fff] backdrop-blur-[16px] shadow-[-3px_3px_0_0_#000]">
                       <Link
                         href="/discover"
                         className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
@@ -127,7 +136,7 @@ export default function Header() {
 
               <Link
                 href="/cuisines"
-                className={`font-outfit  text-[18.04px] text-[#220016] ${
+                className={`font-outfit text-[18.04px] text-[#220016] ${
                   path === "/cuisines" ? "font-bold" : "font-normal"
                 }`}
               >
@@ -135,7 +144,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/about"
-                className={`font-outfit  text-[18.04px] text-[#220016] ${
+                className={`font-outfit text-[18.04px] text-[#220016] ${
                   path === "/about" ? "font-bold" : "font-normal"
                 }`}
               >
@@ -143,7 +152,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/contact"
-                className={`font-outfit  text-[18.04px] text-[#220016] ${
+                className={`font-outfit text-[18.04px] text-[#220016] ${
                   path === "/contact" ? "font-bold" : "font-normal"
                 }`}
               >
