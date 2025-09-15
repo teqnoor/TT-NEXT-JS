@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingCart from "./components/FloatingCart";
 import Script from "next/script";
+import Award from "./components/Award";
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
@@ -47,7 +48,8 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="">{children}</main>
         <Footer />
-        <FloatingCart /> {/* ✅ Add cart button here */}
+        <FloatingCart />
+        <Award />
       </body>
     </html>
   );

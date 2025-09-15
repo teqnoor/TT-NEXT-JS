@@ -33,27 +33,27 @@ export default function AboutPage() {
       title: "High Quality",
       description:
         "Tiger Tiger UK stands as a steadfast assurance of top-tier quality for both its ingredients and culinary offerings. We take pride in ensuring the authentic taste of pan-Asian cuisine, meticulously developed and sourced from the Far East. Our commitment extends across borders, bringing genuine and premium products to discerning palates in the UK, Europe, and the Americas. Embrace the essence of true pan-Asian flavours with Tiger Tiger UK, where quality meets authenticity on a global culinary journey.",
-      color: "#FFFFFF99",
+      color: "#FF7373",
     },
     {
       slug: "simple-japanese-dips-tiger-sauces",
       title: "Competitive Prices",
       description:
         "At Tiger Tiger UK, we take pride in offering not only exceptional quality but also competitive prices. By strategically sourcing, developing, and efficiently managing our supply chain, we aim to make authentic pan-Asian culinary experiences accessible to a wider audience. Ensuring that Tiger Tiger UK is a winning combination of premium quality and competitive pricing, making your culinary journey both delightful and cost-effective.",
-      color: "#97E0FF",
+      color: "#84EBE8",
     },
     {
       slug: "rise-of-japanese-cuisine-uk",
       title: "Mesmerising Taste",
       description:
         "Tiger Tiger UK helps create delectable dishes with carefully selected ingredients to bring you the authentic taste of Asia, no matter where you are. From our irresistibly flavourful sauces, pastes, and curries to our tempting range of frozen foods, main products and all the essential ingredients, each item is designed to make every bite an irresistible journey into the heart of Asian cuisine.",
-      color: "#E597FF",
+      color: "#CBE22F",
     },
   ];
 
   return (
     <>
-      <section className="py-12 bg-[#FFF7D8] relative">
+      <section className="py-12 relative">
         <motion.div
           drag
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
@@ -101,7 +101,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#FFF7D8] px-6 md:px-0 relative">
+      <section className="py-12 px-6 md:px-0 relative">
         <motion.div
           drag
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
@@ -156,7 +156,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#FFF7D8] px-6 md:px-0">
+      <section className="py-12  px-6 md:px-0">
         <div className="bg-[#FEE600] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl  max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
             {/* Right Side */}
@@ -195,24 +195,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#FFF7D8] px-6 md:px-0">
+      <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto text-center">
           <h6 className="text-[20px] text-[#220016]">Ok but why</h6>
-          <h1 className="eczar font-semibold text-[50px] text-[#220016]">
+          <h1 className="eczar font-semibold text-[50px] text-[#405305]">
             Choose Tiger Tiger Foods UK?
           </h1>
           <p>Let us simplify it for you.</p>
         </div>
       </section>
 
-      <section className="py-4 bg-[#FFF7D8] px-6 md:px-0">
+      <section className="py-4 px-6 md:px-0">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {blogs.map((blog, index) => (
               <Link
                 href={`/blogs/${blog.slug}`}
                 key={blog.slug}
-                className={`block p-[26px] text-black transition-all duration-200 hover:shadow-[-11px_12px_0px_0px_#000000]`}
+                className={`block p-[26px] text-black transition-all duration-200 rounded-lg`}
                 style={{
                   backgroundColor: blog.color,
                 }}
@@ -227,12 +227,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#FFF7D8] px-6 md:px-0">
+      <section className="py-12  px-6 md:px-0">
         <div className="max-w-6xl mx-auto text-center">
-          <h6 className="text-[20px] text-[#220016]">
+          <h6 className="text-[20px] text-[#405305]">
             Want to know more about us?
           </h6>
-          <h1 className="eczar font-semibold text-[50px] text-[#220016]">
+          <h1 className="eczar font-semibold text-[50px] text-[#405305]">
             How we work
           </h1>
           <p>
@@ -246,9 +246,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] py-4 px-6 md:px-0">
+      <section className="py-4 px-6 md:px-0">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[#9CD3D1] border border-black rounded-lg p-6">
+          <div className="bg-[#84EBE8]  rounded-lg p-6">
             <h3 className="font-bold text-lg mb-2">Cultural Expertise</h3>
             <p className="text-sm text-gray-800">
               Our team of food enthusiasts and cultural experts are deeply
@@ -259,7 +259,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-[#9CD3D1] border border-black rounded-lg p-6">
+          <div className="bg-[#84EBE8]  rounded-lg p-6">
             <h3 className="font-bold text-lg mb-2">Global Sourcing</h3>
             <p className="text-sm text-gray-800">
               We scour the markets of Asia to source the finest ingredients and
@@ -270,7 +270,7 @@ export default function AboutPage() {
               specialty items.
             </p>
           </div>
-          <div className="bg-[#9CD3D1] border border-black rounded-lg p-6">
+          <div className="bg-[#84EBE8]  rounded-lg p-6">
             <h3 className="font-bold text-lg mb-2">
               Innovation and Adaptability
             </h3>
@@ -283,7 +283,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-[#9CD3D1] border border-black rounded-lg p-6">
+          <div className="bg-[#84EBE8]  rounded-lg p-6">
             <h3 className="font-bold text-lg mb-2">
               Collaborative Development
             </h3>
@@ -299,9 +299,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#E597FF] py-16 px-4 text-center">
-        <div className="max-w-6xl mx-auto px-6 md:px-0">
-          <p className="text-xl md:text-2xl font-semibold text-[#40023F] leading-relaxed mb-8">
+      <section className="bg-[#CBE22F] py-16 px-4 text-center">
+        <div className="max-w-6xl mx-auto px-6 md:px-0 text-center">
+          <p className="text-xl md:text-2xl font-semibold text-[#405305] leading-relaxed mb-8">
             At Tiger Tiger Foods UK, we are more than just a food company. We
             are storytellers, explorers, and ambassadors of Asian cuisine.
             Through our passion for discovery, commitment to quality, and
@@ -312,7 +312,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <a
               href="#contact"
-              className="border border-[#40023F] text-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition"
+              className="bg-white text-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#000] hover:text-white transition"
             >
               Contact us to get to know more
             </a>

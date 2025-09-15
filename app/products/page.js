@@ -51,7 +51,7 @@ import Image from "next/image";
 
     return (
       <>
-        <section className="py-12 bg-[#fff0b4]">
+        <section className="py-12 ">
           {/* Grid Content */}
           <div
             style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
@@ -90,7 +90,7 @@ import Image from "next/image";
         </section>
 
         {/* Categories Section */}
-        <section className="bg-[#fff0b4] py-12">
+        <section className=" py-12">
           {/* Header Row */}
           <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
             <div>

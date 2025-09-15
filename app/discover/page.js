@@ -1,15 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
 import CategoryMarquee from "../components/categoryMarquee";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
+import ProductRangerSlider from "../components/ProductRangeSlider";
 
 export default function DiscoverPage() {
-  const pathname = usePathname();
-  const [headerHeight, setHeaderHeight] = useState(0);
   const [data, setData] = useState([]);
   const [featureData, setFeatureData] = useState([]);
   const [newData, setNewData] = useState([]);
@@ -32,200 +27,52 @@ export default function DiscoverPage() {
       .catch((error) => {
         console.error("Error fetching data:", error); // Handle errors
       });
-    const header = document.getElementById("header"); // Select global header
-    if (header) {
-      setHeaderHeight(header.offsetHeight);
-    }
-
-    // Recalculate on resize (optional)
-    const handleResize = () => {
-      if (header) {
-        setHeaderHeight(header.offsetHeight);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    
   }, []);
 
-  const shouldOffset = pathname !== "/";
 
   return (
     <>
-      <section className="py-12 bg-[#FFF7D8]">
-        {/* Grid Content */}
-        <div
-          style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
-        >
-          <div className="max-w-6xl mx-auto flex md:flex-row flex-col gap-3">
-            {/* Left Images */}
-            <div className="flex flex-col">
-              <motion.div
-                whileHover={{
-                  rotate: 5,
-                  scale: 1.05,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 600,
-                  damping: 25,
-                  duration: 0.2,
-                }}
-              >
-                <Image
-                  src="/wowchow/4.png"
-                  alt="wow1"
-                  width={300}
-                  height={350}
-                  className="rounded-md mb-4 object-cover"
-                />
-              </motion.div>
-              <motion.div
-                whileHover={{
-                  rotate: 5,
-                  scale: 1.05,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 600,
-                  damping: 25,
-                  duration: 0.2,
-                }}
-              >
-                <Image
-                  src="/wowchow/5.png"
-                  alt="wow2"
-                  width={345}
-                  height={150}
-                  className="rounded-md object-cover"
-                />
-              </motion.div>
-            </div>
-
-            {/* Center Image and Text */}
-            <div className="flex flex-col justify-center items-center">
-              <motion.div
-                whileHover={{
-                  rotate: 5,
-                  scale: 1.05,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 600,
-                  damping: 25,
-                  duration: 0.2,
-                }}
-              >
-                <Image
-                  src="/wowchow/1.png"
-                  alt="wow2"
-                  width={415}
-                  height={300}
-                  className="rounded-md  object-cover"
-                />
-              </motion.div>
-            </div>
-
-            {/* Right Images */}
-            <div className="flex flex-col">
-              <motion.div
-                whileHover={{
-                  rotate: 5,
-                  scale: 1.05,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 600,
-                  damping: 25,
-                  duration: 0.2,
-                }}
-              >
-                <Image
-                  src="/wowchow/3.png"
-                  alt="wow3"
-                  width={250}
-                  height={260}
-                  className="rounded-md mb-4  object-cover ml-auto"
-                />
-              </motion.div>
-
-              <motion.div
-                whileHover={{
-                  rotate: 5,
-                  scale: 1.05,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 600,
-                  damping: 25,
-                  duration: 0.2,
-                }}
-              >
-                <Image
-                  src="/wowchow/4.png"
-                  alt="wow4"
-                  width={310}
-                  height={250}
-                  className="rounded-md object-cover"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div
+        style={{
+          backgroundImage: "url('/bg_2.jpg')",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          height: "80vh",
+        }}
+      ></div>
 
       {/* Range Section */}
-      <section className="py-12 px-6 md:px-0 bg-[#FFF7D8]">
+      <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto">
-          {/* Heading */}
-          <h2 className="eczar font-semibold text-[32px] text-[#220016]">
-            Discover our range
-          </h2>
+          {/* Heading row */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
+                Popular Ranges
+              </h2>
+              <p className="text-sm md:text-base text-[#220016] mt-1 mb-4 md:mb-8">
+                Our most popular product line up.
+              </p>
+            </div>
 
-          <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
-            From Drinks to Sauces, Tiger Tiger Foods has it all for you
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-            {/* Card Template */}
-            {[
-              { title: "Wow Chow Noodles", image: "/wow.jpg" },
-              { title: "Bubble Tea", image: "/buble_tea.jpg" },
-              { title: "Coco Choo Drink", image: "/cococho.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
-                style={{ backgroundImage: `url('${card.image}')` }}
-              >
-                <span className="absolute bottom-[5%] left-5 right-5 px-[5%] bg-white text-[#220016] font-semibold text-[18px] py-2 text-center eczar">
-                    {card.title}
-                  </span>
-              </div>
-            ))}
+            <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
+              View All
+            </a>
           </div>
 
-          {/* Button */}
-          <button className="group border border-[#220016] px-6 py-2 rounded-full font-medium hover:bg-[#220016] hover:text-white transition flex items-center gap-2 mx-auto">
-            Discover All Ranges
-            <span className="flex items-center justify-center text-black rounded-full group-hover:text-white">
-              <FiArrowUpRight size={20} />
-            </span>
-          </button>
+          <div className="mt-4 md:mt-0">
+            <ProductRangerSlider />
+          </div>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section className="bg-[#FFF7D8] py-12 px-6 md:px-0">
+      <section className=" py-12 px-6 md:px-0">
         {/* Header Row */}
         <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
-            <h2 className="eczar font-semibold text-[32px] text-[#220016]">
+            <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
               Product Categories
             </h2>
             <p>
@@ -233,12 +80,11 @@ export default function DiscoverPage() {
               and frozen. You name it, we got it.
             </p>
           </div>
-          <a
-            href="/products/categories"
-            className="text-sm text-[#220016] underline"
-          >
-            All Categories
-          </a>
+
+          <a href="/products/categories" className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
+              View All
+            </a>
+
         </div>
 
         {/* Marquee Category Row */}
@@ -246,11 +92,11 @@ export default function DiscoverPage() {
       </section>
 
       {/* New Arrivals Section */}
-      <section className="py-12 px-6 md:px-0 bg-[#FFF7D8]">
+      <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto mb-8">
           <div className="flex flex-wrap justify-between items-center">
             <div>
-              <h2 className="eczar font-semibold text-[32px] text-[#220016]">
+              <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 New Products
               </h2>
 
@@ -258,7 +104,7 @@ export default function DiscoverPage() {
                 Latest and hot selling products from Tiger Tiger Foods
               </p>
             </div>
-            <a href="#" className="text-lg text-[#220016]">
+            <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
               View All
             </a>
           </div>
@@ -287,11 +133,11 @@ export default function DiscoverPage() {
       </section>
 
       {/* Featured Section */}
-      <section className="py-12 px-6 md:px-0 bg-[#FFF7D8]">
+      <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto mb-8">
           <div className="flex flex-wrap justify-between items-center">
             <div>
-              <h2 className="eczar font-semibold text-[32px] text-[#220016]">
+              <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 Featured Products
               </h2>
 
@@ -299,7 +145,7 @@ export default function DiscoverPage() {
                 Top selling and featured products from Tiger Tiger Foods
               </p>
             </div>
-            <a href="#" className="text-lg text-[#220016]">
+            <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
               View All
             </a>
           </div>
@@ -328,27 +174,22 @@ export default function DiscoverPage() {
       </section>
 
       {/* Product Catalog Section */}
-      <section className="py-12 px-6 md:px-0 bg-[#FFF7D8]">
-        <div className="max-w-6xl mx-auto mb-8">
-          <h2 className="eczar font-semibold text-[32px] text-[#220016]">
+      <section className="py-12 px-6 md:px-0">
+        <div className="max-w-6xl mx-auto mb-8 text-center">
+          <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
             Product Catalogue
           </h2>
 
           <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
             Discover over 200 product range from Tiger Tiger Foods
           </p>
+
+          <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
+              Browse all products
+            </a>
         </div>
 
-        {/* Catalog Section */}
-        <div className="max-w-6xl mx-auto">
-          <iframe
-            src="https://jk-foods-uk.paperturn-view.com/?pid=MzM338396&v=6.2"
-            width="100%"
-            height="800px"
-            allowFullScreen
-            style={{ margin: "0 auto" }}
-          ></iframe>
-        </div>
+        
       </section>
     </>
   );

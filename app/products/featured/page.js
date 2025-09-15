@@ -28,34 +28,34 @@ export default function ProductFeaturedPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#FFF7D8]">
+      <section className="py-12 ">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto text-center">
             {/* Heading */}
-            <h2 className="eczar font-semibold text-[32px] text-[#220016]">
+            <h2 className="eczar font-semibold text-[64px] text-[#405305]">
               Featured Products
             </h2>
 
-            <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+            <p className="text-sm md:text-base text-[#405305] mt-1 mb-8">
               Top selling and featured products from Tiger Tiger Foods
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-4 bg-[#FFF7D8]">
+      <section className="py-4 ">
         {/* Grid Content */}
 
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h3 className="eczar font-semibold text-[32px] text-[#220016]">
+          <h3 className="eczar font-semibold text-[32px] text-[#405305]">
             Pulp+
           </h3>
 
-          <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+          <p className="text-sm md:text-base text-[#405305] mt-1 mb-8">
             Discover our award winning Pulp+ juice, made with real fruit with
             pulp. Now in 4 amazing flavours.
           </p>
@@ -122,16 +122,16 @@ export default function ProductFeaturedPage() {
         </div>
       </section>
 
-      <section className="py-4 bg-[#FFF7D8]">
+      <section className="py-4 ">
         {/* Grid Content */}
 
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
-          <h3 className="eczar font-semibold text-[32px] text-[#220016]">
+          <h3 className="eczar font-semibold text-[32px] text-[#405305]">
             Wow Chow
           </h3>
 
-          <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+          <p className="text-sm md:text-base text-[#405305] mt-1 mb-8">
             Bold Asian flavours meet convenience. Just add hot water and enjoy
             authentic stir-fry style noodles in minutes.
           </p>

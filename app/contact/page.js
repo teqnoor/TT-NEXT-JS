@@ -82,7 +82,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#FFF7D8]">
+      <section className="py-12 ">
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
@@ -99,7 +99,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] py-12 px-6 md:px-0">
+      <section className=" py-12 px-6 md:px-0">
         <form onSubmit={handleSubmit}>
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 align-center">
             {/* Contact Form */}
@@ -184,7 +184,7 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div className="md:w-1/2 flex flex-col gap-6 mt-8 md:mt-0">
-              <div className="bg-[#FFF7D8] border border-black rounded-lg shadow-[-5px_7px_0px_0px_#000000] p-[52px] w-full">
+              <div className=" border border-black rounded-lg shadow-[-5px_7px_0px_0px_#000000] p-[52px] w-full">
                 <h3 className="eczar font-semibold mb-1">Visit us</h3>
                 <p className="text-sm mb-3">
                   Bull Close Road Lenton Industrial Estate, Nottingham NG7 2UT,
@@ -204,7 +204,7 @@ export default function ContactPage() {
         </form>
       </section>
 
-      <section className="py-12 bg-[#FFF7D8]">
+      <section className="py-12 ">
         <SmoothSlider />
       </section>
     </>

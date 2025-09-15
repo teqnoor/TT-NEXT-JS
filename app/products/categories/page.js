@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import CategoryMarquee from "../../components/categoryMarquee";
+import Image from "next/image";
 
 export default function ProductsPage() {
   const pathname = usePathname();
@@ -39,7 +40,7 @@ export default function ProductsPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#FFF7D8]">
+      <section className="py-12">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
@@ -54,47 +55,33 @@ export default function ProductsPage() {
                 and frozen. You name it, we got it.
               </p>
             </div>
-            
           </div>
 
-          {/* Marquee Category Row */}
-          <CategoryMarquee categories={data} />
-        </div>
-      </section>
+          <div className="max-w-6xl mx-auto eczar py-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+              {data?.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center justify-center"
+                >
+                  {/* Circular Image */}
+                  <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden shadow-md ring-2 ring-white">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={128}
+                      height={128}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
 
-      <section className="py-4 bg-[#FFF7D8] px-6 md:px-0">
-        <div className="max-w-6xl mx-auto">
-          {/* Heading */}
-          <h2 className="eczar font-semibold text-[32px] mb-5 text-[#220016]">
-            Canned Products
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-            {/* Card Template */}
-            {[
-              { title: "Wow Chow Noodles", image: "/wow.jpg" },
-              { title: "Bubble Tea", image: "/buble_tea.jpg" },
-              { title: "Coco Choo Drink", image: "/cococho.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-
-              { title: "Coco Choo Drink", image: "/cococho.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Wow Chow Noodles", image: "/wow.jpg" },
-              { title: "Japanese Range", image: "/sauces.jpg" },
-              { title: "Bubble Tea", image: "/buble_tea.jpg" },
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
-                style={{ backgroundImage: `url('${card.image}')` }}
-              >
-                <span className="absolute bottom-[5%] bg-white text-[#220016] font-medium text-sm px-[43px] py-[13px]">
-                  {card.title}
-                </span>
-              </div>
-            ))}
+                  {/* Label */}
+                  <p className="mt-3 text-center text-[15px] md:text-base font-semibold text-[#2F5D27]">
+                    {item.name}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

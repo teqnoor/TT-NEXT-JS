@@ -52,7 +52,7 @@ export default function CuisinesPage() {
 
   return (
     <>
-      <section className="py-12 bg-[#FFF7D8]">
+      <section className="py-12 ">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
@@ -66,8 +66,8 @@ export default function CuisinesPage() {
       </section>
 
       {/* Chinese */}
-      <section className="pb-12 bg-[#FFF7D8] px-6 md:px-0">
-        <div className="bg-[#FEE600] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl border-[2px] border-[#220016]  max-w-6xl mx-auto">
+      <section className="pb-12  px-6 md:px-0">
+        <div className="bg-[#FEE600] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl   max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2   flex flex-col h-full">
@@ -95,7 +95,7 @@ export default function CuisinesPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] pb-8 px-4">
+      <section className=" pb-8 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="h-[300px] w-full">
             <Image
@@ -130,8 +130,8 @@ export default function CuisinesPage() {
       </section>
 
       {/* Thai */}
-      <section className="pb-12 bg-[#FFF7D8] px-6 md:px-0">
-        <div className="bg-[#9CD3D1] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl border-[2px] border-[#220016]  max-w-6xl mx-auto">
+      <section className="pb-12  px-6 md:px-0">
+        <div className="bg-[#9CD3D1] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl   max-w-6xl mx-auto">
           <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2 border-r-0  md:border-r-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pr-[0rem] md:pr-[3rem] text-[18px] text-[#40023F]">
@@ -158,7 +158,7 @@ export default function CuisinesPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] pb-8 px-4">
+      <section className=" pb-8 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="h-[300px] w-full">
             <Image
@@ -193,8 +193,8 @@ export default function CuisinesPage() {
       </section>
 
       {/*  Vietnameese */}
-      <section className="pb-12 bg-[#FFF7D8] px-6 md:px-0">
-        <div className="bg-[#E597FF] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl border-[2px] border-[#220016]  max-w-6xl mx-auto">
+      <section className="pb-12  px-6 md:px-0">
+        <div className="bg-[#E597FF] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl   max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2   flex flex-col h-full">
@@ -222,7 +222,7 @@ export default function CuisinesPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] pb-8 px-4">
+      <section className=" pb-8 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="h-[300px] w-full">
             <Image
@@ -257,8 +257,8 @@ export default function CuisinesPage() {
       </section>
 
       {/* Japanese */}
-      <section className="pb-12 bg-[#FFF7D8] px-6 md:px-0">
-        <div className="bg-[#FEE600] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl border-[2px] border-[#220016]  max-w-6xl mx-auto">
+      <section className="pb-12  px-6 md:px-0">
+        <div className="bg-[#FEE600] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl   max-w-6xl mx-auto">
           <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2 border-r-0  md:border-r-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pr-[0rem] md:pr-[3rem] text-[18px] text-[#40023F]">
@@ -287,7 +287,7 @@ export default function CuisinesPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] pb-8 px-4">
+      <section className=" pb-8 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="h-[300px] w-full">
             <Image
@@ -322,8 +322,8 @@ export default function CuisinesPage() {
       </section>
 
       {/*  Korean */}
-      <section className="pb-12 bg-[#FFF7D8] px-6 md:px-0">
-        <div className="bg-[#9CD3D1] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl border-[2px] border-[#220016]  max-w-6xl mx-auto">
+      <section className="pb-12  px-6 md:px-0">
+        <div className="bg-[#9CD3D1] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl   max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2   flex flex-col h-full">
@@ -352,7 +352,7 @@ export default function CuisinesPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] pb-8 px-4">
+      <section className=" pb-8 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="h-[300px] w-full">
             <Image
@@ -387,8 +387,8 @@ export default function CuisinesPage() {
       </section>
 
       {/* Malaysian */}
-      <section className="pb-12 bg-[#FFF7D8] px-6 md:px-0">
-        <div className="bg-[#E597FF] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl border-[2px] border-[#220016]  max-w-6xl mx-auto">
+      <section className="pb-12  px-6 md:px-0">
+        <div className="bg-[#E597FF] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl   max-w-6xl mx-auto">
           <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2 border-r-0  md:border-r-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pr-[0rem] md:pr-[3rem] text-[18px] text-[#40023F]">
@@ -416,7 +416,7 @@ export default function CuisinesPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] pb-8 px-4">
+      <section className=" pb-8 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="h-[300px] w-full">
             <Image
@@ -451,8 +451,8 @@ export default function CuisinesPage() {
       </section>
 
       {/*  Singaporean */}
-      <section className="pb-12 bg-[#FFF7D8] px-6 md:px-0">
-        <div className="bg-[#FFD31E] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl border-[2px] border-[#220016]  max-w-6xl mx-auto">
+      <section className="pb-12  px-6 md:px-0">
+        <div className="bg-[#FFD31E] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl   max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2   flex flex-col h-full">
@@ -479,7 +479,7 @@ export default function CuisinesPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] pb-8 px-4">
+      <section className=" pb-8 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="h-[300px] w-full">
             <Image
@@ -514,8 +514,8 @@ export default function CuisinesPage() {
       </section>
 
       {/* Thai */}
-      <section className="pb-12 bg-[#FFF7D8] px-6 md:px-0">
-        <div className="bg-[#9CD3D1] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl border-[2px] border-[#220016]  max-w-6xl mx-auto">
+      <section className="pb-12  px-6 md:px-0">
+        <div className="bg-[#9CD3D1] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl   max-w-6xl mx-auto">
           <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2 border-r-0  md:border-r-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pr-[0rem] md:pr-[3rem] text-[18px] text-[#40023F]">
@@ -544,7 +544,7 @@ export default function CuisinesPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFF7D8] pb-8 px-4">
+      <section className=" pb-8 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="h-[300px] w-full">
             <Image

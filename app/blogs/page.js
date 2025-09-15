@@ -31,20 +31,20 @@ export default function BlogsPage() {
       slug: "japanese-cooking-for-beginners",
       title: "Japanese Cooking for Beginners: 5 Simple Recipes to Start With",
       description: "A guide to simple Japanese food recipes for beginners.",
-      color: "#FEE600",
+      color: "#CBE22F",
     },
     {
       slug: "simple-japanese-dips-tiger-sauces",
       title: "How To Make Simple Japanese Dips Using Tiger Tiger Sauces",
       description:
         "A simple guide to making delicious Japanese dips with Tiger Tiger sauces.",
-      color: "#E597FF",
+      color: "#84EBE8",
     },
     {
       slug: "rise-of-japanese-cuisine-uk",
       title: "The Rise of Japanese Cuisine in the UK: What You Need to Know",
       description: "The growing popularity of Japanese food in the UK.",
-      color: "#97E0FF",
+      color: "#FF7373",
     },
   ];
 
@@ -73,7 +73,7 @@ export default function BlogsPage() {
               <Link
                 href={`/blogs/${blog.slug}`}
                 key={blog.slug}
-                className={`block p-[32px] text-black transition-all duration-200 hover:shadow-[-11px_12px_0px_0px_#000000]`}
+                className={`block p-[32px] text-black transition-all duration-200 rounded-lg `}
                 style={{
                   backgroundColor: blog.color,
                   
