@@ -1,20 +1,22 @@
 // app/blogs/[slug]/page.js
-import BlogClient from '../../components/BlogClient';
+import BlogClient from "../../components/BlogClient";
 
 export async function generateStaticParams() {
-  const blogs = [
-    { slug: 'japanese-cooking-for-beginners' },
-    { slug: 'simple-japanese-dips-tiger-sauces' },
-    { slug: 'rise-of-japanese-cuisine-uk' },
-  ];
+  const res = await fetch("https://tigertigerfoods.com/api/get-blogs");
+  const data = await res.json();
 
-  return blogs.map((blog) => ({
+  if (!data.success) return [];
+
+  return data.data.map((blog) => ({
     slug: blog.slug,
   }));
 }
 
-export default function BlogDetail({ params }) {
+export default async function BlogDetail({ params }) {
   const { slug } = params;
 
-  return <BlogClient slug={slug} />;
+  const res = await fetch(`https://tigertigerfoods.com/api/get-blog/${slug}`);
+  const blog = await res.json();
+
+  return <BlogClient blog={blog.data} others={blog.others} />;
 }
