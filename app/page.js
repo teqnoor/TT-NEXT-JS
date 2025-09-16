@@ -461,7 +461,7 @@ export default function Home() {
             </p>
           </div>
           <Link
-            href="/products/categories"
+            href="/categories"
             className="text-sm text-[#220016] underline self-start md:self-auto"
           >
             All Categories

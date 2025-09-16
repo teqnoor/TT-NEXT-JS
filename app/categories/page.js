@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import CategoryMarquee from "../../components/categoryMarquee";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductsPage() {
   const pathname = usePathname();
@@ -60,8 +60,9 @@ export default function ProductsPage() {
           <div className="max-w-6xl mx-auto eczar py-6">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
               {data?.map((item, i) => (
-                <div
+                <Link
                   key={i}
+                  href={`/categories/${item.slug}`}
                   className="flex flex-col items-center justify-center"
                 >
                   {/* Circular Image */}
@@ -79,7 +80,7 @@ export default function ProductsPage() {
                   <p className="mt-3 text-center text-[15px] md:text-base font-semibold text-[#2F5D27]">
                     {item.name}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

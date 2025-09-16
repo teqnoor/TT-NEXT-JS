@@ -124,7 +124,7 @@ export default function Header() {
                         New
                       </Link>
                       <Link
-                        href="/products/categories"
+                        href="/categories"
                         className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
                       >
                         Categories
@@ -221,7 +221,7 @@ export default function Header() {
                 New
               </Link>
               <Link
-                href="/products/categories"
+                href="/categories"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Categories
