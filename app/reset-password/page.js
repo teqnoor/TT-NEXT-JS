@@ -89,7 +89,7 @@ export default function ResetPasswordPage() {
         {/* Image first on mobile, second on desktop */}
         <div className="order-1 md:order-2 md:w-1/2 mt-8 md:mt-0">
           <Image
-            src="/Login_img.png"
+            src="/Updatepassword.png"
             alt="Login Image"
             width={1920}
             height={1080}

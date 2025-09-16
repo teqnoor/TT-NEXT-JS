@@ -119,7 +119,7 @@ export default function ForgotPasswordPage() {
         {/* Image */}
         <div className="order-1 md:order-2 md:w-1/2 mt-8 md:mt-0">
           <Image
-            src="/Login_img.png"
+            src="/fg_bg.png"
             alt="Login Image"
             width={1920}
             height={1080}
