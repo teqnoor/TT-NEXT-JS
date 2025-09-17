@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // 👈 import styles
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function CheckoutPage() {
   const pathname = usePathname();
@@ -12,8 +12,9 @@ export default function CheckoutPage() {
   const [cart, setCart] = useState([]);
   const [mounted, setMounted] = useState(false);
 
-  // 🔹 Form data state
+  // Form + user state
   const [formData, setFormData] = useState({
+    user_id: "",
     name: "",
     email: "",
     company_name: "",
@@ -27,70 +28,134 @@ export default function CheckoutPage() {
     phone: "",
   });
 
-  // 🔹 Error state
+  // Error + loading state
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const [successMsg, setSuccessMsg] = useState("");
 
-  // Handle input changes
+  // Handle input change (if you want editable fields)
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" }); // clear error when typing
   };
 
-  // Submit form
+  // ✅ Validation
+  const validateForm = () => {
+    let newErrors = {};
+    if (!formData.name) newErrors.name = "Name is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.business_name)
+      newErrors.business_name = "Business name is required";
+    if (!formData.vat_no) newErrors.vat_no = "VAT number is required";
+    if (!formData.address) newErrors.address = "Address is required";
+    if (!formData.country) newErrors.country = "Country is required";
+    if (!formData.state) newErrors.state = "State is required";
+    if (!formData.city) newErrors.city = "City is required";
+    if (!formData.postal_code)
+      newErrors.postal_code = "Postal code is required";
+    if (!formData.phone) newErrors.phone = "Phone number is required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // ✅ Submit enquiry
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) return;
+
     setLoading(true);
-    setErrors({});
-    setSuccessMsg("");
 
     try {
       const response = await axios.post(
         "https://tigertigerfoods.com/api/send-enquiry",
         {
-          ...formData,
+          user_id: formData.user_id,
+          name: formData.name,
+          email: formData.email,
+          company_name: formData.company_name,
+          business_name: formData.business_name,
+          vat_no: formData.vat_no,
+          address: formData.address,
+          country: formData.country,
+          state: formData.state,
+          city: formData.city,
+          postal_code: formData.postal_code,
+          phone: formData.phone,
           cart: cart,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       );
 
-      if (response.data.success) {
-        setSuccessMsg(response.data.message);
-        setFormData({
-          name: "",
-          email: "",
-          company_name: "",
-          business_name: "",
-          vat_no: "",
-          address: "",
-          country: "",
-          state: "",
-          city: "",
-          postal_code: "",
-          phone: "",
+
+      if (response.data.success === true) {
+        toast.success(`Your enquiry request has been submitted successfully.`, {
+          position: "top-right",
+          autoClose: 3000,
         });
+
+        // clear cart
         sessionStorage.removeItem("inquiry_cart");
         setCart([]);
-        toast.success(
-          { successMsg },
-          {
-            position: "top-right",
-            autoClose: 3000,
-          }
-        );
       } else {
-        setErrors({ general: response.data.message });
+        toast.error(response.data.message, {
+          position: "top-right",
+          autoClose: 3000,
+        });
       }
     } catch (error) {
-      if (error.response?.data?.message) {
-        setErrors({ general: error.response.data.message });
-      }
+      toast.error(error.response?.data?.message || "Something went wrong", {
+        position: "top-right",
+        autoClose: 3000,
+      });
     } finally {
       setLoading(false);
     }
   };
 
-  // Header offset
+  // ✅ Load user data on mount
+  useEffect(() => {
+    const fetchUser = async () => {
+      const token = localStorage.getItem("token");
+      if (!token) return;
+
+      try {
+        const res = await axios.get(
+          "https://tigertigerfoods.com/api/get-user",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+
+        if (res.data.success) {
+          const user = res.data.data;
+          setFormData({
+            user_id: user.id,
+            name: user.contact_name || "",
+            email: user.email || "",
+            company_name: user.company_registration || "",
+            business_name: user.business_name || "",
+            vat_no: user.company_vat || "",
+            address: user.address || "",
+            country: user.country || "",
+            state: user.state || "",
+            city: user.city || "",
+            postal_code: user.zip_code || "",
+            phone: user.phone || "",
+          });
+        }
+      } catch (err) {
+        console.error("Failed to fetch user", err);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  // ✅ Header height adjustment
   useEffect(() => {
     const header = document.getElementById("header");
     if (header) setHeaderHeight(header.offsetHeight);
@@ -99,7 +164,7 @@ export default function CheckoutPage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Load cart from sessionStorage
+  // ✅ Load cart
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedCart =
@@ -110,7 +175,6 @@ export default function CheckoutPage() {
   }, []);
 
   if (!mounted) return null;
-
   const shouldOffset = pathname !== "/";
 
   return (
@@ -118,6 +182,8 @@ export default function CheckoutPage() {
       <div
         style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
       >
+        {/* Alert Bar */}
+        <ToastContainer />
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
           {/* Contact Form */}
           <form
@@ -198,7 +264,7 @@ export default function CheckoutPage() {
                 name="vat_no"
                 value={formData.vat_no}
                 onChange={handleChange}
-                placeholder="Vat No*"
+                placeholder="VAT No*"
                 className="w-full bg-white p-[24px] border border-[#220016] rounded-[14px]"
               />
               {errors.vat_no && (
@@ -297,10 +363,6 @@ export default function CheckoutPage() {
                 <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
               )}
             </div>
-
-            {errors.general && (
-              <p className="text-red-500 text-sm">{errors.general}</p>
-            )}
 
             <button
               type="submit"

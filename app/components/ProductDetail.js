@@ -6,7 +6,6 @@ import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // 👈 import styles
 export default function ProductDetail({ slug }) {
-
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -18,6 +17,16 @@ export default function ProductDetail({ slug }) {
   };
 
   const handleAddToCart = () => {
+    // ✅ Check login first
+    const token = localStorage.getItem("token");
+    if (!token) {
+      toast.error("Please login first to add products to inquiry.", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      return;
+    }
+
     if (!selectedUnit) {
       alert("Please select either Case or Palette before adding to inquiry.");
       return;
@@ -48,7 +57,7 @@ export default function ProductDetail({ slug }) {
 
     // 🔥 Fire custom event
     window.dispatchEvent(new Event("cartUpdated"));
-     // 👇 show success toast instead of alert
+    // 👇 show success toast instead of alert
     toast.success(`Product added to enquiry!`, {
       position: "top-right",
       autoClose: 3000,

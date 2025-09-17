@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import OrdersList from "../components/Orderlist";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -375,7 +376,8 @@ export default function DashboardPage() {
         {activeTab === "orders" && (
           <div>
             <h2 className="text-xl font-semibold mb-4">Your Orders</h2>
-            {/* Orders list here */}
+
+            <OrdersList />
           </div>
         )}
       </div>
