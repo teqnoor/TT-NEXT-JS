@@ -31,25 +31,25 @@ export default function Footer() {
 
         {/* Products */}
         <div>
-          <h4 className="font-semibold mb-2">Products</h4>
+          <h4 className="font-semibold mb-2">UseFull Links</h4>
           <ul className="space-y-1">
             <li>
-              <Link href="#">Pulp+</Link>
+              <Link href="/cuisine">Cuisine</Link>
             </li>
             <li>
-              <Link href="#">Wow Chow</Link>
+              <Link href="/contact">Contact</Link>
             </li>
             <li>
-              <Link href="#">Taste Japan</Link>
+              <Link href="/about">About Us</Link>
             </li>
             <li>
-              <Link href="#">Coco Choo</Link>
+              <Link href="/blogs">Blogs</Link>
             </li>
             <li>
-              <Link href="#">Bubble Tea</Link>
+              <Link href="/trade-register">Sign Up</Link>
             </li>
             <li>
-              <Link href="#">Cramm’d</Link>
+              <Link href="/login">Login</Link>
             </li>
           </ul>
         </div>
