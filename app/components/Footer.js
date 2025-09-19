@@ -138,7 +138,7 @@ export default function Footer() {
         <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
         <div className="flex gap-4">
           <Link href="#">Privacy Policy</Link>
-          <Link href="#">Modern Slavery Statement</Link>
+          <Link href="/modern-slavery-statement">Modern Slavery Statement</Link>
         </div>
         <p>
           Designed and Developed by{" "}
