@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function ModernSalavaryStatementPage() {
+export default function ModernSalaveryStatementPage() {
   const [headerHeight, setHeaderHeight] = useState(0);
   useEffect(() => {
     const header = document.getElementById("header"); // Select global header
