@@ -1,8 +1,10 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ModernSalaveryStatementPage() {
+  const pathname = usePathname();
   const [headerHeight, setHeaderHeight] = useState(0);
   useEffect(() => {
     const header = document.getElementById("header"); // Select global header
