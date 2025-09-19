@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function ModernSalavaryPage() {
   const [headerHeight, setHeaderHeight] = useState(0);
