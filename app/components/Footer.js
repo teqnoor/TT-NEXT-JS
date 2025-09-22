@@ -137,7 +137,7 @@ export default function Footer() {
       <div className="border-t border-[#220016]/20 pt-4 text-center md:text-left max-w-6xl mx-auto text-xs flex flex-col md:flex-row justify-between items-center gap-2">
         <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
         <div className="flex gap-4">
-          <Link href="#">Privacy Policy</Link>
+          <Link href="/privacy-policy">Privacy Policy</Link>
           <Link href="/modern-slavery-statement">Modern Slavery Statement</Link>
         </div>
         <p>

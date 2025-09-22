@@ -28,7 +28,7 @@ export default function ModernSalaveryStatementPage() {
   return (
     <>
       <section className="py-12">
-        <div
+        <div className="max-w-6xl mx-auto"
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
           <h4>HYPERAMA GROUP MODERN SLAVERY STATEMENT</h4>
