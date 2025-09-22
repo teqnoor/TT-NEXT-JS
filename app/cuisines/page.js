@@ -26,29 +26,6 @@ export default function CuisinesPage() {
 
   const shouldOffset = pathname !== "/";
 
-  const blogs = [
-    {
-      slug: "japanese-cooking-for-beginners",
-      title: "High Quality",
-      description:
-        "Tiger Tiger UK stands as a steadfast assurance of top-tier quality for both its ingredients and culinary offerings. We take pride in ensuring the authentic taste of pan-Asian cuisine, meticulously developed and sourced from the Far East. Our commitment extends across borders, bringing genuine and premium products to discerning palates in the UK, Europe, and the Americas. Embrace the essence of true pan-Asian flavours with Tiger Tiger UK, where quality meets authenticity on a global culinary journey.",
-      color: "#FFFFFF99",
-    },
-    {
-      slug: "simple-japanese-dips-tiger-sauces",
-      title: "Competitive Prices",
-      description:
-        "At Tiger Tiger UK, we take pride in offering not only exceptional quality but also competitive prices. By strategically sourcing, developing, and efficiently managing our supply chain, we aim to make authentic pan-Asian culinary experiences accessible to a wider audience. Ensuring that Tiger Tiger UK is a winning combination of premium quality and competitive pricing, making your culinary journey both delightful and cost-effective.",
-      color: "#97E0FF",
-    },
-    {
-      slug: "rise-of-japanese-cuisine-uk",
-      title: "Mesmerising Taste",
-      description:
-        "Tiger Tiger UK helps create delectable dishes with carefully selected ingredients to bring you the authentic taste of Asia, no matter where you are. From our irresistibly flavourful sauces, pastes, and curries to our tempting range of frozen foods, main products and all the essential ingredients, each item is designed to make every bite an irresistible journey into the heart of Asian cuisine.",
-      color: "#E597FF",
-    },
-  ];
 
   return (
     <>

@@ -311,9 +311,9 @@ export default function Home() {
               </p>
             </div>
 
-            <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
+            <Link href='/product-ranges' className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
               View All
-            </a>
+            </Link>
           </div>
 
           <div className="mt-4 md:mt-0">
