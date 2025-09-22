@@ -15,13 +15,8 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [pulpData, setPulpData] = useState([]);
   const [crammidData, setCrammidData] = useState([]);
+  const [wowChowData, setWowChowData] = useState([]);
 
-  const items = [
-    { name: "Mixed Seeds & Nuts", image: "/1.png" },
-    { name: "Pumpkin Seeds & Peanuts", image: "/2.png" },
-    { name: "Sesame Seeds & Peanuts", image: "/3.png" },
-    { name: "Sunflower Seeds & Peanuts", image: "/4.png" },
-  ];
 
   useEffect(() => {
     fetch(`https://tigertigerfoods.com/api/get-categories`)
@@ -46,6 +41,15 @@ export default function Home() {
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setCrammidData(response.data); // Only store the "data" array
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error); // Handle errors
+      });
+
+    fetch(`https://tigertigerfoods.com/api/get-wow-chow`)
+      .then((res) => res.json()) // Parse the response as JSON
+      .then((response) => {
+        setWowChowData(response.data); // Only store the "data" array
       })
       .catch((error) => {
         console.error("Error fetching data:", error); // Handle errors
@@ -311,7 +315,10 @@ export default function Home() {
               </p>
             </div>
 
-            <Link href='/product-ranges' className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
+            <Link
+              href="/product-ranges"
+              className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base"
+            >
               View All
             </Link>
           </div>
@@ -349,7 +356,7 @@ export default function Home() {
         gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-12
       "
           >
-            {crammidData.map((p,i) => (
+            {crammidData.map((p, i) => (
               <li key={p.name} className="w-full flex flex-col items-center">
                 <div
                   className="
@@ -357,7 +364,7 @@ export default function Home() {
               flex items-end justify-center
             "
                 >
-                   <Link href={`/products/${p.slug}`} key={i}>
+                  <Link href={`/products/${p.slug}`} key={i}>
                     <img
                       src={p.images}
                       alt={p.name}
@@ -388,36 +395,32 @@ export default function Home() {
         />
 
         <div className="max-w-6xl mx-auto px-4">
-          {/* Grid */}
           <ul
             className="
-            grid gap-x-8 gap-y-12
-            grid-cols-2 md:grid-cols-3 lg:grid-cols-4
-            place-items-center
-          "
+        grid place-items-center
+        grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+        gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-12
+      "
           >
-            {items.map((p) => (
+            {wowChowData.map((p, i) => (
               <li key={p.name} className="w-full flex flex-col items-center">
-                {/* Image box with fixed visual size so all rows align */}
                 <div
                   className="
-                  w-[210px] h-[250px]
-                  flex items-end justify-center
-                "
+              w-[150px] h-[180px] md:w-[210px] md:h-[250px]
+              flex items-end justify-center
+            "
                 >
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="max-h-full max-w-full object-contain drop-shadow-md"
-                    loading="lazy"
-                  />
+                  <Link href={`/products/${p.slug}`} key={i}>
+                    <img
+                      src={p.images}
+                      alt={p.name}
+                      className="max-h-full max-w-full object-contain drop-shadow-md"
+                      loading="lazy"
+                    />
+                  </Link>
                 </div>
 
-                {/* Caption */}
-                <p
-                  className="mt-3 text-center text-[15px] md:text-base font-semibold tracking-tight
-                             text-[#2F5D27]"
-                >
+                <p className="mt-3 text-center text-sm md:text-base font-semibold tracking-tight text-[#2F5D27]">
                   {p.name}
                 </p>
               </li>
