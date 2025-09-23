@@ -27,19 +27,42 @@ export default function Header() {
       }
     }
 
-    checkAuth(); // run on mount + whenever path changes (e.g., /login -> /dashboard)
+    checkAuth();
 
-    // Listen for storage changes (other tabs/windows)
     window.addEventListener("storage", checkAuth);
-
-    // Listen for custom event when login/logout happens in this app
     window.addEventListener("auth-changed", checkAuth);
 
     return () => {
       window.removeEventListener("storage", checkAuth);
       window.removeEventListener("auth-changed", checkAuth);
     };
-  }, [path]); // 👈 add path here to re-check on navigation
+  }, [path]);
+
+  // ✅ Close dropdown when clicking outside or pressing Escape
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    function handleEscape(event) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   // Lock background scroll when mobile menu is open
   useEffect(() => {

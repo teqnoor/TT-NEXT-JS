@@ -2,15 +2,43 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
+
 
 export default function Footer() {
-  const pathname = usePathname();
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const ac = new AbortController();
+
+    (async () => {
+      try {
+        const res = await fetch("https://tigertigerfoods.com/api/get-categories", {
+          signal: ac.signal,
+          headers: { Accept: "application/json" },
+          cache: "no-store",
+        });
+        if (!res.ok) throw new Error(`Failed to fetch categories (${res.status})`);
+        const json = await res.json();
+
+        // Expecting { success: boolean, data: Category[] }
+        const list = Array.isArray(json?.data) ? json.data : [];
+        setCategories(list.slice(0, 6));
+      } catch (e) {
+        console.error(e);
+        setCategories([]);
+      } finally {
+        setLoading(false);
+      }
+    })();
+
+    return () => ac.abort();
+  }, []);
 
   return (
-    <footer
-      className={`text-[#220016] pt-10 pb-4 text-sm font-outfit px-6 md:px-0`}
-    >
+    <footer className="text-[#220016] pt-10 pb-4 text-sm font-outfit px-6 md:px-0">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
         <div>
@@ -29,53 +57,34 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Products */}
+        {/* Useful Links */}
         <div>
-          <h4 className="font-semibold mb-2">UseFull Links</h4>
+          <h4 className="font-semibold mb-2">Useful Links</h4>
           <ul className="space-y-1">
-            <li>
-              <Link href="/cuisine">Cuisine</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link href="/about">About Us</Link>
-            </li>
-            <li>
-              <Link href="/blogs">Blogs</Link>
-            </li>
-            <li>
-              <Link href="/trade-register">Sign Up</Link>
-            </li>
-            <li>
-              <Link href="/login">Login</Link>
-            </li>
+            <li><Link href="/cuisine">Cuisine</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/blogs">Blogs</Link></li>
+            <li><Link href="/trade-register">Sign Up</Link></li>
+            <li><Link href="/login">Login</Link></li>
           </ul>
         </div>
 
-        {/* Categories */}
+        {/* Categories (dynamic) */}
         <div>
           <h4 className="font-semibold mb-2">Categories</h4>
           <ul className="space-y-1">
-            <li>
-              <Link href="#">Spices & Seasonings</Link>
-            </li>
-            <li>
-              <Link href="#">Taste Japan</Link>
-            </li>
-            <li>
-              <Link href="#">Canned</Link>
-            </li>
-            <li>
-              <Link href="#">Drinks</Link>
-            </li>
-            <li>
-              <Link href="#">Frozen</Link>
-            </li>
-            <li>
-              <Link href="#">Noodles</Link>
-            </li>
+            {loading ? (
+              <li className="text-gray-500">Loading...</li>
+            ) : categories.length ? (
+              categories.map((cat, idx) => (
+                <li key={cat.slug ?? cat.id ?? idx}>
+                  <Link href={`/categories/${cat.slug ?? cat.id}`}>{cat.name ?? "Category"}</Link>
+                </li>
+              ))
+            ) : (
+              <li className="text-gray-500">No categories found.</li>
+            )}
           </ul>
         </div>
 
@@ -99,7 +108,6 @@ export default function Footer() {
       {/* Social Row */}
       <div className="max-w-6xl mx-auto pt-4 pb-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Text */}
           <p className="mb-3 md:mb-0 text-center md:text-left">
             Follow us on social media for updates:
           </p>
