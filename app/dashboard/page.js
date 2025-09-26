@@ -61,7 +61,7 @@ export default function DashboardPage() {
     try {
       const token = localStorage.getItem("token");
       const res = await fetch(
-        "https://tigertigerfoods.com/api/update-profile",
+        "https://backend.tigertigerfoods.com/api/update-profile",
         {
           method: "POST",
           headers: {
@@ -92,7 +92,7 @@ export default function DashboardPage() {
     try {
       const token = localStorage.getItem("token");
       const res = await fetch(
-        "https://tigertigerfoods.com/api/update-password",
+        "https://backend.tigertigerfoods.com/api/update-password",
         {
           method: "POST",
           headers: {

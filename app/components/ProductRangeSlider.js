@@ -9,7 +9,7 @@ export default function ProductRangerSlider() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://tigertigerfoods.com/api/get-product-ranges") // 👈 adjust if full URL needed
+    fetch("https://backend.tigertigerfoods.com/api/get-product-ranges") // 👈 adjust if full URL needed
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

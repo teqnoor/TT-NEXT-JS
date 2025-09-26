@@ -49,7 +49,7 @@ export default function ResetPasswordPage() {
 
     try {
       const { data } = await axios.post(
-        "https://tigertigerfoods.com/api/reset-password",
+        "https://backend.tigertigerfoods.com/api/reset-password",
         formData,
         {
           headers: {

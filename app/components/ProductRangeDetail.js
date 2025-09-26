@@ -9,7 +9,7 @@ export default function ProductRangeDetail({ slug }) {
   useEffect(() => {
     if (!slug) return;
 
-    fetch(`https://tigertigerfoods.com/api/get-product-range-detail/${slug}`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-product-range-detail/${slug}`)
       .then((res) => res.json())
       .then((detailRes) => {
         setProduct(detailRes.data);

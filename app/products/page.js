@@ -12,7 +12,7 @@ import Image from "next/image";
   const [categoryData, setCategoryData] = useState([]);
     useEffect(() => {
 
-      fetch(`https://tigertigerfoods.com/api/get-products`)
+      fetch(`https://backend.tigertigerfoods.com/api/get-products`)
         .then((res) => res.json()) // Parse the response as JSON
         .then((response) => {
           setData(response.data); // Only store the "data" array
@@ -21,7 +21,7 @@ import Image from "next/image";
           console.error("Error fetching data:", error); // Handle errors
         });
 
-        fetch(`https://tigertigerfoods.com/api/get-categories`)
+        fetch(`https://backend.tigertigerfoods.com/api/get-categories`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setCategoryData(response.data); // Only store the "data" array

@@ -1,7 +1,7 @@
 import ProductDetail from "@/app/components/ProductDetail";
 
 export async function generateStaticParams() {
-  const res = await fetch("https://tigertigerfoods.com/api/get-products");
+  const res = await fetch("https://backend.tigertigerfoods.com/api/get-products");
   const data = await res.json();
 
   return data.data.map((product) => ({

@@ -19,7 +19,7 @@ export default function Home() {
 
 
   useEffect(() => {
-    fetch(`https://tigertigerfoods.com/api/get-categories`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-categories`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setData(response.data); // Only store the "data" array
@@ -28,7 +28,7 @@ export default function Home() {
         console.error("Error fetching data:", error); // Handle errors
       });
 
-    fetch(`https://tigertigerfoods.com/api/get-pulp`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-pulp`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setPulpData(response.data); // Only store the "data" array
@@ -37,7 +37,7 @@ export default function Home() {
         console.error("Error fetching data:", error); // Handle errors
       });
 
-    fetch(`https://tigertigerfoods.com/api/get-crammid`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-crammid`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setCrammidData(response.data); // Only store the "data" array
@@ -46,7 +46,7 @@ export default function Home() {
         console.error("Error fetching data:", error); // Handle errors
       });
 
-    fetch(`https://tigertigerfoods.com/api/get-wow-chow`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-wow-chow`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setWowChowData(response.data); // Only store the "data" array

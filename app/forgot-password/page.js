@@ -56,7 +56,7 @@ export default function ForgotPasswordPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://tigertigerfoods.com/api/verify-email", {
+      const res = await fetch("https://backend.tigertigerfoods.com/api/verify-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ export default function ForgotPasswordPage() {
 
     try {
       const enteredOtp = otp.join(""); // combine 4 boxes into one string
-      const res = await fetch("https://tigertigerfoods.com/api/verify-otp", {
+      const res = await fetch("https://backend.tigertigerfoods.com/api/verify-otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

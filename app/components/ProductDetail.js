@@ -68,7 +68,7 @@ export default function ProductDetail({ slug }) {
     if (!slug) return;
 
     // Step 1: Get ID from slug
-    fetch(`https://tigertigerfoods.com/api/get-products`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-products`)
       .then((res) => res.json())
       .then((res) => {
         const found = res.data.find((p) => p.slug === slug);
@@ -76,7 +76,7 @@ export default function ProductDetail({ slug }) {
 
         // Step 2: Fetch detail using ID
         return fetch(
-          `https://tigertigerfoods.com/api/get-product-detail/${found.id}`
+          `https://backend.tigertigerfoods.com/api/get-product-detail/${found.id}`
         );
       })
       .then((res) => res.json())

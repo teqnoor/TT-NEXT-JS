@@ -67,7 +67,7 @@ export default function CheckoutPage() {
 
     try {
       const response = await axios.post(
-        "https://tigertigerfoods.com/api/send-enquiry",
+        "https://backend.tigertigerfoods.com/api/send-enquiry",
         {
           user_id: formData.user_id,
           name: formData.name,
@@ -124,7 +124,7 @@ export default function CheckoutPage() {
 
       try {
         const res = await axios.get(
-          "https://tigertigerfoods.com/api/get-user",
+          "https://backend.tigertigerfoods.com/api/get-user",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

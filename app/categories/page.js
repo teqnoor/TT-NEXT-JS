@@ -11,7 +11,7 @@ export default function ProductsPage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`https://tigertigerfoods.com/api/get-categories`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-categories`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setData(response.data); // Only store the "data" array

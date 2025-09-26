@@ -23,7 +23,7 @@ export default function CategoryProductsClient({ slug }) {
     async function fetchProducts() {
       try {
         const res = await fetch(
-          `https://tigertigerfoods.com/api/get-product-by-category?category=${slug}`
+          `https://backend.tigertigerfoods.com/api/get-product-by-category?category=${slug}`
         );
         const data = await res.json();
         if (data.success) {

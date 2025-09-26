@@ -29,7 +29,7 @@ export default function BlogsPage() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const res = await fetch("https://tigertigerfoods.com/api/get-blogs"); // adjust if base URL needed
+        const res = await fetch("https://backend.tigertigerfoods.com/api/get-blogs"); // adjust if base URL needed
         const data = await res.json();
         if (data.success && Array.isArray(data.data)) {
           const blogsWithColors = data.data.map((blog) => ({

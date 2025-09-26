@@ -27,7 +27,7 @@ export default function ProductRangesPage() {
   }, []);
 
   useEffect(() => {
-    fetch("https://tigertigerfoods.com/api/get-product-ranges")
+    fetch("https://backend.tigertigerfoods.com/api/get-product-ranges")
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

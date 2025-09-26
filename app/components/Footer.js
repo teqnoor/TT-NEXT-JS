@@ -15,7 +15,7 @@ export default function Footer() {
 
     (async () => {
       try {
-        const res = await fetch("https://tigertigerfoods.com/api/get-categories", {
+        const res = await fetch("https://backend.tigertigerfoods.com/api/get-categories", {
           signal: ac.signal,
           headers: { Accept: "application/json" },
           cache: "no-store",

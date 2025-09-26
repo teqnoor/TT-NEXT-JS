@@ -19,7 +19,7 @@ export default function SearchBox() {
 
     try {
       const response = await axios.get(
-        "https://tigertigerfoods.com/api/get-products",
+        "https://backend.tigertigerfoods.com/api/get-products",
         { params: { search: searchTerm, page } }
       );
 

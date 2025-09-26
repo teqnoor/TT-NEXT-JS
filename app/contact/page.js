@@ -44,7 +44,7 @@ export default function ContactPage() {
     setErrors({});
 
     try {
-      const res = await fetch("https://tigertigerfoods.com/api/contact-query", {
+      const res = await fetch("https://backend.tigertigerfoods.com/api/contact-query", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

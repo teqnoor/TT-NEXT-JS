@@ -11,7 +11,7 @@ export default function RelatedProductsSlider({ product_id }) {
 
   // Fetch related products
   useEffect(() => {
-    fetch(`https://tigertigerfoods.com/api/get-related-product/${product_id}`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-related-product/${product_id}`)
       .then((res) => res.json())
       .then((response) => {
         if (response?.data) setRelatedProducts(response.data);

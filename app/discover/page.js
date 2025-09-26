@@ -9,7 +9,7 @@ export default function DiscoverPage() {
   const [featureData, setFeatureData] = useState([]);
   const [newData, setNewData] = useState([]);
   useEffect(() => {
-    fetch(`https://tigertigerfoods.com/api/get-categories`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-categories`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setData(response.data); // Only store the "data" array
@@ -18,7 +18,7 @@ export default function DiscoverPage() {
         console.error("Error fetching data:", error); // Handle errors
       });
 
-    fetch(`https://tigertigerfoods.com/api/get-new-arrival-and-featured`)
+    fetch(`https://backend.tigertigerfoods.com/api/get-new-arrival-and-featured`)
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setFeatureData(response.data.featured_product);

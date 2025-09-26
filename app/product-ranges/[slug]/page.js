@@ -3,7 +3,7 @@ import ProductRangeDetail from "@/app/components/ProductRangeDetail";
 
 
 export async function generateStaticParams() {
-  const res = await fetch("https://tigertigerfoods.com/api/get-product-ranges");
+  const res = await fetch("https://backend.tigertigerfoods.com/api/get-product-ranges");
   const data = await res.json();
 
   return data.data.map((product) => ({

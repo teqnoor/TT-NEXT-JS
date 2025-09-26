@@ -10,7 +10,7 @@ export default function OrdersList() {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("https://tigertigerfoods.com/api/get-orders", {
+        const res = await fetch("https://backend.tigertigerfoods.com/api/get-orders", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
