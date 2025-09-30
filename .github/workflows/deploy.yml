@@ -28,7 +28,7 @@ jobs:
         with:
           server: uk50.siteground.eu
           username: uk50.siteground.eu
-          password: ${{ secrets.FTP_SERVER_PASSWORD }}
+          password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           protocol: ftp
           local-dir: out/
