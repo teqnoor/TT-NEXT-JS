@@ -26,8 +26,8 @@ jobs:
       - name: 📂 Upload to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
-          server: 153.92.6.140
-          username: u405465134.tiger.teqnoor.cloud
+          server: uk50.siteground.eu
+          username: uk50.siteground.eu
           password: ${{ secrets.FTP_SERVER_PASSWORD }}
           port: 21
           protocol: ftp
