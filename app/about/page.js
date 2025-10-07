@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 export default function AboutPage() {
@@ -29,21 +29,18 @@ export default function AboutPage() {
 
   const blogs = [
     {
-      slug: "japanese-cooking-for-beginners",
       title: "High Quality",
       description:
         "Tiger Tiger UK stands as a steadfast assurance of top-tier quality for both its ingredients and culinary offerings. We take pride in ensuring the authentic taste of pan-Asian cuisine, meticulously developed and sourced from the Far East. Our commitment extends across borders, bringing genuine and premium products to discerning palates in the UK, Europe, and the Americas. Embrace the essence of true pan-Asian flavours with Tiger Tiger UK, where quality meets authenticity on a global culinary journey.",
       color: "#FF7373",
     },
     {
-      slug: "simple-japanese-dips-tiger-sauces",
       title: "Competitive Prices",
       description:
         "At Tiger Tiger UK, we take pride in offering not only exceptional quality but also competitive prices. By strategically sourcing, developing, and efficiently managing our supply chain, we aim to make authentic pan-Asian culinary experiences accessible to a wider audience. Ensuring that Tiger Tiger UK is a winning combination of premium quality and competitive pricing, making your culinary journey both delightful and cost-effective.",
       color: "#84EBE8",
     },
     {
-      slug: "rise-of-japanese-cuisine-uk",
       title: "Mesmerising Taste",
       description:
         "Tiger Tiger UK helps create delectable dishes with carefully selected ingredients to bring you the authentic taste of Asia, no matter where you are. From our irresistibly flavourful sauces, pastes, and curries to our tempting range of frozen foods, main products and all the essential ingredients, each item is designed to make every bite an irresistible journey into the heart of Asian cuisine.",
@@ -210,7 +207,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {blogs.map((blog, index) => (
               <Link
-                href={`/blogs/${blog.slug}`}
+                href="javascript:void(0)"
                 key={blog.slug}
                 className={`block p-[26px] text-black transition-all duration-200 rounded-lg`}
                 style={{
@@ -310,18 +307,18 @@ export default function AboutPage() {
           </p>
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="bg-white text-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#000] hover:text-white transition"
             >
               Contact us to get to know more
-            </a>
-            <a
-              href="#products"
+            </Link>
+            <Link
+              href="/products"
               className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#5d0261] transition"
             >
               Discover our products
-            </a>
+            </Link>
           </div>
         </div>
       </section>
