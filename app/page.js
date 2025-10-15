@@ -127,10 +127,10 @@ export default function Home() {
         />
 
         {/* Overlay Content */}
-        <div className="absolute top-[10%] md:top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10 w-full max-w-[90%] md:max-w-full">
+        <div className="absolute top-[10%] md:top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#405305] z-10 w-full max-w-[90%] md:max-w-full">
           <div>
             {/* Top Feature Row */}
-            <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium mb-2 text-[#220016]">
+            <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium mb-2 text-[#405305]">
               {[
                 "High Quality",
                 "Competitive Prices",
@@ -147,13 +147,13 @@ export default function Home() {
             {/* Heading */}
             <p className="text-lg font-outfit mt-10">Made with real fruit</p>
             <h1 className="eczar text-[40px] md:text-[64px]">
-              Award Winning <span className="text-[#FF9E02]">PULP+</span>
+              Award Winning <span className="text-[#405305]">PULP+</span>
             </h1>
 
             {/* Subtext */}
             <p className="text-base font-outfit mb-4">
               Thirst{" "}
-              <span className="text-[#FF9E02] eczar text-[16px]">
+              <span className="text-[#405305] eczar text-[16px]">
                 quenching
               </span>{" "}
               drink made just for you.
@@ -161,7 +161,7 @@ export default function Home() {
 
             {/* Buttons */}
             <div className="flex justify-center gap-4 flex-wrap">
-              <Link href='/tt-app' className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition">
+              <Link href='/tt-app' className="border border-[#405305] px-6 py-2 rounded-full font-medium hover:bg-[#405305] hover:text-white transition">
                 View Our App
               </Link>
               <button className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium border-2 border-transparent hover:bg-yellow-200 hover:text-black hover:border-black transition">
