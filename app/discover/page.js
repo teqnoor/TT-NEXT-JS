@@ -18,7 +18,9 @@ export default function DiscoverPage() {
         console.error("Error fetching data:", error); // Handle errors
       });
 
-    fetch(`https://backend.tigertigerfoods.com/api/get-new-arrival-and-featured`)
+    fetch(
+      `https://backend.tigertigerfoods.com/api/get-new-arrival-and-featured`
+    )
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setFeatureData(response.data.featured_product);
@@ -27,9 +29,7 @@ export default function DiscoverPage() {
       .catch((error) => {
         console.error("Error fetching data:", error); // Handle errors
       });
-    
   }, []);
-
 
   return (
     <>
@@ -44,21 +44,24 @@ export default function DiscoverPage() {
 
       {/* Range Section */}
       <section className="py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Heading row */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 Popular Ranges
               </h2>
-              <p className="text-sm md:text-base text-[#220016] mt-1 mb-4 md:mb-8">
+              <p className="text-sm md:text-base text-[#220016] mt-1 mb-4 md:mb-0">
                 Our most popular product line up.
               </p>
             </div>
 
-            <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
+            <Link
+              href="/product-ranges"
+              className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
+            >
               View All
-            </a>
+            </Link>
           </div>
 
           <div className="mt-4 md:mt-0">
@@ -70,7 +73,7 @@ export default function DiscoverPage() {
       {/* Categories Section */}
       <section className=" py-12 px-6 md:px-0">
         {/* Header Row */}
-        <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
+        <div className="max-w-7xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
             <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
               Product Categories
@@ -81,10 +84,12 @@ export default function DiscoverPage() {
             </p>
           </div>
 
-          <a href="/products/categories" className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
-              View All
-            </a>
-
+          <a
+            href="/products/categories"
+            className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base"
+          >
+            View All
+          </a>
         </div>
 
         {/* Marquee Category Row */}
@@ -93,25 +98,28 @@ export default function DiscoverPage() {
 
       {/* New Arrivals Section */}
       <section className="py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto mb-8">
-          <div className="flex flex-wrap justify-between items-center">
+        <div className="max-w-7xl mx-auto mb-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 New Products
               </h2>
-
-              <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+              <p className="text-sm md:text-base text-[#220016] mt-1 mb-4 md:mb-0">
                 Latest and hot selling products from Tiger Tiger Foods
               </p>
             </div>
-            <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
+
+            <Link
+              href="/product-ranges"
+              className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
+            >
               View All
-            </a>
+            </Link>
           </div>
         </div>
 
         {/* Image Section */}
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
             {/* Card Template */}
             {newData.map((card, i) => (
@@ -134,25 +142,28 @@ export default function DiscoverPage() {
 
       {/* Featured Section */}
       <section className="py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto mb-8">
-          <div className="flex flex-wrap justify-between items-center">
+        <div className="max-w-7xl mx-auto mb-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 Featured Products
               </h2>
-
-              <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
+              <p className="text-sm md:text-base text-[#220016] mt-1 mb-4 md:mb-0">
                 Top selling and featured products from Tiger Tiger Foods
               </p>
             </div>
-            <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
+
+            <Link
+              href="/product-ranges"
+              className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
+            >
               View All
-            </a>
+            </Link>
           </div>
         </div>
 
         {/* Image Section */}
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
             {/* Card Template */}
             {featureData.map((card, i) => (
@@ -175,22 +186,26 @@ export default function DiscoverPage() {
 
       {/* Product Catalog Section */}
       <section className="py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto mb-8 text-center">
-          <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
+        <div className="max-w-7xl mx-auto text-center">
+          {/* Heading */}
+          <h2 className="eczar font-semibold text-[32px] md:text-[64px] text-[#30523E]">
             Product Catalogue
           </h2>
-
           <p className="text-sm md:text-base text-[#220016] mt-1 mb-8">
             Discover over 200 product range from Tiger Tiger Foods
           </p>
 
-          <a className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base">
-              Browse all products
-            </a>
+          <Link
+            href={"/products"}
+            className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar text-[#556D08]"
+          >
+            Browse all products
+          </Link>
         </div>
-
-        
       </section>
+      
     </>
   );
 }
+
+
