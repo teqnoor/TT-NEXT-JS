@@ -1,13 +1,13 @@
 const nextConfig = {
   eslint: {
-    ignoreDuringBuilds: true, // 🚨 disables lint check during build
+    ignoreDuringBuilds: true,
   },
-  output: "export", // ✅ enables static export
-  basePath: "", // no base path
-  assetPrefix: "./", // ✅ use relative paths for CSS/JS
+  output: "export",
+  basePath: "",        // no base path
+  trailingSlash: true, // ensures exported HTML and assets have trailing slash for correct paths
   images: {
-    loader: 'custom',
-    loaderFile: './image-loader.js',
+    loader: "custom",
+    loaderFile: "./image-loader.js",
     unoptimized: true,
   },
 };
