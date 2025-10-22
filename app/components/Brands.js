@@ -42,7 +42,7 @@ export default function BrandsSlider() {
   ];
 
   return (
-    <section className="bg-[#40023F] py-4">
+    <section className="bg-[#FF9003] py-4">
       <div className="max-w-7xl mx-auto px-4">
         <div ref={sliderRef} className="keen-slider">
           {brands.map((brand, index) => (

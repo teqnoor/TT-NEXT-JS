@@ -115,25 +115,25 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center md:justify-end gap-4">
             <a
               href="https://www.instagram.com/tigertigerfoodofficial/"
-              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#40023F] hover:text-white transition-colors"
+              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#556D08] hover:text-white transition-colors"
             >
               Instagram ↗
             </a>
             <a
               href="https://www.facebook.com/tigertigerfoodsofficial/"
-              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#40023F] hover:text-white transition-colors"
+              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#556D08] hover:text-white transition-colors"
             >
               Facebook ↗
             </a>
             <a
               href="https://www.tiktok.com/@tigertigerfoodsofficial1?_t=8rkFatEOb71&_r=1"
-              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#40023F] hover:text-white transition-colors"
+              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#556D08] hover:text-white transition-colors"
             >
               Tiktok ↗
             </a>
             <a
               href="https://www.linkedin.com/company/jk-foodsofficial/"
-              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#40023F] hover:text-white transition-colors"
+              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#556D08] hover:text-white transition-colors"
             >
               Linkedin ↗
             </a>

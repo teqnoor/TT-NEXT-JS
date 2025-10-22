@@ -15,7 +15,7 @@ export default function CategoryMarquee({ categories }) {
               className="inline-flex flex-col items-center justify-center"
             >
               {/* Circular Image */}
-              <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden shadow-md ring-2 ring-white">
+              <div className="w-28 h-28 md:w-[182px] md:h-[182px] rounded-full overflow-hidden shadow-md ring-2 ring-white">
                 <Image
                   src={item.image}
                   alt={item.name}

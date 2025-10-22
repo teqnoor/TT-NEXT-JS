@@ -5,18 +5,18 @@ import SmoothSlider from "./components/SmoothSlider";
 import CategoryMarquee from "./components/categoryMarquee";
 import BrandsSlider from "./components/Brands";
 import { motion } from "framer-motion";
-import { HiOutlineArrowRight } from "react-icons/hi";
-import { FiArrowUpRight } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import ProductRangerSlider from "./components/ProductRangeSlider";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 export default function Home() {
   const [data, setData] = useState([]);
   const [pulpData, setPulpData] = useState([]);
   const [crammidData, setCrammidData] = useState([]);
   const [wowChowData, setWowChowData] = useState([]);
-
 
   useEffect(() => {
     fetch(`https://backend.tigertigerfoods.com/api/get-categories`)
@@ -138,8 +138,8 @@ export default function Home() {
                 "Bulk Orders",
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <FaStar className="text-orange-400 text-sm" />
-                  <span>{text}</span>
+                  <FaStar className="text-[#556D08] text-sm" />
+                  <span className="text-[#556D08]">{text}</span>
                 </div>
               ))}
             </div>
@@ -161,10 +161,13 @@ export default function Home() {
 
             {/* Buttons */}
             <div className="flex justify-center gap-4 flex-wrap">
-              <Link href='/tt-app' className="border border-[#405305] px-6 py-2 rounded-full font-medium hover:bg-[#405305] hover:text-white transition">
+              <Link
+                href="/tt-app"
+                className="border border-[#556D08] px-6 py-2 rounded-full font-medium hover:bg-[#556D08] hover:text-white transition"
+              >
                 View Our App
               </Link>
-              <button className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium border-2 border-transparent hover:bg-yellow-200 hover:text-black hover:border-black transition">
+              <button className="bg-[#556D08] text-white px-6 py-2 rounded-full font-medium border-2 border-transparent hover:bg-[#fff] hover:text-black hover:border-[#556D08] transition">
                 Discover all products
               </button>
             </div>
@@ -225,7 +228,7 @@ export default function Home() {
         className="relative py-16 bg-cover bg-center"
         style={{ backgroundImage: "url('/flavour_bg.jpg')" }}
       >
-        <div className="relative max-w-6xl mx-auto px-6 md:px-0">
+        <div className="relative max-w-7xl mx-auto px-6 md:px-0">
           {/* Title */}
           <h2 className="eczar text-2xl md:text-3xl text-white mb-2">
             4 Amazing Flavours
@@ -281,19 +284,21 @@ export default function Home() {
           <div className="my-12"></div>
 
           {/* Bottom Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
-            <div className="flex flex-col items-center border-b md:border-b-0 md:border-r border-white/40 pb-4 md:pb-0">
-              <p className="font-bold text-[24px] md:text-[32px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white text-center">
+            <div className="flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-white/40 pb-4 md:pb-0">
+              <p className="font-bold eczar text-[24px] md:text-[40px] leading-tight">
                 100% Real Fruit
               </p>
             </div>
-            <div className="flex flex-col items-center border-b md:border-b-0 md:border-r border-white/40 pb-4 md:pb-0">
-              <p className="font-bold text-[24px] md:text-[32px]">
+
+            <div className="flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-white/40 pb-4 md:pb-0">
+              <p className="font-bold eczar text-[24px] md:text-[40px] leading-tight">
                 No Added Sugar
               </p>
             </div>
-            <div className="flex flex-col items-center">
-              <p className="font-bold text-[24px] md:text-[32px]">
+
+            <div className="flex flex-col items-center justify-center">
+              <p className="font-bold eczar text-[24px] md:text-[40px] leading-tight">
                 Never From Concentrate
               </p>
             </div>
@@ -303,21 +308,21 @@ export default function Home() {
 
       {/* Product Range  */}
       <section className="py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Heading row */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 Popular Ranges
               </h2>
-              <p className="text-sm md:text-base text-[#220016] mt-1 mb-4 md:mb-8">
+              <p className="text-sm md:text-base text-[#220016] mt-1 mb-4 md:mb-0">
                 Our most popular product line up.
               </p>
             </div>
 
             <Link
               href="/product-ranges"
-              className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base"
+              className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
             >
               View All
             </Link>
@@ -348,38 +353,43 @@ export default function Home() {
           className="w-full h-auto"
         />
 
-        <div className="max-w-6xl mx-auto px-4">
-          <ul
-            className="
-        grid place-items-center
-        grid-cols-2 md:grid-cols-3 lg:grid-cols-4
-        gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-12
-      "
+        <div className="max-w-7xl mx-auto px-4 bg-white">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={24}
+            slidesPerView={2}
+            breakpoints={{
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+            }}
+            autoplay={{
+              delay: 2000, // time between slides (ms)
+              disableOnInteraction: false, // keep autoplay after user interaction
+            }}
+            loop={true}
+            className="!overflow-hidden"
           >
             {crammidData.map((p, i) => (
-              <li key={p.name} className="w-full flex flex-col items-center">
-                <div
-                  className="
-              w-[150px] h-[180px] md:w-[210px] md:h-[250px]
-              flex items-end justify-center
-            "
-                >
-                  <Link href={`/products/${p.slug}`} key={i}>
-                    <img
-                      src={p.images}
-                      alt={p.name}
-                      className="max-h-full max-w-full object-contain drop-shadow-md"
-                      loading="lazy"
-                    />
-                  </Link>
-                </div>
+              <SwiperSlide key={p.name}>
+                <div className="w-full flex flex-col items-center">
+                  <div className="w-[280px] h-[280px] flex items-end justify-center">
+                    <Link href={`/products/${p.slug}`} key={i}>
+                      <img
+                        src={p.images}
+                        alt={p.name}
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                      />
+                    </Link>
+                  </div>
 
-                <p className="mt-3 text-center text-sm md:text-base font-semibold tracking-tight text-[#2F5D27]">
-                  {p.name}
-                </p>
-              </li>
+                  <p className=" mt-3 text-center text-[16px] md:text-[16px] eczar font-semibold text-[#405305] w-[180px]  line-clamp-3">
+                    {p.name}
+                  </p>
+                </div>
+              </SwiperSlide>
             ))}
-          </ul>
+          </Swiper>
         </div>
       </section>
 
@@ -394,7 +404,7 @@ export default function Home() {
           className="w-full h-full"
         />
 
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <ul
             className="
         grid place-items-center
@@ -406,7 +416,7 @@ export default function Home() {
               <li key={p.name} className="w-full flex flex-col items-center">
                 <div
                   className="
-              w-[150px] h-[180px] md:w-[210px] md:h-[250px]
+              w-[180px] h-[180px] md:w-[280px] md:h-[280px]
               flex items-end justify-center
             "
                 >
@@ -414,15 +424,15 @@ export default function Home() {
                     <img
                       src={p.images}
                       alt={p.name}
-                      className="max-h-full max-w-full object-contain drop-shadow-md"
+                      className="max-h-full max-w-full object-contain"
                       loading="lazy"
                     />
                   </Link>
                 </div>
 
-                <p className="mt-3 text-center text-sm md:text-base font-semibold tracking-tight text-[#2F5D27]">
-                  {p.name}
-                </p>
+                <p className=" mt-3 text-center text-[16px] md:text-[16px] eczar font-semibold text-[#405305] w-[180px]  line-clamp-3">
+                    {p.name}
+                  </p>
               </li>
             ))}
           </ul>
@@ -431,7 +441,7 @@ export default function Home() {
 
       {/* We Offer Alot Section  */}
       <section className="py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <h2 className="eczar font-semibold text-[32px] md:text-[64px] text-[#30523E]">
             We have a lot more to offer
@@ -443,7 +453,7 @@ export default function Home() {
 
           <Link
             href={"/products"}
-            className="bg-[#F1D98F] px-6 py-4 rounded-sm"
+            className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar text-[#556D08]"
           >
             Browse all products
           </Link>
@@ -453,9 +463,9 @@ export default function Home() {
       {/* Categories Section */}
       <section className="py-12">
         {/* Header Row */}
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6 px-6 md:px-0">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6 px-6 md:px-0">
           <div>
-            <h2 className="eczar text-2xl md:text-[32px] text-[#220016]">
+            <h2 className="eczar text-2xl md:text-[32px] text-[#556D08]">
               Product Categories
             </h2>
             <p className="text-sm md:text-base">
@@ -477,7 +487,7 @@ export default function Home() {
 
       {/* We Offer Alot Section  */}
       <section className="py-12 px-6 md:px-0">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <Image
             src="/logo.png"
@@ -504,22 +514,22 @@ export default function Home() {
           {/* Bottom Features */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
             <div className="flex flex-col items-center  pb-4 md:pb-0">
-              <p className="font-bold text-[24px] text-black">
+              <p className="font-bold text-[32px] text-black">
                 200+ <br /> Products
               </p>
             </div>
             <div className="flex flex-col items-center  pb-4 md:pb-0">
-              <p className="font-bold text-[20px] md:text-[24px] text-black">
+              <p className="font-bold text-[20px] md:text-[32px] text-black">
                 Competitive <br /> Prices
               </p>
             </div>
             <div className="flex flex-col items-center pb-4 md:pb-0">
-              <p className="font-bold text-[20px] md:text-[24px] text-black">
+              <p className="font-bold text-[20px] md:text-[32px] text-black">
                 1000+ <br /> UK F&B Businesses <br /> Served
               </p>
             </div>
             <div className="flex flex-col items-center pb-4 md:pb-0">
-              <p className="font-bold text-[20px] md:text-[24px] text-black">
+              <p className="font-bold text-[20px] md:text-[32px] text-black">
                 Bulk <br /> Orders
               </p>
             </div>

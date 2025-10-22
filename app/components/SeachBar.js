@@ -106,9 +106,9 @@ export default function SearchBox() {
       className="relative hidden md:flex flex-col items-start z-50"
     >
       {/* Search Input */}
-      <div className="flex items-center bg-[#40023F] rounded-full px-[10px] py-[14px] w-[320px]">
+      <div className="flex items-center bg-[#F1D98F] rounded-full px-[10px] py-[14px] w-[320px]">
         <FaMagnifyingGlass
-          className="text-white text-sm mr-[10px] ms-[10px]"
+          className="text-[#556D08] text-sm mr-[10px] ms-[10px]"
           size={20}
         />
         <input
@@ -116,7 +116,7 @@ export default function SearchBox() {
           placeholder="Search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="bg-transparent text-white placeholder-white focus:outline-none w-full"
+          className=" text-dark placeholder-dark focus:outline-none w-full"
         />
       </div>
 

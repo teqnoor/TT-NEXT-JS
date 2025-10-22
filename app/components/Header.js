@@ -72,7 +72,7 @@ export default function Header() {
   return (
     <>
       <div
-        className="max-w-6xl mx-auto fixed top-0 left-0 right-0 z-50"
+        className="max-w-7xl mx-auto fixed top-0 left-0 right-0 z-50"
         id="header"
       >
         <header className="mt-6 flex items-center md:gap-[50px] rounded-full bg-white/60 shadow-[0px_4px_13.4px_0px_#0000001F] backdrop-blur-[24px] px-[15px] py-[10px]">
@@ -91,7 +91,7 @@ export default function Header() {
           <div className="md:hidden w-full flex justify-end">
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="text-[#220016] text-3xl"
+              className="text-[#556D08] text-3xl"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <HiOutlineX /> : <HiOutlineMenu />}
@@ -103,7 +103,7 @@ export default function Header() {
             <nav className="hidden md:flex space-x-6 font-medium text-gray-800 relative">
               <Link
                 href="/"
-                className={`font-outfit text-[18.04px] text-[#220016] ${
+                className={`font-outfit text-[18.04px] text-[#556D08] ${
                   path === "/" ? "font-bold" : "font-normal"
                 }`}
               >
@@ -114,7 +114,7 @@ export default function Header() {
               <div ref={dropdownRef} className="relative">
                 <div
                   onClick={() => setIsOpen((prev) => !prev)}
-                  className="cursor-pointer font-outfit font-normal text-[18.04px] text-[#220016]"
+                  className="cursor-pointer font-outfit font-normal text-[18.04px] text-[#556D08]"
                 >
                   Products
                 </div>
@@ -124,31 +124,31 @@ export default function Header() {
                     <div className="flex flex-col border-2 border-[#40023F] rounded-[8px] bg-[#fff] backdrop-blur-[16px] shadow-[-3px_3px_0_0_#000]">
                       <Link
                         href="/discover"
-                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#556D08]"
                       >
                         Discover
                       </Link>
                       <Link
                         href="/products"
-                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#556D08]"
                       >
                         All Products
                       </Link>
                       <Link
                         href="/products/featured"
-                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#556D08]"
                       >
                         Featured
                       </Link>
                       <Link
                         href="/products/new"
-                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#556D08]"
                       >
                         New
                       </Link>
                       <Link
                         href="/categories"
-                        className="px-4 py-2 hover:bg-gray-100 text-[#220016]"
+                        className="px-4 py-2 hover:bg-gray-100 text-[#556D08]"
                       >
                         Categories
                       </Link>
@@ -159,7 +159,7 @@ export default function Header() {
 
               <Link
                 href="/cuisines"
-                className={`font-outfit text-[18.04px] text-[#220016] ${
+                className={`font-outfit text-[18.04px] text-[#556D08] ${
                   path === "/cuisines" ? "font-bold" : "font-normal"
                 }`}
               >
@@ -167,7 +167,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/about"
-                className={`font-outfit text-[18.04px] text-[#220016] ${
+                className={`font-outfit text-[18.04px] text-[#556D08] ${
                   path === "/about" ? "font-bold" : "font-normal"
                 }`}
               >
@@ -175,7 +175,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/contact"
-                className={`font-outfit text-[18.04px] text-[#220016] ${
+                className={`font-outfit text-[18.04px] text-[#556D08] ${
                   path === "/contact" ? "font-bold" : "font-normal"
                 }`}
               >
@@ -183,7 +183,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/blogs"
-                className={`font-outfit text-[18.04px] text-[#220016] ${
+                className={`font-outfit text-[18.04px] text-[#556D08] ${
                   path === "/blogs" ? "font-bold" : "font-normal"
                 }`}
               >
@@ -194,7 +194,7 @@ export default function Header() {
               {isLoggedIn ? (
                 <Link
                   href="/dashboard"
-                  className={`font-outfit text-[18.04px] text-[#220016] ${
+                  className={`font-outfit text-[18.04px] text-[#556D08] ${
                     path === "/dashboard" ? "font-bold" : "font-normal"
                   }`}
                 >
@@ -203,7 +203,7 @@ export default function Header() {
               ) : (
                 <Link
                   href="/login"
-                  className={`font-outfit text-[18.04px] text-[#220016] ${
+                  className={`font-outfit text-[18.04px] text-[#556D08] ${
                     path === "/login" ? "font-bold" : "font-normal"
                   }`}
                 >
@@ -221,7 +221,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 w-3/4 h-screen z-[100] bg-white md:hidden transition-transform duration-300 ease-in-out overflow-y-auto shadow-lg">
           <div className="p-6 flex flex-col h-full">
-            <nav className="flex flex-col space-y-6 text-[#220016] font-outfit text-[18px]">
+            <nav className="flex flex-col space-y-6 text-[#556D08] font-outfit text-[18px]">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                 Home
               </Link>
