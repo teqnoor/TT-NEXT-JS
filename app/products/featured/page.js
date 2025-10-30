@@ -15,7 +15,7 @@ export default function ProductFeaturedPage() {
     )
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
-        setData(response.data); // Only store the "data" array
+        setWowChowData(response.data.featured_product); // Only store the "data" array
       })
       .catch((error) => {
         console.error("Error fetching data:", error); // Handle errors
