@@ -87,11 +87,11 @@ export default function ContactPage() {
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
           <div className="max-w-5xl mx-auto text-center px-6 md:px-0">
-            <h6 className="text-[20px] text-[#220016]">Contact</h6>
-            <h1 className="eczar font-semibold text-[32px] md:text-[64px] text-[#220016]">
+            <h6 className="text-[20px] text-[#405305]">Contact</h6>
+            <h1 className="eczar font-semibold text-[32px] md:text-[64px] text-[#405305]">
               Get in touch with us
             </h1>
-            <p>
+            <p className="text-[#405305]">
               Ready to bring authentic Asian flavors to your business? We'd love
               to hear from you and help you find exactly what you need.
             </p>
@@ -174,7 +174,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-[#FFEB57] hover:bg-[#f9e141] border border-black text-black py-[20px] rounded-[14px]"
+                className="bg-[#556D08]  text-white  py-[20px] rounded-[14px]"
               >
                 {loading ? "Sending..." : "Send message"}
               </button>
@@ -184,7 +184,7 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div className="md:w-1/2 flex flex-col gap-6 mt-8 md:mt-0">
-              <div className=" border border-black rounded-lg shadow-[-5px_7px_0px_0px_#000000] p-[52px] w-full">
+              <div className="p-[52px] w-full">
                 <h3 className="eczar font-semibold mb-1">Visit us</h3>
                 <p className="text-sm mb-3">
                   Bull Close Road Lenton Industrial Estate, Nottingham NG7 2UT,
