@@ -50,7 +50,7 @@ export default function RelatedProductsSlider({ product_id }) {
     <div className="w-full">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-[32px] eczar font-semibold text-[#220016]">
+        <h2 className="text-[#556D08] eczar text-[32px] md:text-[32px]">
           Related Products
         </h2>
       </div>

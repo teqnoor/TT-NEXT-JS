@@ -121,95 +121,120 @@ export default function ProductDetail({ slug }) {
           <div className="p-6 text-red-500">Product not found</div>
         ) : (
           <>
-            <div className="max-w-6xl mx-auto mb-6 mt-4">
-              <h1 className="eczar text-[32px] font-semibold">
-                Product Detail
-              </h1>
-              <p>
-                Product {">"} {product.name}
+            <div className="max-w-7xl mx-auto mb-6 mt-10 md:mt-16 px-4 md:px-0">
+              <div className="grid md:grid-cols-2 gap-10 items-start">
+                {/* LEFT: Product Image */}
+                <div className="flex justify-center">
+                  <Image
+                    src={product.images}
+                    alt={product.name}
+                    width={500}
+                    height={500}
+                    className="rounded-3xl object-cover w-full h-[500px] max-w-[500px]"
+                  />
+                </div>
+
+                {/* RIGHT: Product Info */}
+                <div>
+                  {/* Product Name + Size */}
+                  <h1 className="text-[#556D08] eczar text-[32px] md:text-[32px]  mb-2 leading-tight">
+                    {product.name}
+                  </h1>
+                  <p className="text-base md:text-lg text-[#556D08]/80 mb-8">
+                    {product.quantity}
+                  </p>
+
+                  {/* DETAILS CARD */}
+                  <div className="mb-8">
+                    <h2 className="text-[#556D08] text-xl font-semibold mb-4">
+                      Details
+                    </h2>
+                    <div className="divide-y divide-[#556D08] text-[#556D08]/90">
+                      {[
+                        ["SKU", product.SKU],
+                        ["JK CODE", product.jk_code],
+                        ["PALLET QUANTITY", product.palette_quantity],
+                        ["CASE BARCODE", product.case_barcode],
+                        ["SINGLE BARCODE", product.single_unit_barcode],
+                        ["BRAND", product.brand],
+                      ].map(([label, value]) => (
+                        <div
+                          key={label}
+                          className="flex justify-between py-2 text-sm"
+                        >
+                          <span className="font-medium">{label}</span>
+                          <span>{value || ""}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* BUTTONS */}
+                  <div className="flex gap-4 flex-wrap">
+                    <button
+                      onClick={() => handleSelectUnit("case")}
+                      className={`px-6 py-2.5 rounded-xl font-semibold border transition-all duration-200 ${
+                        selectedUnit === "case"
+                          ? "bg-[#556D08] text-white border-[#556D08]"
+                          : "bg-transparent text-[#556D08] border-[#556D08] hover:bg-[#556D08] hover:text-white"
+                      }`}
+                    >
+                      Case
+                    </button>
+
+                    <button
+                      onClick={() => handleSelectUnit("palette")}
+                      className={`px-6 py-2.5 rounded-xl font-semibold border transition-all duration-200 ${
+                        selectedUnit === "palette"
+                          ? "bg-[#556D08] text-white border-[#556D08]"
+                          : "bg-transparent text-[#556D08] border-[#556D08] hover:bg-[#556D08] hover:text-white"
+                      }`}
+                    >
+                      Pallet
+                    </button>
+
+                    <button
+                      onClick={handleAddToCart}
+                      disabled={!selectedUnit}
+                      className={`px-8 py-2.5 rounded-xl font-semibold flex items-center gap-2 transition-all duration-200 ${
+                        !selectedUnit
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : "bg-[#556D08] hover:bg-[#435707] text-white"
+                      }`}
+                    >
+                      Add to Inquiry
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-5 h-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M2.25 2.25h1.386a.75.75 0 0 1 .728.568l.862 3.445m0 0L6.75 15.75h10.5l1.524-6.088a.75.75 0 0 0-.728-.912H6.372m-1.146 0L4.5 3.75m4.5 12.75a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm7.5 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Product Description */}
+            <div className="max-w-7xl mx-auto px-4 md:px-0 mt-12 mb-12">
+              <h2 className="text-[#556D08] eczar text-[32px] md:text-[32px] mb-4">
+                Product Description
+              </h2>
+              <p className="text-[#444] leading-relaxed">
+                {product.description}
               </p>
             </div>
 
-            <div className="max-w-6xl mx-auto flex gap-6 items-start mb-6">
-              <div className="mb-6 md:mb-0 flex justify-center">
-                <Image
-                  src={product.images}
-                  alt={product.name}
-                  width={550}
-                  height={400}
-                  className="rounded-xl h-[500px] object-cover"
-                />
-              </div>
-              <div className="text-[#220016]">
-                <div className="border border-[#220016] bg-[#FFF0B4] rounded p-[36px] mb-4">
-                  <h2 className="eczar font-semibold text-[32px]">
-                    {product.name}
-                  </h2>
-                  <p className="text-sm">{product.quantity}</p>
-                </div>
-                <div className="bg-[#fff0b4] border border-[#220016] rounded p-[36px] mb-6">
-                  <h3 className="font-bold text-lg mb-3">Details</h3>
-                  {[
-                    ["SKU", product.SKU],
-                    ["JK Code", product.jk_code],
-                    ["Palette Quantity", product.palette_quantity],
-                    ["Case Barcode", product.case_barcode],
-                    ["Single Barcode", product.single_unit_barcode],
-                    ["Brand", product.brand],
-                  ].map(([label, value]) => (
-                    <div
-                      key={label}
-                      className="flex justify-between text-sm py-1 border-b border-[#0000004F]"
-                    >
-                      <span>{label}</span>
-                      <span>{value}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex gap-4 flex-wrap">
-                  <button
-                    onClick={() => handleSelectUnit("case")}
-                    className={`px-4 py-2 rounded-xl font-medium ${
-                      selectedUnit === "case"
-                        ? "bg-[#40023F] text-white"
-                        : "bg-transparent text-black border-[2px] border-[#40023F]"
-                    }`}
-                  >
-                    Case
-                  </button>
-                  <button
-                    onClick={() => handleSelectUnit("palette")}
-                    className={`px-4 py-2 rounded-xl font-medium ${
-                      selectedUnit === "palette"
-                        ? "bg-[#40023F] text-white"
-                        : "bg-transparent text-black border-[2px] border-[#40023F]"
-                    }`}
-                  >
-                    Palette
-                  </button>
-                  <button
-                    onClick={handleAddToCart}
-                    disabled={!selectedUnit}
-                    className={`px-4 py-2 rounded-xl font-medium ${
-                      !selectedUnit
-                        ? "bg-gray-400 text-gray-600 cursor-not-allowed"
-                        : "bg-[#9747FF] text-white"
-                    }`}
-                  >
-                    Add to Inquiry
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="max-w-6xl mx-auto mb-6">
-              <h2 className="eczar text-[32px] font-semibold">
-                Product Description
-              </h2>
-              <p className="text-justify">{product.description}</p>
-            </div>
-
-            <section className="max-w-6xl mx-auto py-12 px-6 md:px-0">
+            {/* Related Products */}
+            <section className="max-w-7xl mx-auto py-12 px-4 md:px-0">
               <RelatedProductsSlider product_id={product.id} />
             </section>
           </>
