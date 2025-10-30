@@ -30,7 +30,7 @@ export default function BlogClient({ blog, others }) {
 
   if (!blog) {
     return (
-      <div className="max-w-6xl mx-auto py-20 text-center">
+      <div className="max-w-7xl mx-auto py-20 text-center">
         <p>Blog not found.</p>
       </div>
     );
@@ -43,7 +43,7 @@ export default function BlogClient({ blog, others }) {
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
-          <div className=" max-w-6xl mx-auto flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
+          <div className=" max-w-7xl mx-auto flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
             <div className="bg-[#97E0FF] p-[20px] md:p-[50px]">
               <h1 className="eczar font-extrabold text-[36px] md:text-[54px] text-[#220016] mb-5">
                 {blog.title}
@@ -67,7 +67,7 @@ export default function BlogClient({ blog, others }) {
 
       {/* Blog Body + Sidebar */}
       <section className="py-4">
-        <div className="max-w-6xl mx-auto px-6 md:px-0 md:flex md:gap-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-0 md:flex md:gap-8">
           {/* Left Content */}
           <div className="md:w-2/3">
             <div
