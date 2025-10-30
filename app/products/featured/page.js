@@ -10,7 +10,9 @@ export default function ProductFeaturedPage() {
   const [wowChowData, setWowChowData] = useState([]);
 
   useEffect(() => {
-    fetch(`https://backend.tigertigerfoods.com/api/get-new-arrival-and-featured`)
+    fetch(
+      `https://backend.tigertigerfoods.com/api/get-new-arrival-and-featured`
+    )
       .then((res) => res.json()) // Parse the response as JSON
       .then((response) => {
         setData(response.data); // Only store the "data" array
@@ -62,22 +64,19 @@ export default function ProductFeaturedPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            {["/pulpRange2.png", "/pulpRange3.png", "/pulpRange1.jpg"].map(
-              (src, index) => (
-                <div
-                  key={index}
-                  className="aspect-[3/4] md:aspect-[3/4] h-auto"
-                >
-                  <div className="w-full h-full overflow-hidden rounded-3xl">
-                    <img
-                      src={src}
-                      alt={`Pulp Range ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+            {wowChowData.map((p, i) => (
+              <div key={index} className="aspect-[3/4] md:aspect-[3/4] h-auto">
+                <div className="w-full h-full overflow-hidden rounded-3xl">
+                  <img
+                    src={src}
+                    alt={`Pulp Range ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              )
-            )}
+              </div>
+            ))}
+
+            
           </div>
         </div>
       </section>
