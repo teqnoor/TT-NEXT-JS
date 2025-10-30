@@ -90,7 +90,7 @@ export default function ProductFeaturedPage() {
                     <div className="absolute bottom-5 left-0 right-0 px-6">
                       <div className="w-full bg-[#FCE7A2] rounded-xl py-3 text-center shadow-md">
                         <p className="eczar text-[24px] md:text-[28px] font-semibold text-black">
-                          {p.title}
+                          {p.name}
                         </p>
                       </div>
                     </div>
