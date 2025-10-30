@@ -41,8 +41,8 @@ export default function SmoothSlider() {
     { src: "/reels/2.mp4", alt: "Wow Chow" },
     { src: "/reels/3.mp4", alt: "PULP+" },
     { src: "/reels/4.mp4", alt: "Taste Japan 1" },
-    { src: "/reels/2.mp4", alt: "Taste Japan 2" },
-    { src: "/reels/4.mp4", alt: "Taste Japan 3" },
+    { src: "/reels/5.mp4", alt: "Taste Japan 2" },
+    { src: "/reels/6.mp4", alt: "Taste Japan 3" },
   ];
 
   return (
