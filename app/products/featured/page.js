@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductFeaturedPage() {
   const pathname = usePathname();
@@ -65,18 +66,16 @@ export default function ProductFeaturedPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {wowChowData.map((p, i) => (
-              <div key={index} className="aspect-[3/4] md:aspect-[3/4] h-auto">
-                <div className="w-full h-full overflow-hidden rounded-3xl">
-                  <img
-                    src={src}
-                    alt={`Pulp Range ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div key={i} className="aspect-[3/4] md:aspect-[3/4] h-auto">
+                <Link href={`/products/${p.slug}`} key={i}>
+                  <div
+                    key={i}
+                    className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
+                    style={{ backgroundImage: `url('${p.images}')` }}
+                  ></div>
+                </Link>
               </div>
             ))}
-
-            
           </div>
         </div>
       </section>
