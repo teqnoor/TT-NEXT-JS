@@ -124,15 +124,26 @@ export default function ProductDetail({ slug }) {
             <div className="max-w-7xl mx-auto mb-6 mt-10 md:mt-16 px-4 md:px-0">
               <div className="grid md:grid-cols-2 gap-10 items-start">
                 {/* LEFT: Product Image */}
-                <div className="flex justify-center">
-                  <Image
-                    src={product.images}
-                    alt={product.name}
-                    width={500}
-                    height={500}
-                    className="rounded-3xl object-cover w-full h-[500px] max-w-[500px]"
-                  />
-                </div>
+                <div className="flex flex-col items-start">
+  {/* Product Image */}
+  <div className="flex justify-center w-full">
+    <Image
+      src={product.images}
+      alt={product.name}
+      width={500}
+      height={500}
+      className="rounded-3xl object-cover w-full h-[500px] max-w-[500px]"
+    />
+  </div>
+
+  {/* Category Badge under image */}
+  <div className="mt-4 flex flex-wrap gap-2">
+    <span className="bg-[#B0C426] text-[#fff] text-sm font-medium px-4 py-1 rounded-full">
+      {product.categories}
+    </span>
+  </div>
+</div>
+
 
                 {/* RIGHT: Product Info */}
                 <div>
