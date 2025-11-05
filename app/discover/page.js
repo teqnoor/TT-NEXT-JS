@@ -209,10 +209,7 @@ export default function DiscoverPage() {
 
           
 
-          {/* Button */}
-          <button className="border border-[#220016] px-6 py-2 rounded-full font-medium hover:bg-[#220016] hover:text-white transition flex items-center gap-2 mx-auto">
-            Load More
-          </button>
+          
         </div>
       </section>
 
