@@ -514,22 +514,22 @@ export default function Home() {
           {/* Bottom Features */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
             <div className="flex flex-col items-center  pb-4 md:pb-0">
-              <p className="font-bold text-[32px] text-black">
+              <p className="font-bold text-[30px] text-[#405305]">
                 200+ <br /> Products
               </p>
             </div>
             <div className="flex flex-col items-center  pb-4 md:pb-0">
-              <p className="font-bold text-[20px] md:text-[32px] text-black">
+              <p className="font-bold text-[20px] md:text-[30px] text-[#405305]">
                 Competitive <br /> Prices
               </p>
             </div>
             <div className="flex flex-col items-center pb-4 md:pb-0">
-              <p className="font-bold text-[20px] md:text-[32px] text-black">
+              <p className="font-bold text-[20px] md:text-[30px] text-[#405305]">
                 1000+ <br /> UK F&B Businesses <br /> Served
               </p>
             </div>
             <div className="flex flex-col items-center pb-4 md:pb-0">
-              <p className="font-bold text-[20px] md:text-[32px] text-black">
+              <p className="font-bold text-[20px] md:text-[30px] text-[#405305]">
                 Bulk <br /> Orders
               </p>
             </div>

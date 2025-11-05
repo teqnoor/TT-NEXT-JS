@@ -120,18 +120,34 @@ export default function DiscoverPage() {
 
         {/* Image Section */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-            {/* Card Template */}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {newData.map((card, i) => (
               <Link href={`/products/${card.slug}`} key={i}>
-                <div
-                  key={i}
-                  className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
-                  style={{ backgroundImage: `url('${card.images}')` }}
-                ></div>
+                <div className="h-[320px] md:h-[500px] ">
+                  <div
+                    key={i}
+                    className="h-[320px] md:h-[420px] rounded-3xl overflow-hidden"
+                  >
+                    <img
+                      src={card.images}
+                      alt={card.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="mt-3">
+                    <div className="w-full bg-[#FCE7A2] rounded-xl py-3 text-center shadow-md">
+                      <p className="eczar text-[14px] md:text-[16px] font-semibold text-black">
+                        {card.name}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
+
+         
 
           {/* Button */}
           <button className="border border-[#220016] px-6 py-2 rounded-full font-medium hover:bg-[#220016] hover:text-white transition flex items-center gap-2 mx-auto">
@@ -164,18 +180,34 @@ export default function DiscoverPage() {
 
         {/* Image Section */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-            {/* Card Template */}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {featureData.map((card, i) => (
               <Link href={`/products/${card.slug}`} key={i}>
-                <div
-                  key={i}
-                  className="relative h-75 rounded bg-cover bg-center flex items-end justify-center"
-                  style={{ backgroundImage: `url('${card.images}')` }}
-                ></div>
+                <div className="h-[320px] md:h-[500px] ">
+                  <div
+                    key={i}
+                    className="h-[320px] md:h-[420px] rounded-3xl overflow-hidden"
+                  >
+                    <img
+                      src={card.images}
+                      alt={card.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="mt-3">
+                    <div className="w-full bg-[#FCE7A2] rounded-xl py-3 text-center shadow-md">
+                      <p className="eczar text-[14px] md:text-[16px] font-semibold text-black">
+                        {card.name}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
+
+          
 
           {/* Button */}
           <button className="border border-[#220016] px-6 py-2 rounded-full font-medium hover:bg-[#220016] hover:text-white transition flex items-center gap-2 mx-auto">

@@ -121,7 +121,7 @@ export default function Header() {
 
                 {isOpen && (
                   <div className="absolute top-full left-0 mt-2 min-w-[150px] z-50">
-                    <div className="flex flex-col border-2 border-[#40023F] rounded-[8px] bg-[#fff] backdrop-blur-[16px] shadow-[-3px_3px_0_0_#000]">
+                    <div className="flex flex-col border-2 border-[#40023F] rounded-[8px] bg-[#fff]">
                       <Link
                         href="/discover"
                         className="px-4 py-2 hover:bg-gray-100 text-[#556D08]"
