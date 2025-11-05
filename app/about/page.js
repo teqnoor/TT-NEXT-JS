@@ -70,8 +70,8 @@ export default function AboutPage() {
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
           <div className="max-w-5xl mx-auto text-center px-6 md:px-0 ">
-            <h6 className="text-[20px] text-[#220016]">About us</h6>
-            <h1 className="eczar font-semibold text-[64px] text-[#220016]">
+            <h6 className="text-[20px] text-[#405305]">About us</h6>
+            <h1 className="eczar font-semibold text-[64px] text-[#405305]">
               Who We Are
             </h1>
             <p>
@@ -87,10 +87,10 @@ export default function AboutPage() {
               quality to customers at competitive prices.
             </p>
             <div className="flex justify-center mt-6 align-center gap-4">
-              <button className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition">
+              <button className="border border-[#405305] px-6 py-2 rounded-full font-medium hover:bg-[#405305] hover:text-white transition">
                 View Products
               </button>
-              <button className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#40023F] transition">
+              <button className="bg-[#405305] text-white px-6 py-2 rounded-full font-medium hover:bg-[#405305] transition">
                 Discover Cuisine
               </button>
             </div>
@@ -129,15 +129,15 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2 border-b-2 md:border-b-0 md:border-r-2 border-black pb-6 md:pb-0 h-full">
-              <h2 className="text-[50px] eczar font-bold mb-2">Our Food</h2>
-              <p className="text-[20px] text-[#40023F]">
+              <h2 className="text-[50px] text-[#405305] eczar font-bold mb-2">Our Food</h2>
+              <p className="text-[20px] text-[#405305]">
                 At Tiger Tiger UK, we redefine value without compromising on the
                 flavours that make every bite memorable.
               </p>
             </div>
 
             {/* Right Side */}
-            <div className="md:w-1/2 text-[20px] text-[#40023F]">
+            <div className="md:w-1/2 text-[20px] text-[#405305]">
               <p className="mb-3">
                 We are the UK’s leading developers of Asian food, offering a
                 diverse selection that spans Japanese, Thai, Chinese, and Indian
@@ -157,7 +157,7 @@ export default function AboutPage() {
         <div className="bg-[#FEE600] px-[40px] py-[64px] md:py-[80px] md:px-[80px]  rounded-xl  max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
             {/* Right Side */}
-            <div className="md:w-1/2 text-[20px] text-[#40023F] border-b-2 md:border-b-0 md:border-r-2 border-black pb-6 md:pb-0 h-full">
+            <div className="md:w-1/2 text-[20px] text-[#405305] border-b-2 md:border-b-0 md:border-r-2 border-black pb-6 md:pb-0 h-full">
               <div className="pr-6">
                 <p className="mb-3">
                   At Tiger Tiger UK, we're passionate about bringing you
@@ -179,10 +179,10 @@ export default function AboutPage() {
 
             {/* Left Side */}
             <div className="md:w-1/2 ">
-              <h2 className="text-[50px] eczar font-bold mb-2">
+              <h2 className="text-[50px] eczar font-bold mb-2 text-[#405305]">
                 How We Develop
               </h2>
-              <p className="text-[20px] text-[#40023F]">
+              <p className="text-[20px] text-[#405305]">
                 Every authentic flavour tells a story passed down through
                 generations. We don't just create Asian foods, we honour
                 culinary legacies with every carefully crafted dish.
@@ -194,7 +194,7 @@ export default function AboutPage() {
 
       <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto text-center">
-          <h6 className="text-[20px] text-[#220016]">Ok but why</h6>
+          <h6 className="text-[20px] text-[#405305]">Ok but why</h6>
           <h1 className="eczar font-semibold text-[50px] text-[#405305]">
             Choose Tiger Tiger Foods UK?
           </h1>
@@ -208,16 +208,16 @@ export default function AboutPage() {
             {blogs.map((blog, index) => (
               <Link
                 href="javascript:void(0)"
-                key={blog.slug}
+                key={index}
                 className={`block p-[26px] text-black transition-all duration-200 rounded-lg`}
                 style={{
                   backgroundColor: blog.color,
                 }}
               >
-                <h2 className="text-xl font-semibold mb-[50px]">
+                <h2 className="text-xl font-semibold mb-[50px] text-[#405305]">
                   {blog.title}
                 </h2>
-                <p className="text-[15px]">{blog.description}</p>
+                <p className="text-[15px] text-[#405305]">{blog.description}</p>
               </Link>
             ))}
           </div>
@@ -257,7 +257,7 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-[#84EBE8]  rounded-lg p-6">
-            <h3 className="font-bold text-lg mb-2">Global Sourcing</h3>
+            <h3 className="font-bold text-lg mb-2 text-[#405305]">Global Sourcing</h3>
             <p className="text-sm text-gray-800">
               We scour the markets of Asia to source the finest ingredients and
               products from trusted suppliers and producers. Our extensive
@@ -268,7 +268,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="bg-[#84EBE8]  rounded-lg p-6">
-            <h3 className="font-bold text-lg mb-2">
+            <h3 className="font-bold text-lg mb-2 text-[#405305]">
               Innovation and Adaptability
             </h3>
             <p className="text-sm text-gray-800">
@@ -281,7 +281,7 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-[#84EBE8]  rounded-lg p-6">
-            <h3 className="font-bold text-lg mb-2">
+            <h3 className="font-bold text-lg mb-2 text-[#405305]">
               Collaborative Development
             </h3>
             <p className="text-sm text-gray-800">
@@ -309,13 +309,13 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <Link
               href="/contact"
-              className="bg-white text-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#000] hover:text-white transition"
+              className="bg-white text-[#405305] px-6 py-2 rounded-full font-medium hover:bg-[#405305] hover:text-white transition"
             >
               Contact us to get to know more
             </Link>
             <Link
               href="/products"
-              className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#5d0261] transition"
+              className="bg-[#405305] text-white px-6 py-2 rounded-full font-medium hover:bg-[#405305] transition"
             >
               Discover our products
             </Link>

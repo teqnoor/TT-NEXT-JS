@@ -1,4 +1,3 @@
-// components/BlogClient.js
 "use client";
 
 import { useEffect, useState } from "react";
@@ -36,6 +35,16 @@ export default function BlogClient({ blog, others }) {
     );
   }
 
+  // ✅ Use the same color pattern logic if no color is passed
+  const colors = ["#CBE22F", "#84EBE8", "#FF7373"];
+  const color =
+    blog.color ||
+    colors[
+      blog.id
+        ? blog.id % colors.length
+        : Math.floor(Math.random() * colors.length)
+    ];
+
   return (
     <>
       {/* Blog Header */}
@@ -43,21 +52,14 @@ export default function BlogClient({ blog, others }) {
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
-          <div className=" max-w-7xl mx-auto flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
-            <div className="bg-[#97E0FF] p-[20px] md:p-[50px]">
+          <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
+            <div
+              className="p-[20px] md:p-[50px] rounded-2xl transition-all duration-300"
+              style={{ backgroundColor: color }}
+            >
               <h1 className="eczar font-extrabold text-[36px] md:text-[54px] text-[#220016] mb-5">
                 {blog.title}
               </h1>
-
-              {blog.image && (
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  width={800}
-                  height={400}
-                  className="rounded-lg mb-6 w-full"
-                />
-              )}
 
               
             </div>
@@ -78,22 +80,17 @@ export default function BlogClient({ blog, others }) {
 
           {/* Sidebar - Other Blogs */}
           <div className="md:w-1/3 mt-8 md:mt-0">
-            {others?.map((other) => (
+            {others?.map((other, index) => (
               <Link
                 href={`/blogs/${other.slug}`}
                 key={other.id}
-                className="block bg-white border p-6 text-black transition-all duration-200 hover:shadow-[-11px_12px_0px_0px_#000000] mb-4 rounded-lg"
+                className="block  p-6 text-black transition-all duration-200 mb-4 rounded-lg"
+                style={{
+                  backgroundColor: colors[index % colors.length],
+                }}
               >
-                {other.image && (
-                  <Image
-                    src={other.image}
-                    alt={other.title}
-                    width={400}
-                    height={200}
-                    className="rounded mb-4"
-                  />
-                )}
-                <h2 className="text-lg font-semibold mb-3">{other.title}</h2>
+                
+                <h2 className="text-lg font-semibold mb-[10rem]">{other.title}</h2>
                 <span className="text-black block">READ MORE</span>
               </Link>
             ))}

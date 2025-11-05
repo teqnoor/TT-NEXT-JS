@@ -33,8 +33,8 @@ export default function ProductFeaturedPage() {
 
       <section className="max-w-7xl mx-auto py-12 ">
         <h2 className="eczar font-semibold text-[64px] text-[#405305]">
-              Cramm’d Chickpeas
-            </h2>
+          Cramm’d Chickpeas
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           {["/crammd_1.jpg", "/crammd_2.jpg", "/crammd_3.jpg"].map(
@@ -59,7 +59,7 @@ export default function ProductFeaturedPage() {
           <div className="max-w-7xl mx-auto text-center">
             {/* Heading */}
             <h2 className="eczar font-semibold text-[64px] text-[#405305]">
-              Featured Products Ranges
+              Featured Products
             </h2>
 
             <p className="text-sm md:text-base text-[#405305] mt-1 mb-8">
@@ -74,29 +74,28 @@ export default function ProductFeaturedPage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            {wowChowData.map((p, i) => (
-              <div key={i} className="aspect-[3/4] md:aspect-[3/4] h-auto">
-                <Link href={`/products/${p.slug}`} key={i}>
-                  <motion.div
-                    whileHover={{
-                      scale: 1.06,
-                      y: -6,
-                      transition: { duration: 0.3, ease: "easeOut" },
-                    }}
-                    className="cursor-pointer relative h-[320px] md:h-[420px] rounded-3xl overflow-hidden shadow-xl"
-                    style={{
-                      cursor:
-                        'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDAwMDAiLz4KPHBhdGggZD0iTTEyIDEySDIwVjIwSDE4VjE1LjQxTDEzLjcxIDE5LjcxTDEyLjI5IDE4LjI5TDE2LjU5IDE0SDEyVjEyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+") 16 16, pointer',
-                    }}
+            {wowChowData.map((card, i) => (
+              <Link href={`/products/${card.slug}`} key={i}>
+                <div className="h-[320px] md:h-[500px] ">
+                  <div
+                    key={i}
+                    className="h-[320px] md:h-[420px] rounded-3xl overflow-hidden"
                   >
                     <img
-                      src={p.images}
-                      alt={p.name}
+                      src={card.images}
+                      alt={card.name}
                       className="h-full w-full object-cover"
                     />
-                  </motion.div>
-                </Link>
-              </div>
+                  </div>
+                  <div className="mt-3">
+                    <div className="w-full bg-[#FCE7A2] rounded-xl py-3 text-center shadow-md">
+                      <p className="eczar text-[14px] md:text-[16px] font-semibold text-black">
+                        {card.name}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

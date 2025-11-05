@@ -29,12 +29,14 @@ export default function BlogsPage() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const res = await fetch("https://backend.tigertigerfoods.com/api/get-blogs"); // adjust if base URL needed
+        const res = await fetch(
+          "https://backend.tigertigerfoods.com/api/get-blogs"
+        ); // adjust if base URL needed
         const data = await res.json();
         if (data.success && Array.isArray(data.data)) {
-          const blogsWithColors = data.data.map((blog) => ({
+          const blogsWithColors = data.data.map((blog, index) => ({
             ...blog,
-            color: colors[Math.floor(Math.random() * colors.length)],
+            color: colors[index % colors.length], // repeat in order
           }));
           setBlogs(blogsWithColors);
         }
@@ -69,18 +71,35 @@ export default function BlogsPage() {
               <Link
                 href={`/blogs/${blog.slug}`}
                 key={blog.slug}
-                className="block p-[32px] text-black transition-all duration-200 rounded-lg"
+                className="relative flex flex-col justify-between p-8 rounded-2xl transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
                 style={{ backgroundColor: blog.color }}
               >
-                
-
                 {/* Blog Title */}
-                <h2 className="text-xl font-semibold mb-[70px]">
-                  {blog.title}
-                </h2>
+                <div>
+                  <h2 className="text-lg md:text-xl font-semibold leading-snug mb-[10rem]">
+                    {blog.title}
+                  </h2>
+
+                  <p
+                    className="text-sm text-black/80"
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        (blog.description
+                          ? blog.description
+                              .replace(/<[^>]+>/g, "")
+                              .substring(0, 100)
+                          : "") + "...",
+                    }}
+                  ></p>
+                </div>
 
                 {/* Read More */}
-                <span className="text-black mt-2 block">READ MORE</span>
+                <div className="mt-6 flex items-center gap-2 text-sm font-medium text-black">
+                  READ MORE
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

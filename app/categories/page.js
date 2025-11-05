@@ -47,10 +47,10 @@ export default function ProductsPage() {
         >
           <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
             <div>
-              <h2 className="eczar font-semibold text-[32px] text-[#220016]">
+              <h2 className="eczar font-semibold text-[32px] text-[#405305]">
                 Product Categories
               </h2>
-              <p>
+              <p className="text-[#405305]">
                 We have wide variety of products ranging from drinks to noodles
                 and frozen. You name it, we got it.
               </p>
