@@ -68,7 +68,7 @@ export default function FloatingCart() {
       {open && (
         <div
           ref={cartRef}
-          className="fixed right-[90px] top-1/2 -translate-y-1/2 w-[320px] bg-white/60 backdrop-blur-[16px] rounded-xl z-40 border-[2px] border-[#40023F] shadow-[-3px_3px_0px_0px_#000000]"
+          className="fixed right-[90px] top-1/2 -translate-y-1/2 w-[320px] bg-white/60 backdrop-blur-[16px] rounded-xl z-40 border-[2px] border-[#40023F]"
         >
           {latestItem ? (
             <>
