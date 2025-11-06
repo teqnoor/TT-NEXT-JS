@@ -11,6 +11,7 @@ import ProductRangerSlider from "./components/ProductRangeSlider";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import Award from "./components/Award";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -540,6 +541,9 @@ export default function Home() {
       <section className="py-12">
         <SmoothSlider />
       </section>
+
+
+      <Award />
     </>
   );
 }

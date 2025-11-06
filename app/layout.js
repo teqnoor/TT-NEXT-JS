@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
         <main className="">{children}</main>
         <Footer />
         <FloatingCart />
-        <Award />
+        
       </body>
     </html>
   );
