@@ -36,9 +36,9 @@ export default function DiscoverPage() {
       <div
         style={{
           backgroundImage: "url('/bg_2.jpg')",
-          backgroundSize: "contain",
+          backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "80vh",
+          height: "70vh",
         }}
       ></div>
 
