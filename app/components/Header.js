@@ -41,10 +41,7 @@ export default function Header() {
   // ✅ Close dropdown when clicking outside or pressing Escape
   useEffect(() => {
     function handleClickOutside(event) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     }
@@ -160,7 +157,7 @@ export default function Header() {
               <Link
                 href="/cuisines"
                 className={`font-outfit text-[18.04px] text-[#556D08] ${
-                  path === "/cuisines" ? "font-bold" : "font-normal"
+                  path.startsWith("/cuisines") ? "font-bold" : "font-normal"
                 }`}
               >
                 Cuisines
@@ -168,7 +165,7 @@ export default function Header() {
               <Link
                 href="/about"
                 className={`font-outfit text-[18.04px] text-[#556D08] ${
-                  path === "/about" ? "font-bold" : "font-normal"
+                  path.startsWith("/about") ? "font-bold" : "font-normal"
                 }`}
               >
                 About
@@ -176,7 +173,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 className={`font-outfit text-[18.04px] text-[#556D08] ${
-                  path === "/contact" ? "font-bold" : "font-normal"
+                  path.startsWith("/contact") ? "font-bold" : "font-normal"
                 }`}
               >
                 Contact
@@ -184,7 +181,7 @@ export default function Header() {
               <Link
                 href="/blogs"
                 className={`font-outfit text-[18.04px] text-[#556D08] ${
-                  path === "/blogs" ? "font-bold" : "font-normal"
+                  path.startsWith("/blogs") ? "font-bold" : "font-normal"
                 }`}
               >
                 Blogs
@@ -195,7 +192,7 @@ export default function Header() {
                 <Link
                   href="/dashboard"
                   className={`font-outfit text-[18.04px] text-[#556D08] ${
-                    path === "/dashboard" ? "font-bold" : "font-normal"
+                    path.startsWith("/dashboard") ? "font-bold" : "font-normal"
                   }`}
                 >
                   Dashboard
@@ -204,7 +201,7 @@ export default function Header() {
                 <Link
                   href="/login"
                   className={`font-outfit text-[18.04px] text-[#556D08] ${
-                    path === "/login" ? "font-bold" : "font-normal"
+                    path.startsWith("/login") ? "font-bold" : "font-normal"
                   }`}
                 >
                   Login
@@ -243,10 +240,7 @@ export default function Header() {
               >
                 New
               </Link>
-              <Link
-                href="/categories"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <Link href="/categories" onClick={() => setMobileMenuOpen(false)}>
                 Categories
               </Link>
               <Link href="/cuisines" onClick={() => setMobileMenuOpen(false)}>

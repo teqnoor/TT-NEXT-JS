@@ -11,7 +11,9 @@ export default function RelatedProductsSlider({ product_id }) {
 
   // Fetch related products
   useEffect(() => {
-    fetch(`https://backend.tigertigerfoods.com/api/get-related-product/${product_id}`)
+    fetch(
+      `https://backend.tigertigerfoods.com/api/get-related-product/${product_id}`
+    )
       .then((res) => res.json())
       .then((response) => {
         if (response?.data) setRelatedProducts(response.data);
@@ -73,6 +75,9 @@ export default function RelatedProductsSlider({ product_id }) {
                 sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw"
                 priority={index < 4}
               />
+              <span className="text-[#220016] text-sm px-4 py-4 flex justify-center items-center">
+                {product.name}
+              </span>
             </Link>
           </div>
         ))}

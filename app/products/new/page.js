@@ -2,10 +2,12 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductNewPage() {
   const pathname = usePathname();
   const [headerHeight, setHeaderHeight] = useState(0);
+    const [wowChowData, setWowChowData] = useState([]);
 
   useEffect(() => {
     const header = document.getElementById("header"); // Select global header
@@ -23,6 +25,20 @@ export default function ProductNewPage() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+   useEffect(() => {
+    fetch(
+      `https://backend.tigertigerfoods.com/api/get-new-arrival-and-featured`
+    )
+      .then((res) => res.json()) // Parse the response as JSON
+      .then((response) => {
+        setWowChowData(response.data.new_arrival); // Only store the "data" array
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error); // Handle errors
+      });
+  }, []);
+
 
   const shouldOffset = pathname !== "/";
 
@@ -46,158 +62,38 @@ export default function ProductNewPage() {
         </div>
       </section>
 
-      <section className="py-4">
+ <section className="py-4">
         {/* Grid Content */}
 
-        <div className="max-w-6xl mx-auto">
-          {/* Heading */}
-          <h3 className="eczar font-semibold text-[32px] text-[#405305]">
-            Pulp+
-          </h3>
-
-          <p className="text-sm md:text-base text-[#405305] mt-1 mb-8">
-            Discover our award winning Pulp+ juice, made with real fruit with
-            pulp. Now in 4 amazing flavours.
-          </p>
-
-          {/* Grid */}
-          <div className="grid grid-cols-4 md:grid-cols-4 gap-3">
-            {/* First Column */}
-            <div className="flex flex-col h-full">
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/pulp1.png" // Change to the correct path for your image
-                  alt="Tiger Tiger Coconut Juice"
-                  width={250}
-                  height={400} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/pulp2.png" // Change to the correct path for your image
-                  alt="Tiger Tiger Mango Juice"
-                  width={250}
-                  height={400} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Second Column */}
-            <div className="flex flex-col h-full">
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/pulp3.png" // Change to the correct path for your image
-                  alt="Tiger Tiger Lychee Juice"
-                  width={250}
-                  height={400} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/pulp4.png" // Change to the correct path for your image
-                  alt="Tiger Tiger Guava Juice"
-                  width={250}
-                  height={400} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Third Column */}
-            <div className="col-span-2 h-full flex flex-col">
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/pulp3.png" // Change to the correct path for your image
-                  alt="Tiger Tiger Lychee Juice"
-                  width={500}
-                  height={500} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {wowChowData.map((card, i) => (
+              <Link href={`/products/${card.slug}`} key={i}>
+                <div className="h-[320px] md:h-[500px] ">
+                  <div
+                    key={i}
+                    className="h-[320px] md:h-[420px] rounded-3xl overflow-hidden"
+                  >
+                    <img
+                      src={card.images}
+                      alt={card.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="mt-3">
+                    <div className="w-full bg-[#FCE7A2] rounded-xl py-3 text-center shadow-md">
+                      <p className="eczar text-[14px] md:text-[16px] font-semibold text-black">
+                        {card.name}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-4">
-        {/* Grid Content */}
-
-        <div className="max-w-6xl mx-auto">
-          {/* Heading */}
-          <h3 className="eczar font-semibold text-[32px] text-[#405305]">
-            Wow Chow
-          </h3>
-
-          <p className="text-sm md:text-base text-[#405305] mt-1 mb-8">
-            Bold Asian flavours meet convenience. Just add hot water and enjoy
-            authentic stir-fry style noodles in minutes.
-          </p>
-
-          {/* Grid */}
-          <div className="grid grid-cols-4 md:grid-cols-4 gap-3">
-            <div className="col-span-2 h-full flex flex-col">
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/wow_chow_bg.jpg" // Change to the correct path for your image
-                  alt="Tiger Tiger Lychee Juice"
-                  width={500}
-                  height={500} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* First Column */}
-            <div className="flex flex-col h-full">
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/pulp1.png" // Change to the correct path for your image
-                  alt="Tiger Tiger Coconut Juice"
-                  width={250}
-                  height={400} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/pulp2.png" // Change to the correct path for your image
-                  alt="Tiger Tiger Mango Juice"
-                  width={250}
-                  height={400} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Second Column */}
-            <div className="flex flex-col h-full">
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/pulp3.png" // Change to the correct path for your image
-                  alt="Tiger Tiger Lychee Juice"
-                  width={250}
-                  height={400} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex-1 mb-4">
-                <Image
-                  src="/pulp4.png" // Change to the correct path for your image
-                  alt="Tiger Tiger Guava Juice"
-                  width={250}
-                  height={400} // Adjust the height according to the image size
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Third Column */}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

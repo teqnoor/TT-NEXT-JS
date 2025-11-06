@@ -78,7 +78,7 @@ import Image from "next/image";
                         className="object-contain h-[300px] w-full"
                       />
                       <span className="text-[#220016] font-medium text-sm px-4 text-center py-4">
-                        {card.title}
+                        {card.name}
                       </span>
                     </div>
                   </Link>

@@ -122,7 +122,7 @@ export default function SearchBox() {
 
       {showDropdown && (
         <div className="absolute top-full mt-2 w-[320px] z-10 max-h-[400px] overflow-auto scrollbar-thin scrollbar-thumb-[#40023F] scrollbar-track-gray-100">
-          <div className="bg-white rounded-xl border-[2px] border-[#40023F] shadow-[-3px_3px_0px_0px_#000000]">
+          <div className="bg-white rounded-xl border-[2px] border-[#40023F]">
             {results.length > 0 ? (
               results.map((item) => (
                 <Link href={`/products/${item.slug}`} key={item.id}>

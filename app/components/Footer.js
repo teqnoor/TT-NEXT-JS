@@ -49,7 +49,7 @@ export default function Footer() {
             height={40}
             className="mb-4"
           />
-          <p className="max-w-xs leading-[1.6]">
+          <p className="max-w-xs leading-[1.6] text-[#405305]">
             The UK’s leading developer of authentic Asian cuisine. From Japanese
             and Thai to Chinese and Indian, we deliver premium ingredients and
             exceptional flavours that bring the true taste of Asia to your
@@ -59,27 +59,27 @@ export default function Footer() {
 
         {/* Useful Links */}
         <div>
-          <h4 className="font-semibold mb-2">Useful Links</h4>
+          <h4 className="font-semibold mb-2 text-[#405305]">Useful Links</h4>
           <ul className="space-y-1">
-            <li><Link href="/cuisine">Cuisine</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/blogs">Blogs</Link></li>
-            <li><Link href="/trade-register">Sign Up</Link></li>
-            <li><Link href="/login">Login</Link></li>
+            <li><Link className="text-[#405305]" href="/cuisine">Cuisine</Link></li>
+            <li><Link className="text-[#405305]" href="/contact">Contact</Link></li>
+            <li><Link className="text-[#405305]" href="/about">About Us</Link></li>
+            <li><Link className="text-[#405305]" href="/blogs">Blogs</Link></li>
+            <li><Link className="text-[#405305]" href="/trade-register">Sign Up</Link></li>
+            <li><Link className="text-[#405305]" href="/login">Login</Link></li>
           </ul>
         </div>
 
         {/* Categories (dynamic) */}
         <div>
-          <h4 className="font-semibold mb-2">Categories</h4>
+          <h4 className="font-semibold mb-2 text-[#405305]">Categories</h4>
           <ul className="space-y-1">
             {loading ? (
-              <li className="text-gray-500">Loading...</li>
+              <li className="text-gray-500 text-[#405305]">Loading...</li>
             ) : categories.length ? (
               categories.map((cat, idx) => (
                 <li key={cat.slug ?? cat.id ?? idx}>
-                  <Link href={`/categories/${cat.slug ?? cat.id}`}>{cat.name ?? "Category"}</Link>
+                  <Link className="text-[#405305]" href={`/categories/${cat.slug ?? cat.id}`}>{cat.name ?? "Category"}</Link>
                 </li>
               ))
             ) : (
@@ -90,17 +90,17 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="font-semibold mb-2">Contact</h4>
+          <h4 className="font-semibold mb-2 text-[#405305]">Contact</h4>
           <address className="not-italic leading-[1.6] space-y-2">
-            <p>
+            <p className="text-[#405305]">
               Bull Close Road
               <br />
               Lenton Industrial Estate,
               <br />
               Nottingham NG7 2UT, England.
             </p>
-            <p>customer.service@tigertigerfoods.com</p>
-            <p>+44 (0) 115 9438 949</p>
+            <p className="text-[#405305]">customer.service@tigertigerfoods.com</p>
+            <p className="text-[#405305]">+44 (0) 115 9438 949</p>
           </address>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function Footer() {
       {/* Social Row */}
       <div className="max-w-6xl mx-auto pt-4 pb-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="mb-3 md:mb-0 text-center md:text-left">
+          <p className="mb-3 md:mb-0 text-center md:text-left text-[#405305]">
             Follow us on social media for updates:
           </p>
 
@@ -143,12 +143,12 @@ export default function Footer() {
 
       {/* Bottom Footer */}
       <div className="border-t border-[#220016]/20 pt-4 text-center md:text-left max-w-6xl mx-auto text-xs flex flex-col md:flex-row justify-between items-center gap-2">
-        <p>&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
+        <p className="text-[#405305]">&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
         <div className="flex gap-4">
-          <Link href="/privacy-policy">Privacy Policy</Link>
-          <Link href="/modern-slavery-statement">Modern Slavery Statement</Link>
+          <Link className="text-[#405305]" href="/privacy-policy">Privacy Policy</Link>
+          <Link className="text-[#405305]" href="/modern-slavery-statement">Modern Slavery Statement</Link>
         </div>
-        <p>
+        <p className="text-[#405305]">
           Designed and Developed by{" "}
           <a href="https://teqnoor.com" className="text-purple-700 font-medium">
             TeqNoor LTD

@@ -126,7 +126,7 @@ export default function LoginPage() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Email*"
-              className="w-full bg-white p-[24px] border border-[#220016] rounded-[14px]"
+              className="w-full bg-[#DBDBDB]  p-[24px]  rounded-[14px]"
               required
               autoComplete="email"
             />
@@ -138,7 +138,7 @@ export default function LoginPage() {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="Password*"
-                className="w-full bg-white p-[24px] border border-[#220016] rounded-[14px] pr-12"
+                className="w-full bg-[#DBDBDB]  p-[24px]  rounded-[14px] pr-12"
                 required
                 autoComplete="current-password"
               />
@@ -165,7 +165,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="bg-[#FFEB57] hover:bg-[#f9e141] border border-black text-black py-[20px] rounded-[14px] disabled:opacity-60"
+              className="bg-[#405305] hover:bg-[#405305] text-white py-[20px] rounded-[14px] disabled:opacity-60"
             >
               {loading ? "Logging in..." : "Login"}
             </button>
