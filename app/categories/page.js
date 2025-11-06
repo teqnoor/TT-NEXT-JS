@@ -45,7 +45,7 @@ export default function ProductsPage() {
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
         >
-          <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
+          <div className="max-w-7xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
             <div>
               <h2 className="eczar font-semibold text-[32px] text-[#405305]">
                 Product Categories
@@ -56,9 +56,8 @@ export default function ProductsPage() {
               </p>
             </div>
           </div>
-
-          <div className="max-w-6xl mx-auto eczar py-6">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          <div className="max-w-7xl mx-auto eczar py-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
               {data?.map((item, i) => (
                 <Link
                   key={i}
@@ -66,12 +65,12 @@ export default function ProductsPage() {
                   className="flex flex-col items-center justify-center"
                 >
                   {/* Circular Image */}
-                  <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden shadow-md ring-2 ring-white">
+                  <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden shadow-md ring-2 ring-white">
                     <Image
                       src={item.image}
                       alt={item.name}
-                      width={128}
-                      height={128}
+                      width={144}
+                      height={144}  
                       className="object-cover w-full h-full"
                     />
                   </div>
