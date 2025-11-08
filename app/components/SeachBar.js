@@ -121,12 +121,12 @@ export default function SearchBox() {
       </div>
 
       {showDropdown && (
-        <div className="absolute top-full mt-2 w-[320px] z-10 max-h-[400px] overflow-auto scrollbar-thin scrollbar-thumb-[#40023F] scrollbar-track-gray-100">
-          <div className="bg-white rounded-xl border-[2px] border-[#40023F]">
+        <div className="absolute top-full mt-2 w-[320px] rounded z-50 max-h-[400px] overflow-auto bg-[#f1f1f1] scrollbar-thin scrollbar-thumb-[#40023F] scrollbar-track-gray-100">
+          <div className="px-2 py-3">
             {results.length > 0 ? (
               results.map((item) => (
                 <Link href={`/products/${item.slug}`} key={item.id}>
-                  <div className="flex items-center p-3 hover:bg-gray-100 rounded-xl cursor-pointer">
+                  <div className="bg-white/80 flex items-center p-3 mt-3 mb-3 hover:bg-[#dadada] rounded-xl cursor-pointer">
                     <img
                       src={item.featured_image || item.images}
                       alt={item.name}
@@ -145,7 +145,6 @@ export default function SearchBox() {
               <div className="p-3 text-gray-500 text-sm">No results found</div>
             )}
 
-            {/* Loader */}
             {hasMore && (
               <div
                 ref={loaderRef}

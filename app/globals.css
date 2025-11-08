@@ -16,9 +16,8 @@
   }
 }
 
-
 :root {
-  --background: #F7F5F3;
+  --background: #f7f5f3;
   --foreground: #171717;
 }
 
@@ -47,5 +46,10 @@ body {
   font-style: normal;
 }
 
-
-
+.backdrop-blur {
+  background: rgba(255, 255, 255, 0.5); /* <-- make sure it's semi-transparent */
+  -webkit-backdrop-filter: blur(29.3px);
+  backdrop-filter: blur(29.3px);
+  box-shadow: 0 4px 31px 0 #00000017;
+  border-radius: 20px;
+}
