@@ -234,14 +234,18 @@ export default function ProductDetail({ slug }) {
             </div>
 
             {/* Product Description */}
-            <div className="max-w-7xl mx-auto px-4 md:px-0 mt-12 mb-12">
-              <h2 className="text-[#556D08] eczar text-[32px] md:text-[32px] mb-4">
-                Product Description
-              </h2>
-              <p className="text-[#444] leading-relaxed">
-                {product.description}
-              </p>
-            </div>
+            {product?.description &&
+              product.description.trim().toLowerCase() !== "null" &&
+              product.description.trim() !== "" && (
+                <div className="max-w-7xl mx-auto px-4 md:px-0 mt-12 mb-12">
+                  <h2 className="text-[#556D08] eczar text-[32px] md:text-[32px] mb-4">
+                    Product Description
+                  </h2>
+                  <p className="text-[#444] leading-relaxed">
+                    {product.description}
+                  </p>
+                </div>
+              )}
 
             {/* Related Products */}
             <section className="max-w-7xl mx-auto py-12 px-4 md:px-0">
