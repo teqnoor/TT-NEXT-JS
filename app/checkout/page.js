@@ -178,7 +178,7 @@ export default function CheckoutPage() {
   const shouldOffset = pathname !== "/";
 
   return (
-    <section className="py-12">
+    <section className="py-12 px-6">
       <div
         style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
       >
