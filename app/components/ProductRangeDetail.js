@@ -6,6 +6,8 @@ export default function ProductRangeDetail({ slug }) {
   const [range, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [imgHeight, setImgHeight] = useState("auto");
+
   useEffect(() => {
     if (!slug) return;
 
@@ -23,6 +25,19 @@ export default function ProductRangeDetail({ slug }) {
       });
   }, [slug]);
 
+    useEffect(() => {
+    if (range?.bg_image) {
+      const img = new Image();
+      img.src = range.bg_image;
+      img.onload = () => {
+        // Maintain natural aspect ratio based on image dimensions
+        const ratio = img.height / img.width;
+        const containerWidth = window.innerWidth;
+        setImgHeight(containerWidth * ratio + "px");
+      };
+    }
+  }, [range?.bg_image]);
+
   if (loading) {
     return <div className="p-6">Loading...</div>;
   }
@@ -31,15 +46,21 @@ export default function ProductRangeDetail({ slug }) {
     return <div className="p-6 text-red-500">Product not found</div>;
   }
 
+
+
   return (
     <>
+      {/* Background image section */}
       {/* Background image section */}
       <div
         style={{
           backgroundImage: `url(${range.bg_image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "100vh",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% auto", // stretch horizontally
+          backgroundPosition: "top center",
+          width: "100%",
+          height: imgHeight, // <-- use calculated height here
+          transition: "height 0.3s ease",
         }}
       ></div>
 
@@ -79,7 +100,7 @@ export default function ProductRangeDetail({ slug }) {
 
           {/* Products loop */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            {["/pulpRange2.png","/pulpRange3.png", "/pulpRange1.jpg"].map(
+            {["/pulpRange2.png", "/pulpRange3.png", "/pulpRange1.jpg"].map(
               (src, index) => (
                 <div
                   key={index}
