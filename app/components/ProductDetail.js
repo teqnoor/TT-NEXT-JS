@@ -24,6 +24,11 @@ export default function ProductDetail({ slug }) {
         position: "top-right",
         autoClose: 3000,
       });
+
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 3000);
+
       return;
     }
 

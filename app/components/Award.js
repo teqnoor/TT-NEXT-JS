@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Award() {
@@ -48,12 +49,10 @@ export default function Award() {
             </p>
 
             <div className="mt-5 flex gap-3 flex-wrap">
-              <button className="bg-white hover:bg-black text-black hover:text-white px-4 py-2 rounded-full text-sm">
-                Read More
-              </button>
-              <button className="bg-green-600 text-white px-4 py-2 rounded-full text-sm">
-                Discover Pulp+
-              </button>
+              
+              <Link href='product-ranges' className="bg-green-600 text-white px-4 py-2 rounded-full text-sm">
+                Discover More
+              </Link>
             </div>
           </div>
 

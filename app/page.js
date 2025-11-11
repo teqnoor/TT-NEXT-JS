@@ -168,9 +168,9 @@ export default function Home() {
               >
                 View Our App
               </Link>
-              <button className="bg-[#556D08] text-white px-6 py-2 rounded-full font-medium border-2 border-transparent hover:bg-[#fff] hover:text-black hover:border-[#556D08] transition">
+              <Link href='/products' className="bg-[#556D08] text-white px-6 py-2 rounded-full font-medium border-2 border-transparent hover:bg-[#fff] hover:text-black hover:border-[#556D08] transition">
                 Discover all products
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -213,9 +213,9 @@ export default function Home() {
               <button className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition">
                 Drink It Up
               </button>
-              <button className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#40023F] transition">
+              <Link href='/products' className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#40023F] transition">
                 Discover all products
-              </button>
+              </Link>
             </div>
           </div>
         </div>
