@@ -551,7 +551,6 @@ export default function Home() {
         <SmoothSlider />
       </section>
 
-      <Award />
     </>
   );
 }
