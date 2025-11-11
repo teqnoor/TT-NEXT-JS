@@ -118,14 +118,17 @@ export default function Home() {
         </motion.div>
 
         {/* Background Image */}
-        <Image
-          src="/Hero_Bg.png"
-          alt="Hero Background"
-          width={1920}
-          height={920}
-          priority
-          className="w-full h-full object-contain"
-        />
+        <div className="relative w-full h-[120vh]">
+          {" "}
+          {/* parent defines height */}
+          <Image
+            src="/Hero_Bg.png"
+            alt="Hero Background"
+            fill
+            priority
+            className="object-cover" // or object-contain if you prefer no cropping
+          />
+        </div>
 
         {/* Overlay Content */}
         <div className="absolute top-[10%] md:top-[15%] left-1/2 -translate-x-1/2 px-4 text-center text-[#405305] z-10 w-full max-w-[90%] md:max-w-full">
@@ -168,7 +171,10 @@ export default function Home() {
               >
                 View Our App
               </Link>
-              <Link href='/products' className="bg-[#556D08] text-white px-6 py-2 rounded-full font-medium border-2 border-transparent hover:bg-[#fff] hover:text-black hover:border-[#556D08] transition">
+              <Link
+                href="/products"
+                className="bg-[#556D08] text-white px-6 py-2 rounded-full font-medium border-2 border-transparent hover:bg-[#fff] hover:text-black hover:border-[#556D08] transition"
+              >
                 Discover all products
               </Link>
             </div>
@@ -213,7 +219,10 @@ export default function Home() {
               <button className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition">
                 Drink It Up
               </button>
-              <Link href='/products' className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#40023F] transition">
+              <Link
+                href="/products"
+                className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#40023F] transition"
+              >
                 Discover all products
               </Link>
             </div>
@@ -432,8 +441,8 @@ export default function Home() {
                 </div>
 
                 <p className=" mt-3 text-center text-[16px] md:text-[16px] eczar font-semibold text-[#405305] w-[180px]  line-clamp-3">
-                    {p.name}
-                  </p>
+                  {p.name}
+                </p>
               </li>
             ))}
           </ul>
@@ -541,7 +550,6 @@ export default function Home() {
       <section className="py-12">
         <SmoothSlider />
       </section>
-
 
       <Award />
     </>
