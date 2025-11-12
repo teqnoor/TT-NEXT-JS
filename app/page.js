@@ -275,7 +275,7 @@ export default function Home() {
                   key={index}
                   className={`rounded-md overflow-hidden flex items-center justify-center`}
                 >
-                  <Link href={`/products/${flavour.slug}`} key={index}>
+                  <Link href={`/products/${flavour.slug}/${flavour.SKU}`} key={index}>
                     <img
                       src={
                         flavour.featured_image
@@ -383,7 +383,7 @@ export default function Home() {
               <SwiperSlide key={p.name}>
                 <div className="w-full flex flex-col items-center">
                   <div className="w-[280px] h-[280px] flex items-end justify-center">
-                    <Link href={`/products/${p.slug}`} key={i}>
+                    <Link href={`/products/${p.slug}/${p.SKU}`} key={i}>
                       <img
                         src={p.images}
                         alt={p.name}
@@ -430,7 +430,7 @@ export default function Home() {
               flex items-end justify-center
             "
                 >
-                  <Link href={`/products/${p.slug}`} key={i}>
+                  <Link href={`/products/${p.slug}/${p.SKU}`} key={i}>
                     <img
                       src={p.images}
                       alt={p.name}
