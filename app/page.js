@@ -485,7 +485,7 @@ export default function Home() {
           </div>
           <Link
             href="/categories"
-            className="text-sm text-[#220016] underline self-start md:self-auto"
+            className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar text-[#556D08]"
           >
             All Categories
           </Link>

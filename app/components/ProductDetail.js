@@ -77,11 +77,13 @@ export default function ProductDetail({ slug, sku }) {
       .then((res) => {
         const found = res.data.find(
           (p) =>
-            p.slug?.trim().toLowerCase() === slug?.trim().toLowerCase() &&
-            p.SKU?.trim() === sku?.trim()
+            p.slug === slug &&
+            p.SKU === sku
         );
 
-        console.log(found);
+        console.log(found)
+      console.log(`${found.id}, ${sku}`);
+
 
         if (!found) throw new Error("Product not found");
 
