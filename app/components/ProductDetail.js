@@ -75,7 +75,11 @@ export default function ProductDetail({ slug, sku }) {
     fetch(`https://backend.tigertigerfoods.com/api/get-products`)
       .then((res) => res.json())
       .then((res) => {
-        const found = res.data.find((p) => p.slug === slug);
+        const found = res.data.find(
+          (p) =>
+            p.slug?.trim().toLowerCase() === slug?.trim().toLowerCase() &&
+            p.SKU?.trim() === sku?.trim()
+        );
 
         console.log(found);
 
@@ -108,7 +112,7 @@ export default function ProductDetail({ slug, sku }) {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [slug , sku]);
+  }, [slug, sku]);
 
   const shouldOffset = pathname !== "/";
 
