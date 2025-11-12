@@ -75,15 +75,12 @@ export default function ProductDetail({ slug, sku }) {
     fetch(`https://backend.tigertigerfoods.com/api/get-products`)
       .then((res) => res.json())
       .then((res) => {
+        
         const found = res.data.find(
           (p) =>
-            p.slug === slug &&
-            p.SKU === sku
+            p.slug?.trim().toLowerCase() === slug?.trim().toLowerCase() &&
+            String(p.SKU)?.trim() === String(sku)?.trim()
         );
-
-        console.log(found)
-      console.log(`${found.id}, ${sku}`);
-
 
         if (!found) throw new Error("Product not found");
 
