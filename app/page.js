@@ -216,9 +216,9 @@ export default function Home() {
 
             {/* Buttons */}
             <div className="flex justify-center gap-4 flex-wrap">
-              <button className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition">
-                Drink It Up
-              </button>
+              <Link href='/tt-app' className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition">
+                View App
+              </Link>
               <Link
                 href="/products"
                 className="bg-[#40023F] text-white px-6 py-2 rounded-full font-medium hover:bg-[#40023F] transition"
