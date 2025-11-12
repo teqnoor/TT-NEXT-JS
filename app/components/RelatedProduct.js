@@ -65,7 +65,7 @@ export default function RelatedProductsSlider({ product_id }) {
             key={product?.id ?? index}
             className="keen-slider__slide flex items-center justify-center"
           >
-            <Link href={`/products/${product.slug}`} prefetch={false}>
+            <Link href={`/products/${product.slug}/${product.SKU}`} prefetch={false}>
               <Image
                 src={product.images}
                 alt={product.name ?? `Product ${index + 1}`}

@@ -68,7 +68,7 @@ import Image from "next/image";
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
                 {data.map((card, i) => (
-                  <Link href={`/products/${card.slug}`} key={i}>
+                  <Link href={`/products/${card.slug}/${card.SKU}`} key={i}>
                     <div className="bg-white rounded flex flex-col items-center justify-between h-[350px]">
                       <Image
                         src={card.images}

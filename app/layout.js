@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/wry2bcj.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

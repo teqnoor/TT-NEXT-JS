@@ -123,7 +123,7 @@ export default function EnquiryPage() {
 
                   {/* Product Info */}
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold">{item.name}</h3>
+                    <h3 className="text-lg font-semibold">{item.name} ({item.unit })</h3>
 
                     {/* Quantity Controls */}
                     <div className="flex items-center mt-2">

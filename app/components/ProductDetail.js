@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // 👈 import styles
-export default function ProductDetail({ slug }) {
+export default function ProductDetail({ slug, sku }) {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -38,8 +38,7 @@ export default function ProductDetail({ slug }) {
     }
     // Store in sessionStorage
     const cart = JSON.parse(sessionStorage.getItem("inquiry_cart") || "[]");
-    const newQuantity =
-      selectedUnit === "palette" ? product.palette_quantity : 1;
+    const newQuantity = selectedUnit === "palette" ? 1 : 1;
     const existingItemIndex = cart.findIndex(
       (item) => item.id === product.id && item.unit === selectedUnit
     );
@@ -77,11 +76,13 @@ export default function ProductDetail({ slug }) {
       .then((res) => res.json())
       .then((res) => {
         const found = res.data.find((p) => p.slug === slug);
+
+        console.log(found);
+
         if (!found) throw new Error("Product not found");
 
-        // Step 2: Fetch detail using ID
         return fetch(
-          `https://backend.tigertigerfoods.com/api/get-product-detail/${found.id}`
+          `https://backend.tigertigerfoods.com/api/get-product-detail/${found.id}/${found.SKU}`
         );
       })
       .then((res) => res.json())
@@ -107,7 +108,7 @@ export default function ProductDetail({ slug }) {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [slug]);
+  }, [slug , sku]);
 
   const shouldOffset = pathname !== "/";
 

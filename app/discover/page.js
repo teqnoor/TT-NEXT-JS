@@ -84,12 +84,12 @@ export default function DiscoverPage() {
             </p>
           </div>
 
-          <a
+          <Link
             href="/products/categories"
-            className="self-start md:self-auto bg-[#F1D98F] px-5 py-3 rounded-sm text-sm md:text-base"
+            className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
           >
             View All
-          </a>
+          </Link>
         </div>
 
         {/* Marquee Category Row */}
@@ -149,10 +149,7 @@ export default function DiscoverPage() {
 
          
 
-          {/* Button */}
-          <button className="border border-[#220016] px-6 py-2 rounded-full font-medium hover:bg-[#220016] hover:text-white transition flex items-center gap-2 mx-auto">
-            Load More
-          </button>
+         
         </div>
       </section>
 

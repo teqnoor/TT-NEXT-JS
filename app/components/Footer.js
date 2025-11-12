@@ -4,23 +4,37 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-
-
 export default function Footer() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    function checkAuth() {
+      try {
+        const token = localStorage.getItem("token");
+        setIsLoggedIn(!!token);
+      } catch {
+        setIsLoggedIn(false);
+      }
+    }
+
+    checkAuth();
+
     const ac = new AbortController();
 
     (async () => {
       try {
-        const res = await fetch("https://backend.tigertigerfoods.com/api/get-categories", {
-          signal: ac.signal,
-          headers: { Accept: "application/json" },
-          cache: "no-store",
-        });
-        if (!res.ok) throw new Error(`Failed to fetch categories (${res.status})`);
+        const res = await fetch(
+          "https://backend.tigertigerfoods.com/api/get-categories",
+          {
+            signal: ac.signal,
+            headers: { Accept: "application/json" },
+            cache: "no-store",
+          }
+        );
+        if (!res.ok)
+          throw new Error(`Failed to fetch categories (${res.status})`);
         const json = await res.json();
 
         // Expecting { success: boolean, data: Category[] }
@@ -61,12 +75,50 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-2 text-[#405305]">Useful Links</h4>
           <ul className="space-y-1">
-            <li><Link className="text-[#405305]" href="/cuisine">Cuisine</Link></li>
-            <li><Link className="text-[#405305]" href="/contact">Contact</Link></li>
-            <li><Link className="text-[#405305]" href="/about">About Us</Link></li>
-            <li><Link className="text-[#405305]" href="/blogs">Blogs</Link></li>
-            <li><Link className="text-[#405305]" href="/trade-register">Sign Up</Link></li>
-            <li><Link className="text-[#405305]" href="/login">Login</Link></li>
+            <li>
+              <Link className="text-[#405305]" href="/cuisine">
+                Cuisine
+              </Link>
+            </li>
+            <li>
+              <Link className="text-[#405305]" href="/contact">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link className="text-[#405305]" href="/about">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link className="text-[#405305]" href="/blogs">
+                Blogs
+              </Link>
+            </li>
+
+            {isLoggedIn ? (
+              <li>
+                <Link
+                  href="/dashboard"
+                  className={`text-[#405305]`}
+                >
+                  Dashboard
+                </Link>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <Link className="text-[#405305]" href="/trade-register">
+                    Sign Up
+                  </Link>
+                </li>
+                <li>
+                  <Link className="text-[#405305]" href="/login">
+                    Login
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
 
@@ -79,7 +131,12 @@ export default function Footer() {
             ) : categories.length ? (
               categories.map((cat, idx) => (
                 <li key={cat.slug ?? cat.id ?? idx}>
-                  <Link className="text-[#405305]" href={`/categories/${cat.slug ?? cat.id}`}>{cat.name ?? "Category"}</Link>
+                  <Link
+                    className="text-[#405305]"
+                    href={`/categories/${cat.slug ?? cat.id}`}
+                  >
+                    {cat.name ?? "Category"}
+                  </Link>
                 </li>
               ))
             ) : (
@@ -99,7 +156,9 @@ export default function Footer() {
               <br />
               Nottingham NG7 2UT, England.
             </p>
-            <p className="text-[#405305]">customer.service@tigertigerfoods.com</p>
+            <p className="text-[#405305]">
+              customer.service@tigertigerfoods.com
+            </p>
             <p className="text-[#405305]">+44 (0) 115 9438 949</p>
           </address>
         </div>
@@ -143,10 +202,16 @@ export default function Footer() {
 
       {/* Bottom Footer */}
       <div className="border-t border-[#220016]/20 pt-4 text-center md:text-left max-w-6xl mx-auto text-xs flex flex-col md:flex-row justify-between items-center gap-2">
-        <p className="text-[#405305]">&copy; {new Date().getFullYear()}. All Rights Reserved.</p>
+        <p className="text-[#405305]">
+          &copy; {new Date().getFullYear()}. All Rights Reserved.
+        </p>
         <div className="flex gap-4">
-          <Link className="text-[#405305]" href="/privacy-policy">Privacy Policy</Link>
-          <Link className="text-[#405305]" href="/modern-slavery-statement">Modern Slavery Statement</Link>
+          <Link className="text-[#405305]" href="/privacy-policy">
+            Privacy Policy
+          </Link>
+          <Link className="text-[#405305]" href="/modern-slavery-statement">
+            Modern Slavery Statement
+          </Link>
         </div>
         <p className="text-[#405305]">
           Designed and Developed by{" "}
