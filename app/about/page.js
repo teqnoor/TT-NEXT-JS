@@ -31,19 +31,19 @@ export default function AboutPage() {
     {
       title: "High Quality",
       description:
-        "Tiger Tiger UK stands as a steadfast assurance of top-tier quality for both its ingredients and culinary offerings. We take pride in ensuring the authentic taste of pan-Asian cuisine, meticulously developed and sourced from the Far East. Our commitment extends across borders, bringing genuine and premium products to discerning palates in the UK, Europe, and the Americas. Embrace the essence of true pan-Asian flavours with Tiger Tiger UK, where quality meets authenticity on a global culinary journey.",
+        "We assure the essence of what’s best with Asian ingredients. Celebrating natural colours and fermented delicacies across the UK food spots, we take pride in our offerings. Our authentic taste of pan-Asian cuisine is the result of combined effort, planning, strategy, and sourcing from the Far East. We continually expand but extend across borders to bring the real taste and textures. So, our customers delight their appetites and discerning palates with premium Asian flavours. Tiger Tiger embraces authenticity and serves in the UK, Europe, and the Americas, ensuring a global culinary journey. ",
       color: "#FF7373",
     },
     {
-      title: "Competitive Prices",
+      title: "Affordable rates",
       description:
-        "At Tiger Tiger UK, we take pride in offering not only exceptional quality but also competitive prices. By strategically sourcing, developing, and efficiently managing our supply chain, we aim to make authentic pan-Asian culinary experiences accessible to a wider audience. Ensuring that Tiger Tiger UK is a winning combination of premium quality and competitive pricing, making your culinary journey both delightful and cost-effective.",
+        "Beyond quality in every flavour and in every taste, Tiger Tiger is concerned with its customers’ and businesses’ budgets. Hence, we plan ahead of the product supply and serve strategically when developed. This allows us to keep prices fair and accessible for each food item without the quality being compromised. An efficient sourcing, developing, and management of the supply chain makes us unique in offering customers access and grabbing the attention of a wider audience.",
       color: "#84EBE8",
     },
     {
       title: "Mesmerising Taste",
       description:
-        "Tiger Tiger UK helps create delectable dishes with carefully selected ingredients to bring you the authentic taste of Asia, no matter where you are. From our irresistibly flavourful sauces, pastes, and curries to our tempting range of frozen foods, main products and all the essential ingredients, each item is designed to make every bite an irresistible journey into the heart of Asian cuisine.",
+        "Tiger Tiger helps create delectable dishes with carefully selected ingredients to bring you the authentic taste of Asia, no matter where you are. From our irresistibly flavourful sauces, pastes, and curries to our tempting range of frozen foods, core products, and all the essential ingredients, each item is designed to make every bite an irresistible journey into the heart of Asian cuisine.",
       color: "#CBE22F",
     },
   ];
@@ -74,17 +74,39 @@ export default function AboutPage() {
             <h1 className="eczar font-semibold text-[64px] text-[#405305]">
               Who We Are
             </h1>
-            <p>
-              Tiger Tiger UK has been developing Asian foods and supplying Asian
-              food services, supermarkets, and direct customers since 1985. Its
-              parent company, JK FOODS UK, with nearly five decades of
-              experience, is widely recognised in the market for its authentic
+            <p className="mb-3">
+              Tiger Tiger has been a developer and supplier of Asian foods and
+              services to major hubs, including supermarkets, retailers,
+              restaurants and direct customers, for a long time. Our parent
+              company, JK FOODS UK, with nearly five decades of experience, is
+              widely recognised in the market for providing authenticity in
               products. Founded by Mark Johal, who recognised the demand for
               high-quality, authentic Asian flavours, he sought out the very
-              best tasting, quality Asian foods from the Far East. He refined
-              their quality and taste and introduced them to the UK, Europe, and
-              the Americas. Tiger Tiger UK is dedicated to delivering taste and
-              quality to customers at competitive prices.
+              best-tasting, quality Asian foods from the Far East. He began by
+              introducing exceptional quality and taste preferred across the UK,
+              Europe, and the Americas. To this day, the brand is well-known for
+              its dedication to delivering taste and quality to customers at
+              manageable prices.
+            </p>
+            <p className="mb-3">
+              At Tiger Tiger, we redefine value without compromising on the
+              flavours that make every bite memorable.Our consistent quality and
+              recognition for a taste appreciated by individuals and
+              professional kitchens alike let us lead developers of Asian food.
+              We keep offering a deep variety of food products that spans
+              Japanese, Thai, Chinese, and Indian cuisines and commit to keeping
+              up the trend. By providing a range of tasty possibilities with top
+              quality, we only aim to support businesses and elevate dishes for
+              the desired effect. With this approach and commitment, we will
+              continue bringing the combination of quality, irresistible taste,
+              and competitive rates.
+            </p>
+            <p className="mb-3">
+              Across the UK’s kitchens! Try Tiger Tiger, the UK’s leading
+              developers of Asian food, and fill your kitchens with the texture
+              and aroma you recall at events. Within a single supplier, you will
+              have multiple options dedicated to being delivered across
+              Japanese, Thai, Chinese, Korean, Vietnamese, and Indian cuisines.
             </p>
             <div className="flex justify-center mt-6 align-center gap-4">
               <button className="border border-[#405305] px-6 py-2 rounded-full font-medium hover:bg-[#405305] hover:text-white transition">
@@ -113,7 +135,8 @@ export default function AboutPage() {
           <Image src="/red.png" alt="about" width={100} height={100} />
         </motion.div>
         <motion.div
-          drag whileDrag={{ scale: 1.2}}
+          drag
+          whileDrag={{ scale: 1.2 }}
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} // Free drag without restriction
           animate={{ x: [0, 10, -10, 0], y: [0, -10, 10, 0] }} // Loop movement
           transition={{
@@ -129,7 +152,9 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2 border-b-2 md:border-b-0 md:border-r-2 border-black pb-6 md:pb-0 h-full">
-              <h2 className="text-[50px] text-[#405305] eczar font-bold mb-2">Our Food</h2>
+              <h2 className="text-[50px] text-[#405305] eczar font-bold mb-2">
+                Our Food
+              </h2>
               <p className="text-[20px] text-[#405305]">
                 At Tiger Tiger UK, we redefine value without compromising on the
                 flavours that make every bite memorable.
@@ -160,19 +185,24 @@ export default function AboutPage() {
             <div className="md:w-1/2 text-[20px] text-[#405305] border-b-2 md:border-b-0 md:border-r-2 border-black pb-6 md:pb-0 h-full">
               <div className="pr-6">
                 <p className="mb-3">
-                  At Tiger Tiger UK, we're passionate about bringing you
-                  authentic Asian cuisine that honours centuries-old traditions.
-                  Our development journey starts with exploring Asia's rich
-                  culinary heritage, working hand-in-hand with expert chefs who
-                  understand the true essence of regional flavours.
+                  We begin our development of Asian foods by delving deeply into
+                  the culinary heritage of Asia. This leads us to draw
+                  inspiration from centuries-old recipes and cooking techniques.
+                  Since supplying indicates a specific chore and a thoughtful
+                  process to adhere to multiple food services, we partner with
+                  experts. Working with our expert chefs and food artists paves
+                  a way for us to specialise in Asian cuisine. That’s where we
+                  keep every product creation sticking true to its origins.
                 </p>
                 <p>
-                  We believe quality makes all the difference—that's why we
-                  carefully source the finest spices, premium ingredients, and
-                  fresh produce to create dishes that taste authentic. Our
-                  commitment extends beyond great taste to sustainable
-                  practices, ensuring every product respects both culinary
-                  traditions and environmental responsibility.
+                  In our every step is excellence and skill on top. We don’t
+                  just list but carefully source the finest ingredients. Our
+                  tasty products collection includes aromatic spices, premium
+                  frozen food, and fresh produce that offer authentic flavours
+                  and textures. With current and rising trends like
+                  sustainability preferences, we keep serving ethical sourcing
+                  practices. We aim to partner with suppliers who share our
+                  commitment to environmental stewardship.
                 </p>
               </div>
             </div>
@@ -183,9 +213,14 @@ export default function AboutPage() {
                 How We Develop
               </h2>
               <p className="text-[20px] text-[#405305]">
-                Every authentic flavour tells a story passed down through
-                generations. We don't just create Asian foods, we honour
-                culinary legacies with every carefully crafted dish.
+                Tiger Tiger begins with research and strategic planning, with
+                researching and strategising many options. We keep attuned to
+                our customers’ and partners’ needs in developing our range of
+                Asian foods. Our passion for authenticity, quality, and culinary
+                excellence is the foundation that reflects our understanding
+                that Asian cuisine is as diverse as it is flavourful. This is
+                why we organise our product listings to honour the rich
+                traditions and regional nuances, making each dish unique.
               </p>
             </div>
           </div>
@@ -233,12 +268,13 @@ export default function AboutPage() {
             How we work
           </h1>
           <p>
-            At Tiger Tiger UK, our mission is to bring the authentic flavours
-            and culinary traditions of Asia to tables around the United Kingdom.
-            We are dedicated to sourcing and developing the highest quality
-            Asian food products, ensuring that every bite transports our
-            customers to the vibrant streets and bustling markets of Asia.
-            Here’s how we work:
+            Tiger Tiger works to fulfil a mission to bring the authentic
+            flavours and culinary Asian trends to every table around the United
+            Kingdom. This approach leads us to have a focus and dedication
+            towards our work on sourcing and developing the highest quality food
+            products. Our customers will get a delight in every bite, and
+            businesses will thrive. Here’s how we ensure our quality transports
+            bring vibrancy to the streets and bustling markets of Asia:
           </p>
         </div>
       </section>
@@ -246,25 +282,34 @@ export default function AboutPage() {
       <section className="py-4 px-6 md:px-0">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-[#84EBE8]  rounded-lg p-6">
-            <h3 className="font-bold text-lg mb-2">Cultural Expertise</h3>
+            <h3 className="font-bold text-lg mb-2">
+              Cultural understanding & expertise
+            </h3>
             <p className="text-sm text-gray-800">
-              Our team of food enthusiasts and cultural experts are deeply
-              passionate about Asian cuisine. We immerse ourselves in the rich
-              tapestry of Asian culinary traditions, exploring diverse flavours,
-              ingredients, and cooking techniques to uncover hidden gems and
-              culinary innovations.
+              We have highly inspired food enthusiasts in our team that work
+              more interestingly than just to fulfil the responsibility. Their
+              cultural understanding and deep passion for Asian cuisines serve
+              the rich tapestry of Asian culinary traditions. We immerse
+              ourselves in exploring diverse flavours, ingredients, and cooking
+              techniques that keep us innovation drivers for keeping the
+              culinary alive and lasting.
             </p>
           </div>
 
           <div className="bg-[#84EBE8]  rounded-lg p-6">
-            <h3 className="font-bold text-lg mb-2 text-[#405305]">Global Sourcing</h3>
+            <h3 className="font-bold text-lg mb-2 text-[#405305]">
+              Global Sourcing
+            </h3>
             <p className="text-sm text-gray-800">
-              We scour the markets of Asia to source the finest ingredients and
-              products from trusted suppliers and producers. Our extensive
-              network of partners spans the region, allowing us to access a wide
-              variety of authentic and premium-quality ingredients, from
-              fragrant spices and aromatic herbs to rare delicacies and
-              specialty items.
+              Tiger Tiger doesn’t just rely on the name or fame but on
+              self-research and assessment. That’s why we scour the Asian
+              markets that can help us source the finest ingredients and
+              products from trusted suppliers and producers. We have earned an
+              extensive network of tested partners in the region, opening up our
+              access and extending our services for a wide variety of authentic
+              and premium-quality ingredients. We don’t only serve the rare
+              delicacies but also fragrant spices and aromatic herbs and
+              speciality items.
             </p>
           </div>
           <div className="bg-[#84EBE8]  rounded-lg p-6">
@@ -272,11 +317,13 @@ export default function AboutPage() {
               Innovation and Adaptability
             </h3>
             <p className="text-sm text-gray-800">
-              We embrace innovation and stay ahead of culinary trends to remain
-              at the forefront of the Asian food industry. Through research,
+              If it belongs to success, it is tied to effort! With innovation as
+              our focus and a future-driven method, we never hesitate to adapt
+              to new trends. That’s why our customers trust us and keep us at
+              the forefront of the Asian food industry. Through research,
               experimentation, and creative exploration, we constantly push the
-              boundaries of flavour and innovation to delight our customers with
-              exciting new culinary experiences.
+              boundaries of flavour and innovation. The purpose? To delight our
+              customers with ready-made culinary tastes.
             </p>
           </div>
 
@@ -285,11 +332,14 @@ export default function AboutPage() {
               Collaborative Development
             </h3>
             <p className="text-sm text-gray-800">
-              We collaborate closely with chefs, culinary experts, and food
-              artisans across Asia to develop unique and innovative food
-              products. From traditional recipes passed down through generations
-              to modern interpretations and fusion creations, we harness the
-              creativity and expertise of our partners to create exciting
+              Our Asian ingredient offerings are the result of close
+              collaboration with chefs, culinary experts, and food artisans
+              across Asia. With this escort and trust, we develop unique and
+              innovative food products. While keeping ahead with the modern
+              interpretations, we never leave traditional recipes passed down
+              through generations. Our services are more than supply but fusion
+              creations, harnessing creativity and expertise. With this
+              approach, we will make our moves and continue creating exciting
               culinary experiences.
             </p>
           </div>
@@ -299,11 +349,11 @@ export default function AboutPage() {
       <section className="bg-[#CBE22F] py-16 px-4 text-center">
         <div className="max-w-6xl mx-auto px-6 md:px-0 text-center">
           <p className="text-xl md:text-2xl font-semibold text-[#405305] leading-relaxed mb-8">
-            At Tiger Tiger Foods UK, we are more than just a food company. We
-            are storytellers, explorers, and ambassadors of Asian cuisine.
-            Through our passion for discovery, commitment to quality, and
-            dedication to customer satisfaction, we strive to share the vibrant
-            and diverse flavours of Asia with the world.
+            Tiger Tiger are explorers and ambassadors of Asian cuisine. Our
+            customer-first approach in Asian food supply and passion for
+            discovery keep us committed to making stories real. We are dedicated
+            to satisfying our customers while sharing the vibrant and diverse
+            flavours of Asia with the world.
           </p>
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">

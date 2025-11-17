@@ -26,7 +26,6 @@ export default function CuisinesPage() {
 
   const shouldOffset = pathname !== "/";
 
-
   return (
     <>
       <section className="py-12 ">
@@ -58,14 +57,18 @@ export default function CuisinesPage() {
             {/* Right Side */}
             <div className="md:w-1/2 border-l-0 md:border-l-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pl-[0rem] md:pl-[3rem]">
               <p className="mb-3 text-justify text-[18px]  text-[#40023F]">
-                Chinese cuisine is one of the most renowned and most loved all
-                around the world. Chinese cuisine reflects its culture, being
-                the main origin of noodles for 4000 years. To help bring one of
-                the most exciting and best-loved global cuisines out of the East
-                and back to the UK, JK FOODS UK has travelled thousands of miles
-                across China sourcing and developing the highest quality and
-                most authentic ingredients, supplying its wholesalers,
-                retailers, and food services.
+                Cuisines across cultures are loved and preferred, but the
+                suppliers play a more important role, sourcing and bringing the
+                consistent colours and tastes at different tables. Chinese
+                cuisine is one of Asia’s top examples. It originated around 4000
+                years ago and is the main consumer of noodles. Tiger Tiger Foods
+                also shares a part of preference among its clients as the
+                supplier of the most exciting and best-loved global cuisines out
+                of the East and back to the UK. We travel thousands of miles,
+                crossing bridges and borders, just to delight our business
+                partners by developing the highest quality and most authentic
+                ingredients. That’s why it has been famous for its consistent
+                supply of its wholesalers, retailers, and food services.
               </p>
             </div>
           </div>
@@ -113,12 +116,14 @@ export default function CuisinesPage() {
             {/* Left Side */}
             <div className="md:w-1/2 border-r-0  md:border-r-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pr-[0rem] md:pr-[3rem] text-[18px] text-[#40023F]">
               <p className="mb-3 text-justify">
-                Thai cuisine is a blend of intense, aromatic, and powerful
-                flavours bringing unforgettable and delicious experiences. The
-                careful balance of sweet, salty, spicy, and sour reflects the
-                cuisine perfectly. Tiger Tiger Foods provides the essence of
-                Thailand with its premium and authentic ingredients, sourced
-                right from the main hubs of Thailand.
+                Thai food holds other features and tastes, as it is full of
+                intense, aromatic, and powerful flavours that delight diners’
+                tongues with every spoon. Our provision of delicious foods left
+                unforgettable experiences, as we care and balance sweet, salty,
+                spicy, and sour to present a perfect cuisine. Tiger Tiger Foods
+                provides the essence of Thailand with its premium and authentic
+                ingredients. With this balance and innovation, we will keep
+                sourcing right from the main hubs of Thailand.
               </p>
             </div>
 
@@ -186,11 +191,11 @@ export default function CuisinesPage() {
             {/* Right Side */}
             <div className="md:w-1/2 border-l-0 md:border-l-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pl-[0rem] md:pl-[3rem]">
               <p className="mb-3 text-justify text-[18px]  text-[#40023F]">
-                Vietnamese cuisine is famous for its fine balance taste of
-                sweet, sour, salty, bitter, hot, and many other flavours. Tiger
-                Tiger Foods UK travels to Vietnam for its evergreen rice quality
-                importing well-known rice paper, rice stick noodles and rice
-                vermicelli to the UK. Moreover, Tiger Tiger Foods UK travelled
+                Vietnamese cuisine is famous for its fine balance of the tastes
+                of sweet, sour, salty, bitter, hot, and many other flavours.
+                Tiger Tiger Foods travels to Vietnam for its evergreen rice
+                quality, importing well-known rice paper, rice stick noodles and
+                rice vermicelli to the UK. Moreover, Tiger Tiger Foods travelled
                 and brought the most famous brand of prawn crackers from Vietnam
                 to the UK.
               </p>
@@ -240,14 +245,15 @@ export default function CuisinesPage() {
             {/* Left Side */}
             <div className="md:w-1/2 border-r-0  md:border-r-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pr-[0rem] md:pr-[3rem] text-[18px] text-[#40023F]">
               <p className="mb-3 text-justify">
-                Japanese cuisine has captured hearts worldwide with its
-                beautiful presentation, incredible flavours, and focus on fresh,
-                healthy ingredients. At Tiger Tiger Foods UK, we're excited to
-                bring Japan's amazing culinary traditions right to your doorstep
-                with an extensive range of authentic products. Whether you're
-                craving fresh sushi, comforting ramen, perfectly seasoned rice,
-                or hearty udon noodles, we've got everything you need to create
-                authentic Japanese dishes at home.
+                When there is talk of variety, style, and flavours, Japanese
+                cuisine is well-known around the world for the artistry of its
+                dishes and its focus on healthier eating. Tiger Tiger Foods
+                brings Japan’s rich heritage of regional and traditional food to
+                the United Kingdom with a vast variety. Whether it’s sushi,
+                sashimi, rice, ramen, yakitori, or udon, Tiger Tiger Foods has
+                it available. Because we keep focusing on continuous research
+                and finding new flavours, this is our best customer-supporting
+                approach for growing.
               </p>
             </div>
 
@@ -370,13 +376,14 @@ export default function CuisinesPage() {
             {/* Left Side */}
             <div className="md:w-1/2 border-r-0  md:border-r-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pr-[0rem] md:pr-[3rem] text-[18px] text-[#40023F]">
               <p className="mb-3 text-justify">
-                Malaysian cuisine is a beautiful fusion of Chinese and Indian
-                influences, creating flavours that are truly one-of-a-kind. The
-                moment you smell those rich, aromatic spices, you know you're
-                experiencing something special, it's Malaysia's diverse culture
-                served on a plate. That's exactly why we at Tiger Tiger Foods UK
-                are so passionate about bringing these distinctive Malaysian
-                products to tables across the UK.
+                Malaysian cuisine is a hotpot of influences linked to China and
+                India. Rich heritage aroma fills up the air with Malaysian
+                cuisine whenever it is around. There are products in bulk, and
+                all with a unique and distinctive culture of Malaysia. Once
+                tasting the fill-ups, people yearn for more to have on their
+                plates. With this demand and love among the non-native public,
+                Tiger Tiger Foods has been very keen on picking up the Malaysian
+                products and distributing them all over the UK.
               </p>
             </div>
 
@@ -443,13 +450,15 @@ export default function CuisinesPage() {
             {/* Right Side */}
             <div className="md:w-1/2 border-l-0 md:border-l-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pl-[0rem] md:pl-[3rem]">
               <p className="mb-3 text-justify text-[18px]  text-[#40023F]">
-                Singaporean cuisine is like taking a delicious journey around
-                Asia without leaving your table. It brings together the best of
-                Chinese, Malay, Indian, and other cultures to create incredible
-                dishes like creamy laksa, tender Hainanese chicken rice, spicy
-                chili crab, and flaky roti prata. Every bite is an adventure
-                that tells the story of Singapore's wonderfully diverse food
-                scene.
+                Since every cuisine is a representation of a certain culture and
+                its people’s tastes, Singaporean cuisine doesn’t lag behind!
+                With a vibrant fusion of flavours from Chinese, Malay, Indian,
+                and other cultures, the foods are rich in taste, colour, aroma,
+                and quality. Consumers love to have many dishes like Hainanese
+                chicken rice, laksa, chilli crab, and roti prata, blending
+                savoury, spicy, and aromatic elements. That’s why Tiger Tiger
+                elevates its services and our clients’ business by creating a
+                culinary adventure that reflects the country’s diverse heritage.
               </p>
             </div>
           </div>
@@ -497,14 +506,16 @@ export default function CuisinesPage() {
             {/* Left Side */}
             <div className="md:w-1/2 border-r-0  md:border-r-2 border-t-2 md:border-t-0 pt-4 md:pt-0 pr-[0rem] md:pr-[3rem] text-[18px] text-[#40023F]">
               <p className="mb-3 text-justify">
-                Indian cuisine is an incredible journey through rich, diverse
-                flavours that have made it beloved worldwide. From fiery hot
-                curries to mild, creamy dishes, Indian food offers something for
-                everyone—whether you're looking for simple comfort food or an
-                elaborate feast. At Tiger Tiger Foods UK, we provide all the
-                authentic spices and ingredients you need to create
-                restaurant-quality Indian dishes at home that will truly impress
-                your family and friends.
+                You may have heard of the treasure trove of rich and diverse
+                flavours; Indian foods exactly present such a unique experience.
+                There is a richness of texture and taste in almost every dish
+                due to the famous spices and sauces. Try your simple dietary or
+                complex mixtures; these ingredients will adapt easily to every
+                recipe, making a masterpiece course. So, Tiger Tiger Foods is
+                always ahead and available here to provide the right ingredients
+                for it. So, make sure you add a generous spoonful of Tiger Tiger
+                Foods experience, quality, and authenticity to your recipes for
+                Indian food that is guaranteed to stand out from the crowd.
               </p>
             </div>
 

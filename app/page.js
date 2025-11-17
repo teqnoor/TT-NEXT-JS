@@ -363,7 +363,7 @@ export default function Home() {
           className="w-full h-auto"
         />
 
-        <div className="max-w-7xl mx-auto px-4 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
