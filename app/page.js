@@ -481,7 +481,7 @@ export default function Home() {
         {/* Header Row */}
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6 px-6 md:px-0">
           <div>
-            <h2 className="eczar text-2xl md:text-[32px] text-[#556D08]">
+            <h2 className="eczar text-2xl md:text-[32px] text-[#556D08] text-center md:text-left">
               Product Categories
             </h2>
             <p className="text-sm md:text-base text-center md:text-left">
