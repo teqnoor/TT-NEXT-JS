@@ -31,7 +31,7 @@ export default function ProductFeaturedPage() {
         }}
       ></div>
 
-      <section className="max-w-7xl mx-auto py-12 ">
+      <section className="max-w-7xl mx-auto py-8 md:py-12">
         <h2 className="eczar font-semibold text-[64px] text-[#405305]">
           Cramm’d Chickpeas
         </h2>
@@ -53,7 +53,7 @@ export default function ProductFeaturedPage() {
         </div>
       </section>
 
-      <section className="py-12 ">
+      <section className="py-8 md:py-12">
         {/* Grid Content */}
         <div>
           <div className="max-w-7xl mx-auto text-center">
@@ -69,7 +69,7 @@ export default function ProductFeaturedPage() {
         </div>
       </section>
 
-      <section className="py-4">
+      <section className="py-8 md:py-12">
         {/* Grid Content */}
 
         <div className="max-w-7xl mx-auto">
