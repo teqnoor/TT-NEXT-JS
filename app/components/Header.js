@@ -238,7 +238,7 @@ export default function Header() {
                 href="/products/new"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                New
+                New Products
               </Link>
               <Link href="/categories" onClick={() => setMobileMenuOpen(false)}>
                 Categories
