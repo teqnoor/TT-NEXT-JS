@@ -29,7 +29,7 @@ export default function ProductRangerSlider() {
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        className="range-swiper pb-10 overflow-visible"
+        className="range-swiper pb-10 overflow-visible md:overflow-hidden"
       >
         {products.map((p, i) => (
           <SwiperSlide key={i} className="!overflow-visible px-2">
