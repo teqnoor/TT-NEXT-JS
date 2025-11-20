@@ -243,10 +243,10 @@ export default function Home() {
       >
         <div className="relative max-w-7xl mx-auto px-6 md:px-0">
           {/* Title */}
-          <h2 className="eczar text-2xl md:text-3xl text-white mb-2">
+          <h2 className="text-center md:text-left eczar text-2xl md:text-3xl text-white mb-2">
             4 Amazing Flavours
           </h2>
-          <p className="text-sm text-white mb-10">
+          <p className="text-center md:text-left text-sm text-white mb-10">
             Pulp+ now available in 4 amazing flavours, Mango, Lychee, Guava and
             Coconut water. Made with real fruit with pulp.
           </p>
