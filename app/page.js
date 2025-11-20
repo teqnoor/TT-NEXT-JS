@@ -216,7 +216,10 @@ export default function Home() {
 
             {/* Buttons */}
             <div className="flex justify-center gap-4 flex-wrap">
-              <Link href='/tt-app' className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition">
+              <Link
+                href="/tt-app"
+                className="border border-[#40023F] px-6 py-2 rounded-full font-medium hover:bg-[#40023F] hover:text-white transition"
+              >
                 View App
               </Link>
               <Link
@@ -275,7 +278,10 @@ export default function Home() {
                   key={index}
                   className={`rounded-md overflow-hidden flex items-center justify-center`}
                 >
-                  <Link href={`/products/${flavour.slug}/${flavour.SKU}`} key={index}>
+                  <Link
+                    href={`/products/${flavour.slug}/${flavour.SKU}`}
+                    key={index}
+                  >
                     <img
                       src={
                         flavour.featured_image
@@ -478,14 +484,14 @@ export default function Home() {
             <h2 className="eczar text-2xl md:text-[32px] text-[#556D08]">
               Product Categories
             </h2>
-            <p className="text-sm md:text-base">
+            <p className="text-sm md:text-base text-center md:text-left">
               We have wide variety of products ranging from drinks to noodles
               and frozen. You name it, we got it.
             </p>
           </div>
           <Link
             href="/categories"
-            className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar text-[#556D08]"
+            className="self-center md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar text-[#556D08]"
           >
             All Categories
           </Link>
@@ -550,7 +556,6 @@ export default function Home() {
       <section className="py-12">
         <SmoothSlider />
       </section>
-
     </>
   );
 }
