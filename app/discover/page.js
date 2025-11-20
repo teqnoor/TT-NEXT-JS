@@ -73,12 +73,12 @@ export default function DiscoverPage() {
       {/* Categories Section */}
       <section className="py-8 md:py-12 px-6 md:px-0">
         {/* Header Row */}
-        <div className="max-w-7xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
-          <div>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center mb-6 px-6 md:px-0 gap-4">
+          <div className="text-center md:text-left">
             <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
               Product Categories
             </h2>
-            <p>
+            <p className="mt-1 mb-4 md:mb-0">
               We have wide variety of products ranging from drinks to noodles
               and frozen. You name it, we got it.
             </p>
@@ -86,7 +86,7 @@ export default function DiscoverPage() {
 
           <Link
             href="/products/categories"
-            className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
+            className="bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
           >
             View All
           </Link>
@@ -99,7 +99,7 @@ export default function DiscoverPage() {
       {/* New Arrivals Section */}
       <section className="py-8 md:py-12 px-6 md:px-0">
         <div className="max-w-7xl mx-auto mb-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 items-center text-center md:text-left">
             <div>
               <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 New Products
@@ -111,7 +111,7 @@ export default function DiscoverPage() {
 
             <Link
               href="/product-ranges"
-              className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
+              className="bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
             >
               View All
             </Link>
@@ -157,7 +157,7 @@ export default function DiscoverPage() {
       {/* Featured Section */}
       <section className="py-8 md:py-12 px-6 md:px-0">
         <div className="max-w-7xl mx-auto mb-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 items-center text-center md:text-left">
             <div>
               <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 Featured Products
@@ -169,7 +169,7 @@ export default function DiscoverPage() {
 
             <Link
               href="/product-ranges"
-              className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
+              className="bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
             >
               View All
             </Link>
