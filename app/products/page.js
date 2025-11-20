@@ -1,7 +1,6 @@
   "use client";
   import { useEffect, useState } from "react";
   import { usePathname } from "next/navigation";
-  import CategoryMarquee from "../components/categoryMarquee";
   import Link from "next/link";
 import Image from "next/image";
 
@@ -9,7 +8,6 @@ import Image from "next/image";
     const pathname = usePathname();
     const [headerHeight, setHeaderHeight] = useState(0);
   const [data, setData] = useState([]);
-  const [categoryData, setCategoryData] = useState([]);
     useEffect(() => {
 
       fetch(`https://backend.tigertigerfoods.com/api/get-products`)
@@ -21,15 +19,7 @@ import Image from "next/image";
           console.error("Error fetching data:", error); // Handle errors
         });
 
-        fetch(`https://backend.tigertigerfoods.com/api/get-categories`)
-      .then((res) => res.json()) // Parse the response as JSON
-      .then((response) => {
-        setCategoryData(response.data); // Only store the "data" array
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error); // Handle errors
-      });
-
+      
 
       const header = document.getElementById("header"); // Select global header
       if (header) {
@@ -58,7 +48,7 @@ import Image from "next/image";
           >
             <div className="max-w-6xl mx-auto px-6 md:px-0">
               {/* Heading */}
-              <h2 className="eczar font-semibold text-[32px] text-[#220016]">
+              <h2 className="eczar font-semibold text-[32px] text-[#30523E]">
                 All Products
               </h2>
 
@@ -89,27 +79,7 @@ import Image from "next/image";
           </div>
         </section>
 
-        {/* Categories Section */}
-        <section className=" py-12">
-          {/* Header Row */}
-          <div className="max-w-6xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
-            <div>
-              <h2 className="eczar font-semibold text-[32px] text-[#220016]">
-                Product Categories
-              </h2>
-              <p>
-                We have wide variety of products ranging from drinks to noodles
-                and frozen. You name it, we got it.
-              </p>
-            </div>
-            <Link href="/products/categories" className="text-sm text-[#220016] underline">
-              All Categories
-            </Link>
-          </div>
-
-          {/* Marquee Category Row */}
-          <CategoryMarquee categories={categoryData}/>
-        </section>
+        
       </>
     );
   }
