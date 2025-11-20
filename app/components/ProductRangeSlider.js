@@ -19,7 +19,7 @@ export default function ProductRangerSlider() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto py-12">
+    <div className="max-w-7xl mx-auto">
       <Swiper
         loop
         grabCursor
