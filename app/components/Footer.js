@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaInstagram, FaFacebookF, FaTiktok, FaLinkedinIn } from "react-icons/fa6";
 
 export default function Footer() {
   const [categories, setCategories] = useState([]);
@@ -98,10 +99,7 @@ export default function Footer() {
 
             {isLoggedIn ? (
               <li>
-                <Link
-                  href="/dashboard"
-                  className={`text-[#405305]`}
-                >
+                <Link href="/dashboard" className={`text-[#405305]`}>
                   Dashboard
                 </Link>
               </li>
@@ -165,39 +163,34 @@ export default function Footer() {
       </div>
 
       {/* Social Row */}
-      <div className="max-w-6xl mx-auto pt-4 pb-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="mb-3 md:mb-0 text-center md:text-left text-[#405305]">
-            Follow us on social media for updates:
-          </p>
+      <div className="flex flex-row flex-nowrap justify-center md:justify-end gap-4">
+        <a
+          href="https://www.instagram.com/tigertigerfoodofficial/"
+          className="border border-[#220016] p-3 rounded-full inline-flex items-center justify-center text-xl hover:bg-[#556D08] hover:text-white transition-colors"
+        >
+          <FaInstagram />
+        </a>
 
-          <div className="flex flex-wrap justify-center md:justify-end gap-4">
-            <a
-              href="https://www.instagram.com/tigertigerfoodofficial/"
-              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#556D08] hover:text-white transition-colors"
-            >
-              Instagram ↗
-            </a>
-            <a
-              href="https://www.facebook.com/tigertigerfoodsofficial/"
-              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#556D08] hover:text-white transition-colors"
-            >
-              Facebook ↗
-            </a>
-            <a
-              href="https://www.tiktok.com/@tigertigerfoodsofficial1?_t=8rkFatEOb71&_r=1"
-              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#556D08] hover:text-white transition-colors"
-            >
-              Tiktok ↗
-            </a>
-            <a
-              href="https://www.linkedin.com/company/jk-foodsofficial/"
-              className="border border-[#220016] px-6 py-2 rounded-full inline-block font-medium hover:bg-[#556D08] hover:text-white transition-colors"
-            >
-              Linkedin ↗
-            </a>
-          </div>
-        </div>
+        <a
+          href="https://www.facebook.com/tigertigerfoodsofficial/"
+          className="border border-[#220016] p-3 rounded-full inline-flex items-center justify-center text-xl hover:bg-[#556D08] hover:text-white transition-colors"
+        >
+          <FaFacebookF />
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@tigertigerfoodsofficial1?_t=8rkFatEOb71&_r=1"
+          className="border border-[#220016] p-3 rounded-full inline-flex items-center justify-center text-xl hover:bg-[#556D08] hover:text-white transition-colors"
+        >
+          <FaTiktok />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/company/jk-foodsofficial/"
+          className="border border-[#220016] p-3 rounded-full inline-flex items-center justify-center text-xl hover:bg-[#556D08] hover:text-white transition-colors"
+        >
+          <FaLinkedinIn />
+        </a>
       </div>
 
       {/* Bottom Footer */}
