@@ -47,7 +47,7 @@ export default function DiscoverPage() {
         <div className="max-w-7xl mx-auto">
           {/* Heading row */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 Popular Ranges
               </h2>
@@ -58,13 +58,13 @@ export default function DiscoverPage() {
 
             <Link
               href="/product-ranges"
-              className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
+              className="self-center md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
             >
               View All
             </Link>
           </div>
 
-          <div className="mt-4 md:mt-0">
+          <div className="mt-4">
             <ProductRangerSlider />
           </div>
         </div>
@@ -123,8 +123,12 @@ export default function DiscoverPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {newData.map((card, i) => (
               <div>
-                <Link href={`/products/${card.slug}`} key={i} className="h-[320px] md:h-[500px] ">
-                  <div >
+                <Link
+                  href={`/products/${card.slug}`}
+                  key={i}
+                  className="h-[320px] md:h-[500px] "
+                >
+                  <div>
                     <div
                       key={i}
                       className="h-[320px] md:h-[420px] rounded-3xl overflow-hidden"
@@ -176,8 +180,12 @@ export default function DiscoverPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {featureData.map((card, i) => (
-              <Link href={`/products/${card.slug}`} key={i} className="h-[420px] md:h-[500px] ">
-                <div >
+              <Link
+                href={`/products/${card.slug}`}
+                key={i}
+                className="h-[4 20px] md:h-[500px] "
+              >
+                <div>
                   <div
                     key={i}
                     className="h-[320px] md:h-[420px] rounded-3xl overflow-hidden"

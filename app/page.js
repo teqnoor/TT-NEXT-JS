@@ -327,7 +327,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           {/* Heading row */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <h2 className="eczar font-semibold text-3xl md:text-[64px] leading-tight text-[#30523E]">
                 Popular Ranges
               </h2>
@@ -338,7 +338,7 @@ export default function Home() {
 
             <Link
               href="/product-ranges"
-              className="self-start md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
+              className="self-center md:self-auto bg-[#F1D98F] px-[32px] py-[18px] rounded-[16px] text-sm md:text-[32px] eczar"
             >
               View All
             </Link>
