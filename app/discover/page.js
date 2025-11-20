@@ -43,7 +43,7 @@ export default function DiscoverPage() {
       ></div>
 
       {/* Range Section */}
-      <section className="py-12 px-6 md:px-0 overflow-hidden">
+      <section className="py-8 md:py-12 px-6 md:px-0 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Heading row */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -71,7 +71,7 @@ export default function DiscoverPage() {
       </section>
 
       {/* Categories Section */}
-      <section className=" py-12 px-6 md:px-0">
+      <section className="py-8 md:py-12 px-6 md:px-0">
         {/* Header Row */}
         <div className="max-w-7xl mx-auto  flex flex-wrap justify-between items-center mb-6 px-6 md:px-0">
           <div>
@@ -97,7 +97,7 @@ export default function DiscoverPage() {
       </section>
 
       {/* New Arrivals Section */}
-      <section className="py-12 px-6 md:px-0">
+      <section className="py-8 md:py-12 px-6 md:px-0">
         <div className="max-w-7xl mx-auto mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
@@ -154,7 +154,7 @@ export default function DiscoverPage() {
       </section>
 
       {/* Featured Section */}
-      <section className="py-12 px-6 md:px-0">
+      <section className="py-8 md:py-12 px-6 md:px-0">
         <div className="max-w-7xl mx-auto mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
@@ -211,7 +211,7 @@ export default function DiscoverPage() {
       </section>
 
       {/* Product Catalog Section */}
-      <section className="py-12 px-6 md:px-0">
+      <section className="py-8 md:py-12 px-6 md:px-0">
         <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <h2 className="eczar font-semibold text-[32px] md:text-[64px] text-[#30523E]">
