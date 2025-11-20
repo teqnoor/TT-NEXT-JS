@@ -160,10 +160,10 @@ export default function Footer() {
             <p className="text-[#405305]">+44 (0) 115 9438 949</p>
           </address>
         </div>
-      </div>
+
 
       {/* Social Row */}
-      <div className="flex flex-row flex-nowrap justify-center md:justify-end gap-4">
+      <div className="flex flex-row flex-nowrap  gap-4 mb-3">
         <a
           href="https://www.instagram.com/tigertigerfoodofficial/"
           className="border border-[#220016] p-3 rounded-full inline-flex items-center justify-center text-xl hover:bg-[#556D08] hover:text-white transition-colors"
@@ -192,6 +192,9 @@ export default function Footer() {
           <FaLinkedinIn />
         </a>
       </div>
+
+      </div>
+
 
       {/* Bottom Footer */}
       <div className="border-t border-[#220016]/20 pt-4 text-center md:text-left max-w-6xl mx-auto text-xs flex flex-col md:flex-row justify-between items-center gap-2">
