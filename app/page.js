@@ -238,7 +238,7 @@ export default function Home() {
 
       {/* Flavours Section */}
       <section
-        className="relative py-16 bg-cover bg-center"
+        className="relative py-8 md:py-12 bg-cover bg-center"
         style={{ backgroundImage: "url('/flavour_bg.jpg')" }}
       >
         <div className="relative max-w-7xl mx-auto px-6 md:px-0">
@@ -323,7 +323,7 @@ export default function Home() {
       </section>
 
       {/* Product Range  */}
-      <section className="py-12 px-6 md:px-0 overflow-hidden">
+      <section className="py-8 md:py-12 px-6 md:px-0 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Heading row */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -352,7 +352,7 @@ export default function Home() {
 
       {/* Crammid Section */}
 
-      <section className="py-12">
+      <section className="py-8 md:py-12">
         {/* Large banner only on desktop to avoid huge mobile scroll */}
         <Image
           src="/cramid.jpg"
@@ -410,7 +410,7 @@ export default function Home() {
       </section>
 
       {/* Wow Chow Section */}
-      <section className="py-12">
+      <section className="py-8 md:py-12">
         {/* Overlay */}
         <Image
           src="/wow_chow_bg.png"
@@ -456,7 +456,7 @@ export default function Home() {
       </section>
 
       {/* We Offer Alot Section  */}
-      <section className="py-12 px-6 md:px-0">
+      <section className="py-8 md:py-12 px-6 md:px-0">
         <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <h2 className="eczar font-semibold text-[32px] md:text-[64px] text-[#30523E]">
@@ -477,7 +477,7 @@ export default function Home() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-12">
+      <section className="py-8 md:py-12">
         {/* Header Row */}
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6 px-6 md:px-0">
           <div>
@@ -502,7 +502,7 @@ export default function Home() {
       </section>
 
       {/* We Offer Alot Section  */}
-      <section className="py-12 px-6 md:px-0">
+      <section className="py-8 md:py-12 px-6 md:px-0">
         <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <Image
@@ -553,7 +553,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-8 md:py-12">
         <SmoothSlider />
       </section>
     </>
