@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function ProductNewPage() {
   const pathname = usePathname();
   const [headerHeight, setHeaderHeight] = useState(0);
-    const [wowChowData, setWowChowData] = useState([]);
+  const [wowChowData, setWowChowData] = useState([]);
 
   useEffect(() => {
     const header = document.getElementById("header"); // Select global header
@@ -26,7 +26,7 @@ export default function ProductNewPage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-   useEffect(() => {
+  useEffect(() => {
     fetch(
       `https://backend.tigertigerfoods.com/api/get-new-arrival-and-featured`
     )
@@ -39,12 +39,11 @@ export default function ProductNewPage() {
       });
   }, []);
 
-
   const shouldOffset = pathname !== "/";
 
   return (
     <>
-      <section className="py-12">
+      <section className="py-8 md:py-12">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
@@ -62,7 +61,7 @@ export default function ProductNewPage() {
         </div>
       </section>
 
- <section className="py-4">
+      <section className="py-8 md:py-12">
         {/* Grid Content */}
 
         <div className="max-w-7xl mx-auto">
@@ -93,7 +92,6 @@ export default function ProductNewPage() {
           </div>
         </div>
       </section>
-
     </>
   );
 }

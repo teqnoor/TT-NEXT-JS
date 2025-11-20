@@ -10,6 +10,11 @@ export default function Footer() {
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const [openUseful, setOpenUseful] = useState(false);
+const [openCategories, setOpenCategories] = useState(false);
+const [openContact, setOpenContact] = useState(false);
+
+
   useEffect(() => {
     function checkAuth() {
       try {
