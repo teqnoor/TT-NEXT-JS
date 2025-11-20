@@ -317,7 +317,7 @@ export default function Home() {
       </section>
 
       {/* Product Range  */}
-      <section className="py-12 px-6 md:px-0">
+      <section className="py-12 px-6 md:px-0 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Heading row */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
