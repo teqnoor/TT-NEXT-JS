@@ -183,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* Hero Mobile Section */}
-      <section className="relative w-full h-screen  md:hidden overflow-hidden bg-[#fff0b4]">
+      <section className="relative w-full h-[70vh]  md:hidden overflow-hidden bg-[#fff0b4]">
         {/* Overlay Content */}
         <div className="absolute top-[20%]  left-1/2 -translate-x-1/2 px-4 text-center text-[#220016] z-10 w-full max-w-[90%] md:max-w-full">
           <div>
