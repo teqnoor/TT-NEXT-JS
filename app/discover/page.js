@@ -123,8 +123,8 @@ export default function DiscoverPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {newData.map((card, i) => (
               <div>
-                <Link href={`/products/${card.slug}`} key={i}>
-                  <div className="h-[320px] md:h-[500px] ">
+                <Link href={`/products/${card.slug}`} key={i} className="h-[320px] md:h-[500px] ">
+                  <div >
                     <div
                       key={i}
                       className="h-[320px] md:h-[420px] rounded-3xl overflow-hidden"
@@ -176,8 +176,8 @@ export default function DiscoverPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {featureData.map((card, i) => (
-              <Link href={`/products/${card.slug}`} key={i}>
-                <div className="h-[320px] md:h-[500px] ">
+              <Link href={`/products/${card.slug}`} key={i} className="h-[420px] md:h-[500px] ">
+                <div >
                   <div
                     key={i}
                     className="h-[320px] md:h-[420px] rounded-3xl overflow-hidden"
