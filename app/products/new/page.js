@@ -43,7 +43,7 @@ export default function ProductNewPage() {
 
   return (
     <>
-      <section className="py-8 md:py-12">
+     <section className="pt-[50px] pb-[0px]">
         {/* Grid Content */}
         <div
           style={{ marginTop: shouldOffset ? `${headerHeight}px` : undefined }}
@@ -54,7 +54,7 @@ export default function ProductNewPage() {
               New Products
             </h2>
 
-            <p className="text-center md:text-left  text-sm md:text-base text-[#405305] mt-1 mb-8">
+            <p className="text-center md:text-left  text-sm md:text-base text-[#405305]">
               Latest and hot selling products from Tiger Tiger Foods
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function ProductNewPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-0">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {wowChowData.map((card, i) => (
-              <Link href={`/products/${card.slug}`} key={i} className="h-[320px] md:h-[500px] ">
+              <Link href={`/products/${card.slug}`} key={i} className="h-[420px] md:h-[500px] ">
                 <div >
                   <div
                     key={i}

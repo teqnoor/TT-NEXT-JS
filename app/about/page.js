@@ -71,7 +71,7 @@ export default function AboutPage() {
         >
           <div className="max-w-5xl mx-auto text-center px-6 md:px-0 ">
             <h6 className="text-[20px] text-[#405305]">About us</h6>
-            <h1 className="eczar font-semibold text-[64px] text-[#405305]">
+            <h1 className="eczar font-semibold text-[35px] md:text-[64px] text-[#405305]">
               Who We Are
             </h1>
             <p className="mb-3">
@@ -152,7 +152,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
             {/* Left Side */}
             <div className="md:w-1/2 border-b-2 md:border-b-0 md:border-r-2 border-black pb-6 md:pb-0 h-full">
-              <h2 className="text-[50px] text-[#405305] eczar font-bold mb-2">
+              <h2 className="text-[35px] md:text-[50px] text-[#405305] eczar font-bold mb-2">
                 Our Food
               </h2>
               <p className="text-[20px] text-[#405305]">
@@ -209,7 +209,7 @@ export default function AboutPage() {
 
             {/* Left Side */}
             <div className="md:w-1/2 ">
-              <h2 className="text-[50px] eczar font-bold mb-2 text-[#405305]">
+              <h2 className="text-[35px] md:text-[50px] eczar font-bold mb-2 text-[#405305]">
                 How We Develop
               </h2>
               <p className="text-[20px] text-[#405305]">
@@ -230,7 +230,7 @@ export default function AboutPage() {
       <section className="py-12 px-6 md:px-0">
         <div className="max-w-6xl mx-auto text-center">
           <h6 className="text-[20px] text-[#405305]">Ok but why</h6>
-          <h1 className="eczar font-semibold text-[50px] text-[#405305]">
+          <h1 className="eczar font-semibold text-[35px] md:text-[50px] text-[#405305]">
             Choose Tiger Tiger Foods UK?
           </h1>
           <p>Let us simplify it for you.</p>
@@ -264,7 +264,7 @@ export default function AboutPage() {
           <h6 className="text-[20px] text-[#405305]">
             Want to know more about us?
           </h6>
-          <h1 className="eczar font-semibold text-[50px] text-[#405305]">
+          <h1 className="eczar font-semibold text-[35px] md:text-[50px] text-[#405305]">
             How we work
           </h1>
           <p>
