@@ -27,12 +27,13 @@ export default function ProductFeaturedPage() {
           backgroundImage: "url('/feature_bg.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "100vh",
+          backgroundRepeat: "no-repeat", // prevent repeating
+          height: "30vh",
         }}
       ></div>
 
-      <section className="max-w-7xl mx-auto py-8 md:py-12">
-        <h2 className="eczar font-semibold text-[64px] text-[#405305]">
+      <section className="max-w-7xl mx-auto py-8 md:py-12 px-6 md:px-0">
+        <h2 className="text-center md:text-left eczar font-semibold text-[32px] md:text-[64px] text-[#405305]">
           Cramm’d Chickpeas
         </h2>
 
@@ -58,11 +59,11 @@ export default function ProductFeaturedPage() {
         <div>
           <div className="max-w-7xl mx-auto text-center">
             {/* Heading */}
-            <h2 className="eczar font-semibold text-[64px] text-[#405305]">
+            <h2 className="text-center md:text-left eczar font-semibold text-[32px] md:text-[64px] text-[#405305]">
               Featured Products
             </h2>
 
-            <p className="text-sm md:text-base text-[#405305] mt-1 mb-8">
+            <p className="text-center md:text-left text-sm md:text-base text-[#405305] mt-1 mb-8">
               Top selling and featured products from Tiger Tiger Foods
             </p>
           </div>
@@ -72,11 +73,15 @@ export default function ProductFeaturedPage() {
       <section className="py-8 md:py-12">
         {/* Grid Content */}
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-6 md:px-0">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {wowChowData.map((card, i) => (
-              <Link href={`/products/${card.slug}`} key={i}>
-                <div className="h-[320px] md:h-[500px] ">
+              <Link
+                href={`/products/${card.slug}`}
+                key={i}
+                className="h-[420px] md:h-[500px] "
+              >
+                <div>
                   <div
                     key={i}
                     className="h-[320px] md:h-[420px] rounded-3xl overflow-hidden"
