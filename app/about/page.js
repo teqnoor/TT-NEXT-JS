@@ -60,7 +60,7 @@ export default function AboutPage() {
             duration: 3, // Slower animation
             ease: "easeInOut",
           }}
-          className="absolute bottom-[10px] left-[20px]"
+          className="absolute bottom-[-40px] left-[20px]"
         >
           <Image src="/yello.png" alt="about" width={100} height={100} />
         </motion.div>
