@@ -67,7 +67,7 @@ export default function ProductNewPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-0">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {wowChowData.map((card, i) => (
-              <Link href={`/products/${card.slug}`} key={i} className="h-[420px] md:h-[500px] ">
+              <Link href={`/products/${card.slug}/${card.SKU}`} key={i} className="h-[420px] md:h-[500px] ">
                 <div >
                   <div
                     key={i}
