@@ -49,10 +49,10 @@ export default function SmoothSlider() {
     <>
       <div className="max-w-6xl mx-auto overflow-hidden">
         <div className="px-6 md:px-0">
-          <h2 className="eczar font-semibold text-[32px] text-[#556D08]">
+          <h2 className="text-center md:text-left eczar font-semibold text-[32px] text-[#30523E]">
             What's Cooking?
           </h2>
-          <p className="mb-5">Discover our social media and connect with us</p>
+          <p className="mb-5 text-center md:text-left">Discover our social media and connect with us</p>
         </div>
       </div>
       <div ref={sliderRef} className="keen-slider">
